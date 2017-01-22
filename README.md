@@ -1,0 +1,1 @@
+# lgd-wp-theme
