@@ -1,10 +1,10 @@
 <?php
 /**
- * Template Name: Standard index
+ * Template Name: Standard Landing
  */
 
 $args = array(
-    'meta_key' => 'landing_page_body'
+    'meta_key' => 'landing_page_body',
     'meta_value' => '1',
     'post_type'      => 'page',
     'posts_per_page' => -1,
