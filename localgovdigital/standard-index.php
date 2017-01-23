@@ -26,6 +26,7 @@ get_header(); ?>
 				<div>
           <?php echo $i; the_title( sprintf( '<h3><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
 					<p><?php the_excerpt(); ?></p>
+					<p><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">Find out more about point <?php echo $i; ?></a></p>
         </div>
      <?php
         $i++;
