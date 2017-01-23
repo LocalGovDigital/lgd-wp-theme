@@ -2,16 +2,15 @@ branches:
   only:
   - master
 skip_tags: true
-build: off
+build_script:
+- ps: $root = Resolve-Path .\localgovdigital; [IO.Directory]::GetFiles($root.Path, '*.*', 'AllDirectories') | % { Push-AppveyorArtifact $_ -FileName $_.Substring($root.Path.Length + 1) }
 test: off
-artifacts:
-- path: localgovdigital\**\*.*
 deploy:
 - provider: FTP
   host:
     secure: H6bRvr6FiP3wyFSKBZGFXW9rk7ie1AinE/L3ehC0pzs=
-  protocol: ftps
+  protocol: ftp
   username:
     secure: 7MrkC4KDGY8tZNyNy5/7/zxP7RJMcNVmFJB8xfcQ3rk=
   password:
-    secure: MZdYF7ohMP31C1eHkYWQeQ==
+    secure: USfHqX/KxdwD+yj04oApSQ==
