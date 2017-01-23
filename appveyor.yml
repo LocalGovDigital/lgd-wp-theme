@@ -8,7 +8,7 @@ deploy:
 - provider: FTP
   host:
     secure: H6bRvr6FiP3wyFSKBZGFXW9rk7ie1AinE/L3ehC0pzs=
-  protocol: sftp
+  protocol: ftps
   username:
     secure: 7MrkC4KDGY8tZNyNy5/7/zxP7RJMcNVmFJB8xfcQ3rk=
   password:
