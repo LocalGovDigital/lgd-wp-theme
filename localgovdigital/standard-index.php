@@ -24,7 +24,7 @@ get_header(); ?>
 		if ( $the_query->have_posts() ) :
 			while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 				<div>
-          				<?php the_title( sprintf( '<h3><span>%s</span> ', $i ), '</h3>' ); ?>
+          				<?php the_title( sprintf( '<h3><span>%s.</span> ', $i ), '</h3>' ); ?>
 					<p><?php the_excerpt(); ?></p>
 					<p><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">Find out more about point <?php echo $i; ?></a></p>
         </div>
