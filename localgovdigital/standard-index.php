@@ -17,25 +17,30 @@ $the_query = new WP_Query( $args );
 
 get_header(); ?>
 
-<div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main" style="width: 80%; margin: 0 auto;">
+<div class="container">
+	<div class="row">
+		<main class="col-sm-8" role="main">
 		<?php 
-    $i = 1;
-		if ( $the_query->have_posts() ) :
-			while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+			the_content();
+			
+			$i = 1;
+			if ( $the_query->have_posts() ) :
+				while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 				<div>
-          				<?php the_title( sprintf( '<h3><span>%s.</span> ', $i ), '</h3>' ); ?>
+					<?php the_title( sprintf( '<h3><span>%s.</span> ', $i ), '</h3>' ); ?>
 					<p><?php the_excerpt(); ?></p>
 					<p><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">Find out more about point <?php echo $i; ?></a></p>
-        </div>
-     <?php
-        $i++;
+        			</div>
+		<?php
+			$i++;
 			endwhile;
 		else : // I'm not sure it's possible to have no posts when this page is shown, but WTH.
 			get_template_part( 'template-parts/post/content', 'none' );
 		endif; ?>
-
-	</main><!-- #main -->
-</div><!-- #primary -->
+		</main>
+		<div class="col-sm-3 offset-sm-1">
+		</div>
+	</div>
+</div>
 
 <?php get_footer();
