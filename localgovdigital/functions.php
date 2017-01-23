@@ -605,3 +605,8 @@ function lgd_excerpt_length($length) {
     return 55;
     }
     add_filter('excerpt_length', 'lgd_excerpt_length');
+
+function add_excerpts_to_pages() {
+     add_post_type_support( 'page', 'excerpt' );
+}
+add_action( 'init', 'add_excerpts_to_pages' );
