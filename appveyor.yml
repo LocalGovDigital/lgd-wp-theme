@@ -4,6 +4,8 @@ branches:
 skip_tags: true
 build: off
 test: off
+artifacts:
+- path: localgovdigital\**\*.*
 deploy:
 - provider: FTP
   host:
