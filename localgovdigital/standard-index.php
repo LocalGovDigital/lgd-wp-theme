@@ -24,7 +24,8 @@ get_header(); ?>
 		if ( $the_query->have_posts() ) :
 			while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 				<div>
-          <?php echo $i; the_title( sprintf( '<h3><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>. 
+          <?php echo $i; the_title( sprintf( '<h3><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+					<p><?php the_excerpt(); ?></p>
         </div>
      <?php
         $i++;
