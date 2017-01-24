@@ -594,6 +594,14 @@ function lgd_excerpt_length($length) {
 
 function add_excerpts_to_pages() {
      add_post_type_support( 'page', 'excerpt' );
+	
+	if (!is_admin()) {
+	// Deregister core jQuery
+    wp_deregister_script('jquery');
+		
+		// Deregister core jQuery Migrate
+    wp_deregister_script('jquery-migrate');
+	}
 }
 add_action( 'init', 'add_excerpts_to_pages' );
 
