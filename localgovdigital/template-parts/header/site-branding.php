@@ -10,13 +10,8 @@
 
 ?>
 <?php
-if (has_custom_logo())
-{
+if (has_custom_logo()) :
 	the_custom_logo();
-}
-else
-{ ?>
+else : ?>
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="navbar-brand"><?php bloginfo( 'name' ); ?></a>	
-<?php
-}
-?>
+<?php endif; ?>
