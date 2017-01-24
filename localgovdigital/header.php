@@ -31,7 +31,11 @@
 		<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
 		<?php if ( has_nav_menu( 'top' ) ) : ?>
 		<div class="collapse navbar-collapse" id="navbarNav">
-			<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
+			<?php wp_nav_menu( array(
+				'theme_location' => 'top',
+				'menu_id'        => 'top-menu',
+				'menu_class'	 => 'navbar-nav',
+			) ); ?>
 		</div>
 		<?php endif; ?>
 	</div>
