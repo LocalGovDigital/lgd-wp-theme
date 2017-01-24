@@ -292,6 +292,8 @@ function lgd_resource_hints( $urls, $relation_type ) {
 			'crossorigin',
 		);
 	}
+	
+	//'https://cdn.jsdelivr.net'
 
 	return $urls;
 }
@@ -390,28 +392,12 @@ add_action( 'wp_head', 'lgd_colors_css_wrap' );
 function lgd_scripts() {
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'lgd-fonts', lgd_fonts_url(), array(), null );
+	
+	// Add Bootstrap
+	_e( '<link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha256-rr9hHBQ43H7HSOmmNkxzQGazS/Khx+L8ZRHteEY1tQ4=" crossorigin="anonymous">');
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'lgd-style', get_stylesheet_uri() );
-
-	// Load the dark colorscheme.
-	if ( 'dark' === get_theme_mod( 'colorscheme', 'light' ) || is_customize_preview() ) {
-		wp_enqueue_style( 'lgd-colors-dark', get_theme_file_uri( '/assets/css/colors-dark.css' ), array( 'lgd-style' ), '1.0' );
-	}
-
-	// // Load the Internet Explorer 9 specific stylesheet, to fix display issues in the Customizer.
-	// if ( is_customize_preview() ) {
-	// 	wp_enqueue_style( 'lgd-ie9', get_theme_file_uri( '/assets/css/ie9.css' ), array( 'lgd-style' ), '1.0' );
-	// 	wp_style_add_data( 'lgd-ie9', 'conditional', 'IE 9' );
-	// }
-
-	// // Load the Internet Explorer 8 specific stylesheet.
-	// wp_enqueue_style( 'lgd-ie8', get_theme_file_uri( '/assets/css/ie8.css' ), array( 'lgd-style' ), '1.0' );
-	// wp_style_add_data( 'lgd-ie8', 'conditional', 'lt IE 9' );
-
-	// // Load the html5 shiv.
-	// wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
-	// wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
 
 	wp_enqueue_script( 'lgd-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
 
