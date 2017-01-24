@@ -22,17 +22,19 @@
 <body <?php body_class(); ?>>
 <a class="sr-only sr-only-focusable" href="#content"><?php _e( 'Skip to content', 'localgovdigital' ); ?></a>
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-	<?php if ( has_nav_menu( 'top' ) ) : ?>
-	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<?php endif; ?>
-	<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
-	<?php if ( has_nav_menu( 'top' ) ) : ?>
-	<div class="collapse navbar-collapse" id="navbarNav">
-		<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
+	<div class="container d-flex justify-content-between">
+		<?php if ( has_nav_menu( 'top' ) ) : ?>
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<?php endif; ?>
+		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
+		<?php if ( has_nav_menu( 'top' ) ) : ?>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
+		</div>
+		<?php endif; ?>
 	</div>
-	<?php endif; ?>
 </nav>
 	
 <div id="page" class="site">
