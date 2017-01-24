@@ -22,46 +22,20 @@
 <body <?php body_class(); ?>>
 <a class="sr-only sr-only-focusable" href="#content"><?php _e( 'Skip to content', 'localgovdigital' ); ?></a>
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="#">Navbar</a>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-  </div>
+	<?php if ( has_nav_menu( 'top' ) ) : ?>
+	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<?php endif; ?>
+	<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
+	<?php if ( has_nav_menu( 'top' ) ) : ?>
+	<div class="collapse navbar-collapse" id="navbarNav">
+		<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
+	</div>
+	<?php endif; ?>
 </nav>
 	
-	
 <div id="page" class="site">
-	
-
-	<header id="masthead" class="site-header" role="banner">
-
-		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
-
-		<?php if ( has_nav_menu( 'top' ) ) : ?>
-			<div class="navigation-top">
-				<div class="wrap">
-					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
-				</div><!-- .wrap -->
-			</div><!-- .navigation-top -->
-		<?php endif; ?>
-
-	</header><!-- #masthead -->
-
 	<?php
 	// If a regular post or page, and not the front page, show the featured image.
 	if ( has_post_thumbnail() && ( is_single() || ( is_page() && ! twentyseventeen_is_frontpage() ) ) ) :
