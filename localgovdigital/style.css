@@ -31,3 +31,8 @@ Originally based on the WordPress theme "Twenty Seventeen".
 .card-text {
   font-size: 85%;
 }
+
+footer {
+    padding: 3rem 0;
+    margin: 4rem 0 0;
+}
