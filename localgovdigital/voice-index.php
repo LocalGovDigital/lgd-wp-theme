@@ -7,7 +7,7 @@ $args = array(
     'post_type'=> 'voice_post',
     'orderby'    => 'date',
     'order'    => 'DESC',
-    'post_limits' => 20
+    'post_limit' => 15
     );              
 
 $the_query = new WP_Query( $args );

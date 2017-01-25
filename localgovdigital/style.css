@@ -28,10 +28,6 @@ Originally based on the WordPress theme "Twenty Seventeen".
   border: 0;
 }
 
-.card > img {
-  margin-bottom: .75rem;
-}
-
 .card-text {
   font-size: 85%;
 }

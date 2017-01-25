@@ -10,5 +10,4 @@
 
 ?>
 <div class="site-info">
-	<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'lgd' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'lgd' ), 'WordPress' ); ?></a>
-</div><!-- .site-info -->
+</div>

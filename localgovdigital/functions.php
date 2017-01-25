@@ -606,7 +606,12 @@ function add_excerpts_to_pages() {
 add_action( 'init', 'add_excerpts_to_pages' );
 
 function my_special_nav_class( $classes, $item ) {
-	$classes[] = 'nav-item';
+	if ( 'social' === $args->theme_location ) {
+        $classes[] = 'list-inline-item';
+    }
+    else {
+		$classes[] = 'nav-item';
+    }
 	return $classes;
 }
 add_filter( 'nav_menu_css_class', 'my_special_nav_class', 10, 2 );
