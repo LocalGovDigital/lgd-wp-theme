@@ -490,3 +490,7 @@ function lgd_add_menuclass($nav_menu) {
 	return $nav_menu;
 }
 add_filter('wp_nav_menu','lgd_add_menuclass', 10, 2);
+
+function return_false() {
+	return false;
+}
