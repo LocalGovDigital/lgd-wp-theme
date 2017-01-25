@@ -40,11 +40,10 @@
 		<?php endif; ?>
 	</div>
 </nav>
+<?php if (!lgd_is_frontpage() && function_exists('bcn_display')) : ?>
 <div class="container">
-	<ol class="breadcrumb">
-    <?php if(function_exists('bcn_display'))
-    {
-        bcn_display_list();
-    }?>
+	<ol class="breadcrumb" typeof="BreadcrumbList" vocab="https://schema.org/">
+    <?php bcn_display_list(); ?>
 	</ol>
 </div>
+<?php endif; ?>
