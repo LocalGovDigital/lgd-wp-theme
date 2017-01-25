@@ -482,7 +482,7 @@ function lgd_nav_class( $classes, $item ) {
 }
 add_filter( 'nav_menu_css_class', 'lgd_nav_class', 10, 2 );
 
-function lgd_add_menuclass($nav_menu) {
+function lgd_add_menuclass($nav_menu, $args) {
 	if ( 'top' === $args->theme_location ) {
 		$nav_menu = preg_replace('/<a /', '<a class="nav-link"', $nav_menu);
 	}
