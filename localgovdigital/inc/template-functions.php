@@ -44,20 +44,6 @@ function lgd_body_classes( $classes ) {
 		$classes[] = 'has-sidebar';
 	}
 
-	// Add class for one or two column page layouts.
-	if ( is_page() || is_archive() ) {
-		if ( 'one-column' === get_theme_mod( 'page_layout' ) ) {
-			$classes[] = 'page-one-column';
-		} else {
-			$classes[] = 'page-two-column';
-		}
-	}
-
-	// Add class if the site title and tagline is hidden.
-	if ( 'blank' === get_header_textcolor() ) {
-		$classes[] = 'title-tagline-hidden';
-	}
-
 	return $classes;
 }
 add_filter( 'body_class', 'lgd_body_classes' );

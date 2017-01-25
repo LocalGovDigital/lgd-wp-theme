@@ -399,22 +399,11 @@ function lgd_scripts() {
 	// Theme stylesheet.
 	wp_enqueue_style( 'lgd-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'lgd-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
+	wp_enqueue_script( 'lgd-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ) );
 
 	$lgd_l10n = array(
 		'quote'          => lgd_get_svg( array( 'icon' => 'quote-right' ) ),
 	);
-
-	if ( has_nav_menu( 'top' ) ) {
-		wp_enqueue_script( 'lgd-navigation', get_theme_file_uri( '/assets/js/navigation.js' ), array(), '1.0', true );
-		$lgd_l10n['expand']         = __( 'Expand child menu', 'lgd' );
-		$lgd_l10n['collapse']       = __( 'Collapse child menu', 'lgd' );
-		$lgd_l10n['icon']           = lgd_get_svg( array( 'icon' => 'angle-down', 'fallback' => true ) );
-	}
-
-	wp_enqueue_script( 'lgd-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );
-
-	wp_enqueue_script( 'jquery-scrollto', get_theme_file_uri( '/assets/js/jquery.scrollTo.js' ), array( 'jquery' ), '2.1.2', true );
 
 	wp_localize_script( 'lgd-skip-link-focus-fix', 'lgdScreenReaderText', $lgd_l10n );
 
@@ -507,11 +496,6 @@ function lgd_front_page_template( $template ) {
 add_filter( 'frontpage_template',  'lgd_front_page_template' );
 
 /**
- * Implement the Custom Header feature.
- */
-require get_parent_theme_file_path( '/inc/custom-header.php' );
-
-/**
  * Custom template tags for this theme.
  */
 require get_parent_theme_file_path( '/inc/template-tags.php' );
@@ -537,28 +521,27 @@ require get_parent_theme_file_path( '/inc/icon-functions.php' );
  * Adds a custom "Read More" link to post excerpts.
  * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis, "Read More" and arrow.
  */
-function isa_cpt_excerpt_more( $more ) {
+function lgd_excerpt_more( $more ) {
     global $post;
     if ( 'voice_post' == $post->post_type ) {
         $more = '';
     }
     return $more;
 }
-add_filter('excerpt_more', 'isa_cpt_excerpt_more');
+add_filter('excerpt_more', 'lgd_excerpt_more');
 
 
 function wp_remove_version() {
-return '';
+ return '';
 }
-
 add_filter('the_generator', 'wp_remove_version');
 	
-remove_action ('wp_head', 'rsd_link');
-remove_action( 'wp_head', 'wlwmanifest_link');
-remove_action( 'wp_head', 'wp_shortlink_wp_head');
-remove_action('wp_head', 'wp_generator');
+remove_action( 'wp_head', 'rsd_link' );
+remove_action( 'wp_head', 'wlwmanifest_link' );
+remove_action( 'wp_head', 'wp_shortlink_wp_head' );
+remove_action( 'wp_head', 'wp_generator' );
 
-function my_login_logo() { ?>
+function lgd_login_logo() { ?>
     <style>
         #login h1 a, .login h1 a {
             max-width: 680px;
@@ -571,17 +554,17 @@ function my_login_logo() { ?>
         }
     </style>
 <?php }
-add_action( 'login_enqueue_scripts', 'my_login_logo' );
+add_action( 'login_enqueue_scripts', 'lgd_login_logo' );
 
-function my_login_logo_url() {
+function lgd_login_logo_url() {
     return home_url();
 }
-add_filter( 'login_headerurl', 'my_login_logo_url' );
+add_filter( 'login_headerurl', 'lgd_login_logo_url' );
 
-function my_login_logo_url_title() {
+function lgd_login_headertitle() {
     return get_bloginfo();
 }
-add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+add_filter( 'login_headertitle', 'lgd_login_headertitle' );
 
 function lgd_excerpt_length($length) {
     global $post;
@@ -592,20 +575,20 @@ function lgd_excerpt_length($length) {
     }
     add_filter('excerpt_length', 'lgd_excerpt_length');
 
-function add_excerpts_to_pages() {
-     add_post_type_support( 'page', 'excerpt' );
+function lgd_init() {
+	add_post_type_support( 'page', 'excerpt' );
 	
 	if (!is_admin()) {
-	// Deregister core jQuery
-    wp_deregister_script('jquery');
+		// Deregister core jQuery
+		wp_deregister_script('jquery');
 		
 		// Deregister core jQuery Migrate
-    wp_deregister_script('jquery-migrate');
+		wp_deregister_script('jquery-migrate');
 	}
 }
-add_action( 'init', 'add_excerpts_to_pages' );
+add_action( 'init', 'lgd_init' );
 
-function my_special_nav_class( $classes, $item ) {
+function lgd_nav_class( $classes, $item ) {
 	if ( 'social' === $args->theme_location ) {
         $classes[] = 'list-inline-item';
     }
@@ -614,13 +597,13 @@ function my_special_nav_class( $classes, $item ) {
     }
 	return $classes;
 }
-add_filter( 'nav_menu_css_class', 'my_special_nav_class', 10, 2 );
+add_filter( 'nav_menu_css_class', 'lgd_nav_class', 10, 2 );
 
-function add_menuclass($nav_menu) {
+function lgd_add_menuclass($nav_menu) {
 	if ( 'top' === $args->theme_location ) {
 		$nav_menu = preg_replace('/<a /', '<a class="nav-link"', $nav_menu);
 	}
 	
 	return $nav_menu;
 }
-add_filter('wp_nav_menu','add_menuclass');
+add_filter('wp_nav_menu','lgd_add_menuclass');
