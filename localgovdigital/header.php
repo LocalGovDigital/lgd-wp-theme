@@ -40,9 +40,11 @@
 		<?php endif; ?>
 	</div>
 </nav>
-<div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+<div class="container">
+	<ol class="breadcrumb">
     <?php if(function_exists('bcn_display'))
     {
-        bcn_display();
+        bcn_display_list();
     }?>
+	</ol>
 </div>
