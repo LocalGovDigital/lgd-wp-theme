@@ -1,6 +1,6 @@
 <?php
 /**
- * Twenty Seventeen: Customizer
+ * LocalGovDigital: Customizer
  *
  * @package WordPress
  * @subpackage Twenty_Seventeen
@@ -15,7 +15,6 @@
 function lgd_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport  = 'postMessage';
 
 	$wp_customize->selective_refresh->add_partial( 'blogname', array(
 		'selector' => '.site-title a',
@@ -27,45 +26,11 @@ function lgd_customize_register( $wp_customize ) {
 	) );
 
 	/**
-	 * Custom colors.
-	 */
-
-	$wp_customize->add_setting( 'colorscheme_hue', array(
-		'default'           => 250,
-		'transport'         => 'postMessage',
-		'sanitize_callback' => 'absint', // The hue is stored as a positive integer.
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'colorscheme_hue', array(
-		'mode' => 'hue',
-		'section'  => 'colors',
-		'priority' => 6,
-	) ) );
-
-	/**
 	 * Theme options.
 	 */
 	$wp_customize->add_section( 'theme_options', array(
 		'title'    => __( 'Theme Options', 'lgd' ),
 		'priority' => 130, // Before Additional CSS.
-	) );
-
-	$wp_customize->add_setting( 'page_layout', array(
-		'default'           => 'two-column',
-		'sanitize_callback' => 'lgd_sanitize_page_layout',
-		'transport'         => 'postMessage',
-	) );
-
-	$wp_customize->add_control( 'page_layout', array(
-		'label'       => __( 'Page Layout', 'lgd' ),
-		'section'     => 'theme_options',
-		'type'        => 'radio',
-		'description' => __( 'When the two column layout is assigned, the page title is in one column and content is in the other.', 'lgd' ),
-		'choices'     => array(
-			'one-column' => __( 'One Column', 'lgd' ),
-			'two-column' => __( 'Two Column', 'lgd' ),
-		),
-		'active_callback' => 'lgd_is_view_with_layout_option',
 	) );
 
 	/**
@@ -105,22 +70,6 @@ function lgd_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'lgd_customize_register' );
 
 /**
- * Sanitize the page layout options.
- */
-function lgd_sanitize_page_layout( $input ) {
-	$valid = array(
-		'one-column' => __( 'One Column', 'lgd' ),
-		'two-column' => __( 'Two Column', 'lgd' ),
-	);
-
-	if ( array_key_exists( $input, $valid ) ) {
-		return $input;
-	}
-
-	return '';
-}
-
-/**
  * Render the site title for the selective refresh partial.
  *
  * @since Twenty Seventeen 1.0
@@ -149,14 +98,6 @@ function lgd_customize_partial_blogdescription() {
  */
 function lgd_is_static_front_page() {
 	return ( is_front_page() && ! is_home() );
-}
-
-/**
- * Return whether we're on a view that supports a one or two column layout.
- */
-function lgd_is_view_with_layout_option() {
-	// This option is available on all pages. It's also available on archives when there isn't a sidebar.
-	return ( is_page() || ( is_archive() && ! is_active_sidebar( 'sidebar-1' ) ) );
 }
 
 /**
