@@ -28,6 +28,14 @@ function lgd_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
+	// Disable comments feed
+    add_filter( 'feed_links_show_comments_feed', 'return_false' );
+
+	remove_action( 'wp_head', 'rsd_link' );
+	remove_action( 'wp_head', 'wlwmanifest_link' );
+	remove_action( 'wp_head', 'wp_shortlink_wp_head' );
+	remove_action( 'wp_head', 'wp_generator' );
+
 	/*
 	 * Let WordPress manage the document title.
 	 * By adding theme support, we declare that this theme does not use a
@@ -300,12 +308,6 @@ function lgd_scripts() {
 
 	wp_enqueue_script( 'lgd-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ) );
 
-	$lgd_l10n = array(
-		'quote'          => lgd_get_svg( array( 'icon' => 'quote-right' ) ),
-	);
-
-	wp_localize_script( 'lgd-skip-link-focus-fix', 'lgdScreenReaderText', $lgd_l10n );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -420,11 +422,7 @@ function wp_remove_version() {
  return '';
 }
 add_filter('the_generator', 'wp_remove_version');
-	
-remove_action( 'wp_head', 'rsd_link' );
-remove_action( 'wp_head', 'wlwmanifest_link' );
-remove_action( 'wp_head', 'wp_shortlink_wp_head' );
-remove_action( 'wp_head', 'wp_generator' );
+
 
 function lgd_login_logo() { ?>
     <style>
@@ -491,4 +489,4 @@ function lgd_add_menuclass($nav_menu) {
 	
 	return $nav_menu;
 }
-add_filter('wp_nav_menu','lgd_add_menuclass');
+add_filter('wp_nav_menu','lgd_add_menuclass', 10, 2);
