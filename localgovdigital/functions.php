@@ -492,7 +492,7 @@ function lgd_add_menuclass($nav_menu, $args) {
 add_filter('wp_nav_menu','lgd_add_menuclass', 10, 2);
 
 function lgd_bcn_li_attributes( $li_class ) {
-	echo $li_class;
+	$li_class = str_replace('="', '="breadcrumb-item ', $li_class);
 	return str_replace('current_item', 'active', $li_class);
 }
 add_filter( 'bcn_li_attributes', 'lgd_bcn_li_attributes', 10, 1 );
