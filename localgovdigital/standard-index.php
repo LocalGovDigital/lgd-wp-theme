@@ -20,25 +20,29 @@ get_header(); ?>
 <div class="container">
 	<div class="row">
 		<main class="col-sm-8" role="main">
-		<?php 
-			the_content();
+    <?php 
+    the_content();
 			
-			$i = 1;
-			if ( $the_query->have_posts() ) :
-				while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-				<div>
-					<?php the_title( sprintf( '<h3><span>%s.</span> ', $i ), '</h3>' ); ?>
-					<p><?php the_excerpt(); ?></p>
-					<p><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">Find out more about point <?php echo $i; ?></a></p>
-        			</div>
-		<?php
-			$i++;
-			endwhile;
-		else : // I'm not sure it's possible to have no posts when this page is shown, but WTH.
-			get_template_part( 'template-parts/post/content', 'none' );
-		endif; ?>
+    $i = 1;
+    if ( $the_query->have_posts() ) :
+    
+      while ( $the_query->have_posts() ) : 
+      
+        $the_query->the_post(); ?>
+      <div>
+        <?php the_title( sprintf( '<h3><span>%s.</span> ', $i ), '</h3>' ); ?>
+        <p><?php the_excerpt(); ?></p>
+        <p><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">Find out more about point <?php echo $i; ?></a></p>
+      </div>
+    <?php
+        $i++;
+      endwhile;
+    else :
+      get_template_part( 'template-parts/post/content', 'none' );
+    endif; ?>
 		</main>
 		<div class="col-sm-3 offset-sm-1">
+      <?php get_sidebar(); ?>
 		</div>
 	</div>
 </div>

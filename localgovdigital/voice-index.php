@@ -1,13 +1,13 @@
 <?php
 /**
- * Template Name: Voice posts
+ * Template Name: Voice Landing
  */
 
 $args = array(
     'post_type'=> 'voice_post',
     'orderby'    => 'date',
     'order'    => 'DESC',
-    'post_limit' => 15
+    'posts_per_page' => 15,
     );              
 
 $the_query = new WP_Query( $args );
