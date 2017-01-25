@@ -2,15 +2,9 @@
 /**
  * Template for displaying search forms in Twenty Seventeen
  *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.0
  */
-?>
 
-<?php $unique_id = esc_attr( uniqid( 'search-form-' ) ); ?>
-
+$unique_id = esc_attr( uniqid( 'search-form-' ) ); ?>
 <form role="search" method="get" class="form-inline" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<label for="<?php echo $unique_id; ?>" class="sr-only">
 		<?php echo _x( 'Search for:', 'label', 'lgd' ); ?>
