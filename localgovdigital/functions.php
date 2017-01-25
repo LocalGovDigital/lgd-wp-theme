@@ -615,3 +615,12 @@ function my_special_nav_class( $classes, $item ) {
 	return $classes;
 }
 add_filter( 'nav_menu_css_class', 'my_special_nav_class', 10, 2 );
+
+function add_menuclass($nav_menu) {
+	if ( 'top' === $args->theme_location ) {
+		$nav_menu = preg_replace('/<a /', '<a class="nav-link"', $nav_menu);
+	}
+	
+	return $nav_menu;
+}
+add_filter('wp_nav_menu','add_menuclass');
