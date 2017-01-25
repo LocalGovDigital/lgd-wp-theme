@@ -29,7 +29,7 @@ function lgd_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	// Disable comments feed
-    add_filter( 'feed_links_show_comments_feed', 'return_false' );
+    add_filter( 'feed_links_show_comments_feed', '__return_false' );
 
 	remove_action( 'wp_head', 'rsd_link' );
 	remove_action( 'wp_head', 'wlwmanifest_link' );
@@ -491,6 +491,8 @@ function lgd_add_menuclass($nav_menu, $args) {
 }
 add_filter('wp_nav_menu','lgd_add_menuclass', 10, 2);
 
-function return_false() {
-	return false;
+function lgd_bcn_li_attributes( $li_class ) {
+	echo $li_class;
+	return str_replace('current_item', 'active', $li_class);
 }
+add_filter( 'bcn_li_attributes', 'lgd_bcn_li_attributes', 10, 1 );
