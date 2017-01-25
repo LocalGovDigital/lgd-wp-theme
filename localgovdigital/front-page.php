@@ -5,17 +5,13 @@
  * If the user has selected a static page for their homepage, this is what will
  * appear.
  * Learn more: https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.0
  */
 
 get_header(); ?>
 
-<div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+<div class="container">
+  <div class="row">
+    <main class="col-sm-8" role="main">
 
 		<?php // Show the selected frontpage content.
 		if ( have_posts() ) :
@@ -48,7 +44,11 @@ get_header(); ?>
 
 	endif; // The if ( 0 !== lgd_panel_count() ) ends here. ?>
 
-	</main><!-- #main -->
-</div><!-- #primary -->
+    </main>
+    <div class="col-sm-3 offset-sm-1">
+      <?php get_sidebar(); ?>
+    </div>
+  </div>
+</div>
 
 <?php get_footer();

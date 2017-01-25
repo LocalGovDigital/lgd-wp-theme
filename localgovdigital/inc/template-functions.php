@@ -58,10 +58,6 @@ function lgd_body_classes( $classes ) {
 		$classes[] = 'title-tagline-hidden';
 	}
 
-	// Get the colorscheme or the default if there isn't one.
-	$colors = lgd_sanitize_colorscheme( get_theme_mod( 'colorscheme', 'light' ) );
-	$classes[] = 'colors-' . $colors;
-
 	return $classes;
 }
 add_filter( 'body_class', 'lgd_body_classes' );
