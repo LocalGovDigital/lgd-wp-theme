@@ -11,10 +11,10 @@
 
 <?php $unique_id = esc_attr( uniqid( 'search-form-' ) ); ?>
 
-<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<label for="<?php echo $unique_id; ?>">
-		<span class="screen-reader-text"><?php echo _x( 'Search for:', 'label', 'lgd' ); ?></span>
+<form role="search" method="get" class="form-inline" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+	<label for="<?php echo $unique_id; ?>" class="sr-only">
+		<?php echo _x( 'Search for:', 'label', 'lgd' ); ?>
 	</label>
-	<input type="search" id="<?php echo $unique_id; ?>" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'lgd' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
-	<button type="submit" class="search-submit"><?php echo lgd_get_svg( array( 'icon' => 'search' ) ); ?><span class="screen-reader-text"><?php echo _x( 'Search', 'submit button', 'lgd' ); ?></span></button>
+	<input type="search" id="<?php echo $unique_id; ?>" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'lgd' ); ?>" value="<?php echo get_search_query(); ?>" name="s">
+	<button type="submit" class="btn btn-primary"><span class="fa fa-search" aria-hidden="true"></span> <span class="sr-only"><?php echo _x( 'Search', 'submit button', 'lgd' ); ?></span></button>
 </form>
