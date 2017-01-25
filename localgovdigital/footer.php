@@ -13,7 +13,7 @@
  */
 
 ?>
-<footer role="contentinfo">
+<footer role="contentinfo" class="bg-faded">
 	<div class="container">
 		<?php
 		get_template_part( 'template-parts/footer/footer', 'widgets' );
