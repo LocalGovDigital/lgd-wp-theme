@@ -1,0 +1,173 @@
+// GENERAL STYLES FOR FORMS
+
+label, legend {
+	font-size: 1em;
+	line-height: 2.5em;
+	display: inline;
+	&.wrapper-label {
+		padding: 0 1em;
+		input[type="radio"] {
+			margin-right: 0.5em;
+			cursor: pointer;
+		}
+
+		input[type="checkbox"] {
+			margin-right: 0.5em;
+			margin-bottom: 0;
+			cursor: pointer;
+		}
+	}
+}
+
+#global__content {
+	.gform_body {
+		.gform_page_fields {
+			padding-left: 2%;
+			ul {
+				padding: 0;
+				margin: 0;
+				li.gfield {
+					list-style: none;
+					padding-left: 0;
+					padding-right: 0;
+					.gfield_required {
+						display: none;
+					}
+					.page-indicator {
+
+					}
+					h2 {
+
+					}
+					label {
+						color: $content-black;
+						line-height: 1.5em;
+						padding-bottom: 1em;
+						display: inline-block;
+					 }
+					.gfield_description {
+						padding-top: 1em;
+						ul {
+							padding-top: 1em;
+							li{
+								margin-left: 1em;
+							}
+						}
+
+					}
+					input[type="email"],
+					input[type="number"],
+					input[type="tel"],
+					input[type="text"],
+					input[type="url"],
+					input[type="radio"],
+					input[type="checkbox"],
+					textarea, select {
+						color: $content-black;
+						display: inline;
+						&:focus {
+							outline: 3px solid $orange;
+							outline-offset: 2px;
+						}
+						&.small {
+							max-width: 200px;
+						}
+
+						&.medium {
+							max-width: 500px;
+						}
+					}
+
+					textarea {
+						max-height: 150px
+					}
+
+					.ginput_container_radio, .ginput_container_checkbox {
+						padding-top: 1.5em;
+						li {
+							list-style: none;
+							margin-bottom: 0.5em !important;
+							input[type="radio"], input[type="checkbox"] {
+								/*height: 35px;
+								width: 35px;
+
+								outline: 2px solid $mid-grey;*/
+								width:25px;
+								height:25px;
+								cursor: pointer;
+								&::before {
+									border:2px solid $mid-grey;
+								}
+								&:focus, &:checked {
+									outline: 2px solid $orange;
+								}
+
+							}
+							label {
+								vertical-align: top;
+								padding-top: 0em;
+							}
+						}
+
+					}
+					&.gform_validation_container {
+						display: none;
+					}
+
+					&.gfield_error {
+						.ginput_container {
+							input[type="email"],
+							input[type="number"],
+							input[type="tel"],
+							input[type="text"],
+							input[type="url"],
+							input[type="radio"],
+							input[type="checkbox"],
+							textarea, select {
+								outline: 1px solid $error-red;
+								&:focus {
+									outline: 1px solid $error-red;
+								}
+							}
+						}
+						.validation_message {
+							padding-top: 0;
+							margin-top: -1em;
+							color: $error-red;
+						}
+					}
+				}
+			}
+		}
+		.gform_page_footer {
+			padding-left: 2%;
+		}
+	}
+	.gform_validation_error {
+		.top-error-panel {
+			margin: 0 2% 2.5em;
+			border-top: 5px solid $error-red;
+			border-bottom: 5px solid $error-red;
+			padding: 1em 1.5em;
+			h2 {
+				font-family: $title-font;
+			}
+		}
+	}
+	.form_confirmation {
+		margin: 0 0 2.5em;
+		border-top: 5px solid $green;
+		border-bottom: 5px solid $green;
+		padding: 1em 1.5em;
+		h2 {
+			font-family: $title-font;
+		}
+		p{
+			margin: 0 1em;
+		}
+		h3 {
+			font-family: $title-font;
+			text-align:  center;
+		}
+	}
+}

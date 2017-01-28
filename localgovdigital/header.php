@@ -20,27 +20,41 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<a class="sr-only sr-only-focusable" href="#content"><?php _e( 'Skip to content', 'localgovdigital' ); ?></a>
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-	<div class="container d-flex justify-content-between">
-		<?php if ( has_nav_menu( 'top' ) ) : ?>
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<?php endif; ?>
-		<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
-		<?php if ( has_nav_menu( 'top' ) ) : ?>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<?php wp_nav_menu( array(
-				'theme_location' => 'top',
-				'menu_id'        => 'top-menu',
-				'menu_class'	 => 'navbar-nav',
-			) ); ?>
-		</div>
-		<?php endif; ?>
-	</div>
-</nav>
-<?php if (!lgd_is_frontpage() && function_exists('bcn_display')) : ?>
+
+<a href="#content-start" class="screen-reader-text">skip to main content</a>
+
+<header id="header__<?php if ( is_front_page() ) { echo 'front-page'; } else {  echo 'page'; } ?>">
+<div class="container">
+	<div class="row">
+        <div class="col-sm-4">
+		    <?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
+        </div>
+        <div class="col-sm-8">
+            <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <?php /* Primary navigation formatting */
+                    wp_nav_menu( array(
+                    'menu' => 'main_nav',
+                    'theme_location'    => 'primary',
+                    'depth'             => 2,
+                    'container'         => 'div',
+                    'container_class'   => 'collapse navbar-collapse',
+                    'container_id'      => 'bs-example-navbar-collapse-1',
+                    'menu_class'        => 'nav navbar-nav',
+                    'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                    'walker'            => new wp_bootstrap_navwalker())
+                    );?>
+                    <?php //wp_nav_menu( array( 'theme_location' => 'main_nav' ) ); ?>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+</header>
+<?php if (!is_home() && function_exists('bcn_display')) : ?>
 <div class="container">
 	<ol class="breadcrumb" typeof="BreadcrumbList" vocab="https://schema.org/">
     <?php bcn_display_list(); ?>

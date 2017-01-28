@@ -24,7 +24,7 @@ get_header(); ?>
 
 		<?php
 		// Get each of our panels and show the post data.
-		if ( 0 !== lgd_panel_count() || is_customize_preview() ) : // If we have pages to show.
+		/*if ( 0 !== lgd_panel_count() || is_customize_preview() ) : // If we have pages to show.*/
 
 			/**
 			 * Filter number of front page sections in Twenty Seventeen.
@@ -33,7 +33,7 @@ get_header(); ?>
 			 *
 			 * @param $num_sections integer
 			 */
-			$num_sections = apply_filters( 'lgd_front_page_sections', 4 );
+			/*$num_sections = apply_filters( 'lgd_front_page_sections', 4 );
 			global $lgdcounter;
 
 			// Create a setting and control for each of the sections available in the theme.
@@ -42,7 +42,7 @@ get_header(); ?>
 				lgd_front_page_section( null, $i );
 			}
 
-	endif; // The if ( 0 !== lgd_panel_count() ) ends here. ?>
+	endif; // The if ( 0 !== lgd_panel_count() ) ends here. */ ?>
 
     </main>
     <div class="col-sm-3 offset-sm-1">

@@ -1,0 +1,50 @@
+// MEDIA QUERY BREAK POINTS
+$breakpoints: (
+  xsmall: 'screen and (max-width : 30em)',
+  small: 'screen and (max-width : 40em)',
+  medium: 'screen and (min-width : 40.063em)',
+  portrait: 'screen and (max-width : 48em)',
+  small_landscape: 'screen and (max-width : 61.875em)',
+  large: 'screen and (min-width : 64.063em)',
+);
+
+
+// MEDIA QUERY MIXIN 
+@mixin media($breakpoint) {
+  $point: map-get($breakpoints, $breakpoint );
+  @media #{$point} {
+    @content;
+  }
+}
+
+// FLEXBOX
+@mixin flex-display () {
+  //display: -webkit-box;  // OLD - iOS 6-, Safari
+  display: -moz-box;     // OLD - Firefox 19-
+  display: -ms-flexbox;  // TWEENER - IE 10
+  //display: -webkit-flex; // NEW - Chrome prefixed
+  display: flex;         // NEW - Proper Spec
+}
+
+// SOCIAL MEDIA ICONS - specifies icon and styling
+@mixin social_icons($icon, $color, $hover-color, $size){
+  &::before {
+    transition: all 0.5s ease 0s;
+    color: $color;
+    @if($icon == 'facebook') {
+      content: "\f230";
+    }
+    @if($icon == 'twitter') {
+      content: "\f081";
+    }
+    font-family: FontAwesome;
+    font-size: $size;
+  }
+  &:hover {
+    text-decoration: none;
+    &::before {
+      transition: all 0.5s ease 0s;
+      color: $hover-color;
+    }
+  }
+}

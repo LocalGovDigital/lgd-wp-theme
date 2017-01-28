@@ -1,0 +1,24 @@
+// WEBSITE ICONS
+i {
+	font-style: normal;
+}
+
+.sidebar-social-icons {
+	a {
+		margin-right: 0.5em;
+		&:hover {
+			text-decoration: none;
+		}
+		&:focus {
+			outline: 2px solid $orange;
+			border-bottom: none !important;
+		}
+	}
+
+	.facebook {
+		@include social_icons('facebook', $facebook-blue, $light-black, 3.5em);
+	}
+	.twitter {
+		@include social_icons('twitter', $twitter-blue, $light-black, 3.5em);
+	}
+}

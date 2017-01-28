@@ -1,0 +1,161 @@
+/*!
+Theme Name: LocalGov Digital
+Theme URI: https://localgov.digital/
+Author: Ben Cheetham
+Author URI: https://ben.cheetham.me.uk/
+Description:
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: lgd
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+*/
+
+/*
+* Config SASS
+*/
+@import "sass/config/config";
+@import "sass/config/functions";
+@import "sass/config/mixin";
+@import "sass/config/includes";
+@import "sass/config/grid";
+
+
+/*
+* Default Style SASS
+*/
+@import "sass/styles/header";
+@import "sass/styles/footer";
+@import "sass/styles/sidebar";
+@import "sass/styles/menu";
+@import "sass/styles/content";
+
+/*
+* Features SASS
+*/
+@import "sass/features/forms";
+@import "sass/features/sliders";
+@import "sass/features/buttons";
+@import "sass/features/lists";
+@import "sass/features/icons";
+@import "sass/features/blocks";
+
+
+/***********************/
+/* START ACCESSIBILITY STYLES */
+
+/* Text meant only for screen readers */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active, 
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar */
+}
+
+/* contrast yellow black*/
+
+.contrast-yb, .contrast-yb .container.main {background: #000; color: #FFFF99;}
+.contrast-yb a { color: #FFFF00; outline: 0px; text-decoration: none; }
+.contrast-yb a:hover { color: #DF0000; }
+
+.contrast-yb h1, 
+.contrast-yb h2, 
+.contrast-yb h3, 
+.contrast-yb h4, 
+.contrast-yb h5, 
+.contrast-yb h6 {color: #FFFF66 !important;}
+
+.contrast-yb h1 a, 
+.contrast-yb h2 a,  
+.contrast-yb h3 a, 
+.contrast-yb h4 a, 
+.contrast-yb h5 a, 
+.contrast-yb h6 a {color: #FFFF99 !important;}
+
+.contrast-yb #respond input,
+.contrast-yb #respond textarea {
+  background: #000;
+  border: 2px solid #FFFF00;
+  color: #FFFF99;
+  }
+
+.contrast-yb #respond .comment-form-author label,
+.contrast-yb #respond .comment-form-email label,
+.contrast-yb .contrast-yb #respond .comment-form-url label,
+.contrast-yb #respond .comment-form-comment label {
+  background: #333;
+  color: #FFFF99;
+}
+
+/* contrast black yellow */
+.contrast-by, .contrast-by .container.main {background: #FFFF99; color: #000;}
+.contrast-by a { color: #0000FF; outline: 0px; text-decoration: none; }
+.contrast-by a:hover { color: #DF0000; }
+
+.contrast-by h1, 
+.contrast-by h2, 
+.contrast-by h3, 
+.contrast-by h4, 
+.contrast-by h5, 
+.contrast-by h6 {color: #333333 !important;}
+
+.contrast-by h1 a,  
+.contrast-by h2 a, 
+.contrast-by h3 a, 
+.contrast-by h4 a,  
+.contrast-by h5 a, 
+.contrast-by h6 a {color: #777777 !important;}
+
+.contrast-by #respond input,
+.contrast-by #respond textarea {
+  background: #FFFF99;
+  border: 2px solid #444;
+  color: #000;
+  }
+
+.contrast-by #respond .comment-form-author label,
+.contrast-by #respond .comment-form-email label,
+.contrast-by .contrast-yb #respond .comment-form-url label,
+.contrast-by #respond .comment-form-comment label {
+  background: #FFFF99;
+  color: #333;}
+
+/* ------ accessibility fonts ------ */
+.font-medium .content-area p,
+.font-medium .content-area ul {font-size: 1.2rem; }
+
+.font-medium #reply-title {font-size: 22px; line-height: 33px;}
+.font-medium #respond input#submit {font-size: 18px;}
+
+.font-large .content-area p,
+.font-large .content-area ul  {font-size: 1.4rem;}
+
+.font-large #reply-title {font-size: 25px; line-height: 36px;}
+.font-large #respond input#submit {font-size: 21px; }
+
+/* ----- reset list items ----- */
+ul {
+  list-style: none;
+}

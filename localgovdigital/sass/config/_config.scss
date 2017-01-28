@@ -1,0 +1,122 @@
+// STYLE CONFIG
+
+// General colours
+$white 			:#fff;
+$black 			:#000;
+$light-black 	:#474747;
+$content-black  :#565656;
+$mid-grey       :#d5d5d5;
+$light-grey		:#ececec;
+$vlight-grey	:#fcfcfc;
+
+// Blue
+$link-blue		:#0073b9;
+$twitter-blue   :#00aced;
+$facebook-blue  :#3b5998;
+$light-blue		:#74c2e8;
+$vlight-blue	:#9BD6F2;
+$xlight-blue	:#F2FAFF;
+
+// Green
+$green	        :#3fb34f;
+
+// Orange
+$orange			:#d68600;
+
+// Red
+$error-red      :#e40844;
+
+// Fonts
+$font-size: 16px;
+$title-font: Helvetica, sans-serif;
+$title-font-light: OpenSansLight, Helvetica, sans-serif;
+$standard-font: Arial, Helvetica, sans-serif;
+
+// Global styles
+html,
+body {
+	font-family: $standard-font;
+	margin: 0;
+	padding: 0;
+	font-size: $font-size;
+	line-height: 1.6em;
+	color: $content-black;
+	background-color: $white;
+}
+
+h1, 
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $title-font-light;
+	color: $light-black;
+}
+
+h1 {
+	font-size: 2.5em;
+	padding: 0 0 0.5em;
+	margin-bottom: 0;
+}
+
+h2 {
+	font-size: 1.7em;
+	padding: 0.5em 0 0.5em;
+	display: inline-block;
+}
+
+.home {
+	h2 {
+		font-size: 1.8em;
+		padding: 1em 0 0.5em;
+	}
+}
+
+
+h3 {
+	font-size: 1.4em;
+	padding: 1.0em 0 0.2em;
+}
+
+h4 {
+	font-size: 1.2em;
+}
+
+p {
+	margin-bottom: 1.7em;
+}
+
+a {
+	color: $link-blue;
+	text-decoration:none;
+}
+
+.callout{
+	color: $light-black;
+	border: 1px solid $light-grey;
+	padding: 1em 2em 2em;
+}
+
+ul {
+	list-style: none;
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both; 		
+}
+
+
+/*
+* Overwrite Row and grid block margin rules 
+* for Foundation
+*/
+
+[class*="block-grid-"],
+.row .row, form .row .row {
+	margin: 0;
+}
+
+
