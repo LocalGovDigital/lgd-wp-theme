@@ -44,7 +44,6 @@ jQuery(document).ready(function($) {
     });
 
 
-
     // SITE FUNCTIONS
 
     // Consultation questions notes show / hide for all devices

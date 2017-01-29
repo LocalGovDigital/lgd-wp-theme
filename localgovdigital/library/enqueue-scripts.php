@@ -5,14 +5,14 @@ function lgd_scripts() {
 
 	/* jQuery javascript */
 	wp_deregister_script('jquery');
-	wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.1.1.slim.min.js', false, false);
+	wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.1.1.min.js', false, false);
     //wp_enqueue_script('jquery');
 
 	/* Add global javascript */
 	wp_enqueue_script('site_functions', get_template_directory_uri() . '/assets/js/functions.js', false, true );
 
 	/* Add third party scripts */
-	wp_enqueue_script('bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css', false, true );
+	wp_enqueue_script('bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', false, true );
 	wp_enqueue_script('modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', false, true );
 
 
