@@ -1,0 +1,46 @@
+CheckSpelling Off
+Options -Indexes
+
+# Block the include-only files.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^wp-admin/includes/ - [F,L]
+RewriteRule !^wp-includes/ - [S=3]
+RewriteRule ^wp-includes/[^/]+\.php$ - [F,L]
+RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
+RewriteRule ^wp-includes/theme-compat/ - [F,L]
+</IfModule>
+
+<files wp-config.php>
+Require all denied
+</files>
+
+<Files wp-login.php>
+Order Deny,Allow
+Deny from all
+Allow from all
+</Files>
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+
+Authtype Basic
+AuthName "Protected directory"
+AuthUserFile /var/sites/l/localgov.digital/.htpasswd
+Require valid-user
+
+<IfModule mod_dummy.c>
+AuthUserFile \\PDC1\sites\l\localgov.digital\.htpasswd
+</IfModule>
+
+AddType x-httpd-php7 .php

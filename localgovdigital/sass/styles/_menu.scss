@@ -1,7 +1,5 @@
 // MENU STYLES
 
-
-
 // Search icon - mangnifying glass
 .fa-search {
 	&:before {
@@ -16,252 +14,253 @@
 	}
 }
 
+// Top nav styles
+
+
 // Main nav styles
-#global__main-nav {
-	background-color:$light-black;
-	height: auto;
-	//min-height:50px;
-	@include media(portrait) {
-		.column {
-			padding:0;
-		}
-	}
-	
-	.navbar {
-		padding: 0;
-		.toggle-area {
-			list-style: none;
-			display: none;
-			position: relative;
-			margin: 0;
-			@include media(portrait) {
-				display: block;
-				padding-left: 0.9375em;
-    			padding-right: 0.9375em;
-			}
-			li {
-			    float: left;
-			    margin-bottom: 5px;
-			    margin-right: 0;
-			    margin-top: 5px;
-			    padding: 5px 7px 4px;
-			    width: 37px;
-			    &:hover {
-			    	background-color: $link-blue;
-					transition: all 0.5s ease 0s;
-					cursor: pointer;
-				}
-				i {
-		    		color: #fff;
-		    		font-size: 1.6em;
-				}
-			}
-		}
-	}
-	section {
-		position: relative;
+#global__brand-nav {
+	.main-nav {
+		height: auto;
+		//min-height:50px;
 		@include media(portrait) {
-			display: none;
-			width: 100%;
-			&.open { 
-				display: block;
+			.column {
+				padding: 0;
 			}
 		}
-
-		ul {
-			margin: 0;
-			@include media(small_landscape) {
-				display:flex;
-			}
-
-			@include media(portrait) {
-				width: 100%;
-				display: block;
-			}
-
-			> li {
-				border-right: 1px solid #fff;
-			    color: #fff;
-			    display: block;
-			    float: left;
-			    //height: 100%;
-			    position: relative;
-			    //transition: all 0.5s ease 0s;
-				@include media(small_landscape) {
-					width:135px;
-					min-height: 76px;
-				}
+		.navbar {
+			padding: 0;
+			.toggle-area {
+				list-style: none;
+				display: none;
+				position: relative;
+				margin: 0;
 				@include media(portrait) {
-					width: 100%;
-					border-bottom: 1px solid #fff;
-					border-right:none;
-					height: auto;
-					min-height: auto;
+					display: block;
+					padding-left: 0.9375em;
+					padding-right: 0.9375em;
 				}
-				&:first-child {
-					border-left: 1px solid $white;
-					@include media(portrait) {
-						border-left:none;
+				li {
+					float: left;
+					margin-bottom: 5px;
+					margin-right: 0;
+					margin-top: 5px;
+					padding: 5px 7px 4px;
+					width: 37px;
+					&:hover {
+						background-color: $link-blue;
+						transition: all 0.5s ease 0s;
+						cursor: pointer;
+					}
+					i {
+						color: #fff;
+						font-size: 1.6em;
 					}
 				}
-				a {
-					color: $white;
-					font-weight: bold;
+			}
+		}
+		section {
+			position: relative;
+			@include media(portrait) {
+				display: none;
+				width: 100%;
+				&.open {
 					display: block;
-					padding: 0.8em 0.6em;
-					line-height: 135%;
-					text-decoration: none;
+				}
+			}
+
+			ul {
+				margin: 0;
+				@include media(small_landscape) {
+					display: flex;
+				}
+
+				@include media(portrait) {
+					width: 100%;
+					display: block;
+				}
+
+				> li {
+					border-right: 1px solid $light-grey;
+					color: $light-black;
+					display: block;
+					float: left;
+					//height: 100%;
+					position: relative;
+					//transition: all 0.5s ease 0s;
+					@include media(small_landscape) {
+						width: 135px;
+						min-height: 76px;
+					}
+					@include media(portrait) {
+						width: 100%;
+						border-bottom: 1px solid vlight-grey;
+						border-right: none;
+						height: auto;
+						min-height: auto;
+					}
+					&:first-child {
+						border-left: 1px solid $light-grey;
+						@include media(portrait) {
+							border-left: none;
+						}
+					}
+					a {
+						color: $light-black;
+						display: block;
+						padding: 0.8em 0.6em;
+						line-height: 135%;
+						text-decoration: none;
+						&:focus {
+							outline: none;
+							background-color: $orange;
+						}
+					}
+					&:hover {
+						background-color: $link-blue;
+						color: $white;
+						transition: all 0.5s ease 0s;
+
+						a {
+							color: $white;
+						}
+					}
+
+				}
+			}
+			.has-dropdown {
+				@include media(portrait) {
+					padding: 0;
+				}
+				a {
+					padding-right: 29px;
 					&:focus {
-						outline:none;
+						outline: none;
 						background-color: $orange;
 					}
 				}
-				&:hover {
-					background-color: $link-blue;
-					color: $white;
-					transition: all 0.5s ease 0s;
-					
-					a {
-						color: $white;
-					}
+				&:before {
+					font-family: FontAwesome;
+					content: "\f0d7";
+					float: right;
+					padding-right: 10px;
+					padding-top: 12px;
+					font-size: 0.9em;
 				}
-
-
-			}
-		} 
-		.has-dropdown {
-			@include media(portrait) {
-				padding:0;		
-			}
-			a{
-				padding-right:29px;
-				&:focus {
-					outline:none;
-					background-color: $orange;
-				}
-			}
-		    &:before {
-				font-family: FontAwesome;
-				content:"\f0d7";
-				float:right;
-				padding-right: 10px;
-    			padding-top: 12px;
-				font-size: 0.9em;
-			}
-			> .dropdown {
-				display: none;
-				height: auto;
-				width: 365px;
-				left: 0;
-				top: 100%;
-				position: absolute;
-			    background-color: $white;
-			    border: 1px solid rgba(0, 0, 0, 0.15);
-			    border-radius: 0;
-			    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
-			    list-style: outside none none;
-			    padding: 1.0em 1.2em 1.5em;
-			    z-index: 1000;
-			    font-weight: normal;
-			    overflow: hidden;
-			    @include media(portrait) {
-					position:relative;
+				> .dropdown {
+					display: none;
+					height: auto;
+					width: 365px;
+					left: 0;
+					top: 100%;
+					position: absolute;
 					background-color: $white;
-					color: $light-black;
-					width: 100%;
-					border:none;
-					box-shadow:none;
-					padding:0;
-					border-top: 1px solid $light-grey;
-				}
-				
-				li {
-					float: none;
-					width: 100%;
-					@include media(small_landscape) {
-						min-height: 40px;
+					border: 1px solid rgba(0, 0, 0, 0.15);
+					border-radius: 0;
+					box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+					list-style: outside none none;
+					padding: 1.0em 1.2em 1.5em;
+					z-index: 1000;
+					font-weight: normal;
+					overflow: hidden;
+					@include media(portrait) {
+						position: relative;
+						background-color: $white;
+						color: $light-black;
+						width: 100%;
+						border: none;
+						box-shadow: none;
+						padding: 0;
+						border-top: 1px solid $light-grey;
 					}
-					&:before {
-						transition: all 0.5s ease 0s;
-						font-family: FontAwesome;
-						content:"\f105";
-						float: left;
-						color: $light-grey;
-						font-size:2.0em;
-						font-weight: bold;
-						margin-left: 0.2em;
-    					margin-top: -0.1em;
-    					@include media(portrait) {
-							color: $light-grey;
+
+					li {
+						float: none;
+						width: 100%;
+						@include media(small_landscape) {
+							min-height: 40px;
 						}
-					}
-					&:hover {
-						background-color: $xlight-blue;
 						&:before {
 							transition: all 0.5s ease 0s;
-							color: $vlight-blue;
-							margin-left: 0.5em;
+							font-family: FontAwesome;
+							content: "\f105";
+							float: left;
+							color: $light-grey;
+							font-size: 2.0em;
+							font-weight: bold;
+							margin-left: 0.2em;
+							margin-top: -0.1em;
+							@include media(portrait) {
+								color: $light-grey;
+							}
 						}
-						@include media(portrait) {
-							background-color: $xlight-blue
+						&:hover {
+							background-color: $xlight-blue;
+							&:before {
+								transition: all 0.5s ease 0s;
+								color: $vlight-blue;
+								margin-left: 0.5em;
+							}
+							@include media(portrait) {
+								background-color: $xlight-blue
+							}
+						}
+						a {
+							color: $light-black;
+							display: block;
+							padding-left: 35px;
+							text-decoration: none;
+							line-height: inherit;
+							@include media(portrait) {
+								color: $content-black;
+							}
+							&:focus {
+								color: $white;
+							}
+						}
+						.menu-item-description {
+							font-weight: normal;
+							display: block;
+							line-height: 1.2em;
+						}
+
+					}
+					.menu-label {
+						width: 100%;
+						&:before {
+							content: none;
+						}
+						&:hover {
+							background-color: $white;
+							@include media(portrait) {
+								background-color: $light-blue;
+							}
+						}
+						a {
+							padding-left: 15px;
+							font-size: 1.2em;
+							cursor: default;
 						}
 					}
-					a {
-				    	color: $light-black;
-				    	display: block;
-				    	padding-left:35px;
-				    	text-decoration: none;
-						line-height: inherit;
-				    	@include media(portrait) {
-							color: $content-black;
-						}
-						&:focus {
-							color: $white;
-						}
-				    }
-				    .menu-item-description {
-				    	font-weight: normal;
-				    	display: block;
-				    	line-height: 1.2em;
-				    }
-				    
+
 				}
-				.menu-label {
-					width: 100%;
-					&:before {
-						content:none;
+				&.drop-left {
+					ul {
+						left: auto;
+						right: 0;
 					}
-					&:hover {
-						background-color:$white;
-						@include media(portrait) {
-							background-color: $light-blue;
-						}
-					}
-					a{
-						padding-left:15px;
-						font-size: 1.2em;
-						cursor: default;
+				}
+				&.expand {
+					> .dropdown {
+						transition: all 0.5s ease 0s;
+						display: block;
 					}
 				}
 
 			}
-			&.drop-left {
-				ul {
-					left:auto;
-					right:0;
-				}
-			}
-			&.expand {
-				> .dropdown {
-					transition: all 0.5s ease 0s;
-					display: block;
-				}
-			}
-
 		}
-	}
-	.title.back.js-generated, .parent-link.hide-for-large-up {
-	  display: none !important;
+		.title.back.js-generated, .parent-link.hide-for-large-up {
+			display: none !important;
+		}
 	}
 }
 

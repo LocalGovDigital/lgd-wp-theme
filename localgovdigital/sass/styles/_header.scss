@@ -1,9 +1,14 @@
 // HEADER STYLING
 // Branding
 
-#global__brand {
+#global__brand-nav {
 	.brand {
 		padding: 2em 0;
+		img{
+			width: 100%;
+			height: auto;
+			max-width: 300px;
+		}
 	}
 }
 
