@@ -4,6 +4,8 @@ register_nav_menus( array(
     'main_nav' => 'Main Navigation',
     'footer_nav' => 'Footer Navigation',
     'top_links' => 'Top links',
+    'footer_terms' => 'Terms Navigation',
+    'footer_social' => 'Footer Social Navigation'
 ));
 
 

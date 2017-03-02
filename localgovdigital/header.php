@@ -24,21 +24,20 @@
 <a href="#content-start" class="screen-reader-text">skip to main content</a>
 
 <header id="header__<?php if ( is_front_page() ) { echo 'front-page'; } else {  echo 'page'; } ?>">
-    <div id="global__top-links">
+    <div id="global__top-links" class="small-12 column" >
         <section>
             <?php wp_nav_menu( array( 'theme_location' => 'top_links' ) ); ?>
         </section>
     </div>
     <div id="global__brand-nav" class="container-fluid">
-        <div class="row">
-            <div class="col-sm-4 brand">
+            <div class="small-10 medium-3 column brand">
                 <?php if(is_home()) : ?>
                     <h1><img src="/wp-content/uploads/2017/01/lgd_logo-1-e1485652490381.png" alt="LocalGov Digital"></h1>
                 <?php else : ?>
                     <img src="/wp-content/uploads/2017/01/lgd_logo-1-e1485652490381.png" alt="LocalGov Digital">
                 <?php endif; ?>
             </div>
-            <div class="col-sm-8 main-nav">
+            <div class="small-2 medium-9 column main-nav">
                 <nav class="navbar" data-topbar role="navigation">
                     <ul class="toggle-area" aria-hidden="true">
                         <li id="mobile-menu">
@@ -50,7 +49,6 @@
                     </section>
                 </nav>
             </div>
-        </div>
     </div>
 </header>
 <?php /*if (!is_home() && function_exists('bcn_display')) : ?>
