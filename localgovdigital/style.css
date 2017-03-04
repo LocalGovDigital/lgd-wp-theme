@@ -87,12 +87,108 @@ ul {
 /*
 * Default Style SASS
 */
-#global__brand-nav .brand {
+#global__top-links {
+  display: block;
+  clear: both;
+  padding-right: 0; }
+  #global__top-links ul {
+    float: right; }
+    #global__top-links ul li {
+      position: relative;
+      border-left: 1px solid #ececec;
+      padding: 0em 1em;
+      height: 3em;
+      min-width: 100px; }
+      #global__top-links ul li a {
+        border-left: none;
+        border-right: none;
+        color: #565656;
+        padding: 0.3rem 0.7rem; }
+      #global__top-links ul li.menu-twitter::before {
+        transition: all 0.5s ease 0s;
+        color: #474747;
+        content: "\f081";
+        font-family: FontAwesome;
+        font-size: 1.5em;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        margin-top: -0.8em;
+        margin-left: -0.4em; }
+      #global__top-links ul li.menu-twitter:hover {
+        text-decoration: none; }
+        #global__top-links ul li.menu-twitter:hover::before {
+          transition: all 0.5s ease 0s;
+          color: #74c2e8; }
+      #global__top-links ul li.menu-twitter a {
+        clip: rect(1px, 1px, 1px, 1px);
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden; }
+      #global__top-links ul li.menu-google-plus::before {
+        transition: all 0.5s ease 0s;
+        color: #474747;
+        content: "\f0d4";
+        font-family: FontAwesome;
+        font-size: 1.5em;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        margin-top: -0.8em;
+        margin-left: -0.4em; }
+      #global__top-links ul li.menu-google-plus:hover {
+        text-decoration: none; }
+        #global__top-links ul li.menu-google-plus:hover::before {
+          transition: all 0.5s ease 0s;
+          color: #74c2e8; }
+      #global__top-links ul li.menu-google-plus a {
+        clip: rect(1px, 1px, 1px, 1px);
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden; }
+      #global__top-links ul li.menu-slack::before {
+        transition: all 0.5s ease 0s;
+        color: #474747;
+        content: "\f198";
+        font-family: FontAwesome;
+        font-size: 1.5em;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        margin-top: -0.8em;
+        margin-left: -0.4em; }
+      #global__top-links ul li.menu-slack:hover {
+        text-decoration: none; }
+        #global__top-links ul li.menu-slack:hover::before {
+          transition: all 0.5s ease 0s;
+          color: #74c2e8; }
+      #global__top-links ul li.menu-slack a {
+        clip: rect(1px, 1px, 1px, 1px);
+        position: absolute !important;
+        height: 1px;
+        width: 1px;
+        overflow: hidden; }
+      #global__top-links ul li:first-child {
+        border-left: 1px solid #ececec; }
+
+#global__brand-nav {
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  display: table;
+  width: 100%;
   padding: 2em 0; }
   #global__brand-nav .brand img {
     width: 100%;
     height: auto;
     max-width: 300px; }
+  #global__brand-nav .main-nav {
+    float: right;
+    padding-right: 0;
+    padding-top: 0.4em; }
+    #global__brand-nav .main-nav nav {
+      float: right; }
 
 #global__breadcrumb {
   margin: 1em 0; }
@@ -176,7 +272,7 @@ ul {
         #global__brand-nav .main-nav section ul > li a {
           color: #474747;
           display: block;
-          padding: 0.8em 0.6em;
+          padding: 0.2em 0.6em;
           line-height: 135%;
           text-decoration: none; }
           #global__brand-nav .main-nav section ul > li a:focus {
@@ -198,10 +294,10 @@ ul {
         background-color: #d68600; }
     #global__brand-nav .main-nav section .has-dropdown:before {
       font-family: FontAwesome;
-      content: "\f0d7";
+      content: "\f107";
       float: right;
       padding-right: 10px;
-      padding-top: 12px;
+      padding-top: 3px;
       font-size: 0.9em; }
     #global__brand-nav .main-nav section .has-dropdown > .dropdown {
       display: none;
@@ -528,23 +624,45 @@ i {
   color: #3b5998;
   content: "\f230";
   font-family: FontAwesome;
-  font-size: 3.5em; }
+  font-size: 3.5em;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  margin-top: -0.8em;
+  margin-left: -0.4em; }
 .sidebar-social-icons .facebook:hover {
   text-decoration: none; }
   .sidebar-social-icons .facebook:hover::before {
     transition: all 0.5s ease 0s;
     color: #474747; }
+.sidebar-social-icons .facebook a {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
 .sidebar-social-icons .twitter::before {
   transition: all 0.5s ease 0s;
   color: #00aced;
   content: "\f081";
   font-family: FontAwesome;
-  font-size: 3.5em; }
+  font-size: 3.5em;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  margin-top: -0.8em;
+  margin-left: -0.4em; }
 .sidebar-social-icons .twitter:hover {
   text-decoration: none; }
   .sidebar-social-icons .twitter:hover::before {
     transition: all 0.5s ease 0s;
     color: #474747; }
+.sidebar-social-icons .twitter a {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
 
 /* save this styling for show / hide functions
 #guidance__consultation-questions {

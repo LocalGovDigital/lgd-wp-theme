@@ -37,8 +37,19 @@ $breakpoints: (
     @if($icon == 'twitter') {
       content: "\f081";
     }
+    @if($icon == 'gplus') {
+      content: "\f0d4";
+    }
+    @if($icon == 'slack') {
+      content: "\f198";
+    }
     font-family: FontAwesome;
     font-size: $size;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    margin-top: -0.8em;
+    margin-left: -0.4em;
   }
   &:hover {
     text-decoration: none;
@@ -46,5 +57,12 @@ $breakpoints: (
       transition: all 0.5s ease 0s;
       color: $hover-color;
     }
+  }
+  a {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
   }
 }

@@ -29,7 +29,7 @@
             <?php wp_nav_menu( array( 'theme_location' => 'top_links' ) ); ?>
         </section>
     </div>
-    <div id="global__brand-nav" class="container-fluid">
+    <div id="global__brand-nav">
             <div class="small-10 medium-3 column brand">
                 <?php if(is_home()) : ?>
                     <h1><img src="/wp-content/uploads/2017/01/lgd_logo-1-e1485652490381.png" alt="LocalGov Digital"></h1>

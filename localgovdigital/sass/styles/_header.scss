@@ -1,13 +1,59 @@
 // HEADER STYLING
 // Branding
 
+#global__top-links{
+	display: block;
+	clear:both;
+	padding-right: 0;
+	ul {
+		float: right;
+		li {
+			position: relative;
+			border-left: 1px solid $light-grey;
+			padding: 0em 1em;
+			height: 3em;
+			min-width:100px;
+			a {
+				border-left:none;
+				border-right:none;
+				color: $content-black;
+				padding: 0.3rem 0.7rem;
+			}
+			&.menu-twitter {
+				@include social_icons(twitter, $light-black, $light-blue, 1.5em);
+			}
+			&.menu-google-plus {
+				@include social_icons(gplus, $light-black, $light-blue, 1.5em);
+			}
+			&.menu-slack {
+				@include social_icons(slack, $light-black, $light-blue, 1.5em);
+			}
+			&:first-child {
+				border-left:1px solid $light-grey;
+			}
+		}
+	}
+}
+
 #global__brand-nav {
+	border-top:1px solid $light-grey;
+	border-bottom:1px solid $light-grey;
+	display: table;
+	width: 100%;
+	padding: 2em 0;
 	.brand {
-		padding: 2em 0;
 		img{
 			width: 100%;
 			height: auto;
 			max-width: 300px;
+		}
+	}
+	.main-nav {
+		float: right;
+		padding-right: 0;
+		padding-top: 0.4em;
+		nav {
+			float: right;
 		}
 	}
 }

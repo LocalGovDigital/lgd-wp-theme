@@ -107,7 +107,7 @@
 					a {
 						color: $light-black;
 						display: block;
-						padding: 0.8em 0.6em;
+						padding: 0.2em 0.6em;
 						line-height: 135%;
 						text-decoration: none;
 						&:focus {
@@ -140,10 +140,10 @@
 				}
 				&:before {
 					font-family: FontAwesome;
-					content: "\f0d7";
+					content: "\f107";
 					float: right;
 					padding-right: 10px;
-					padding-top: 12px;
+					padding-top: 3px;
 					font-size: 0.9em;
 				}
 				> .dropdown {
