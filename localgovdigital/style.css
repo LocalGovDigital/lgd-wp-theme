@@ -33,8 +33,8 @@ h6 {
   color: #474747; }
 
 h1 {
-  font-size: 2.5em;
-  padding: 0 0 0.5em;
+  font-size: 2.2em;
+  padding: 0.5em 0 0.5em;
   margin-bottom: 0; }
 
 h2 {
@@ -42,9 +42,11 @@ h2 {
   padding: 0.5em 0 0.5em;
   display: inline-block; }
 
+.home h1 {
+  padding: 1em 0 0.5em; }
 .home h2 {
   font-size: 1.8em;
-  padding: 1em 0 0.5em; }
+  padding: 1.5em 0 0.5em; }
 
 h3 {
   font-size: 1.4em;
@@ -96,9 +98,10 @@ ul {
     #global__top-links ul li {
       position: relative;
       border-left: 1px solid #ececec;
-      padding: 0em 1em;
-      height: 3em;
-      min-width: 100px; }
+      padding: 1em 1em 0;
+      height: 3.5em;
+      min-width: 100px;
+      vertical-align: top; }
       #global__top-links ul li a {
         border-left: none;
         border-right: none;
@@ -188,7 +191,8 @@ ul {
     padding-right: 0;
     padding-top: 0.4em; }
     #global__brand-nav .main-nav nav {
-      float: right; }
+      float: right;
+      margin-right: 1em; }
 
 #global__breadcrumb {
   margin: 1em 0; }
@@ -390,6 +394,10 @@ ul {
   #global__brand-nav .main-nav .title.back.js-generated, #global__brand-nav .main-nav .parent-link.hide-for-large-up {
     display: none !important; }
 
+#home__intro {
+  padding: 3em 0;
+  border-bottom: 5px solid #ececec; }
+
 /*
 * Features SASS
 */
@@ -542,7 +550,8 @@ label, legend {
   margin-top: 1.5em;
   background-color: #0073b9;
   border: 2px solid #0073b9;
-  text-align: left; }
+  text-align: left;
+  font-size: 1em; }
   @media screen and (max-width: 48em) {
     .button {
       width: 100%;

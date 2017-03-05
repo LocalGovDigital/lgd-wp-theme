@@ -14,6 +14,7 @@ get_header(); ?>
     <section id="home__intro">
         <div class="row">
             <div class="small-12 medium-8 column">
+                <h1><?php the_title();?></h1>
                 <?php the_content();?>
             </div>
             <div class="small-12 medium-4 column">

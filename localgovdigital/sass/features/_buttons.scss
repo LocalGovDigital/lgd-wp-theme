@@ -8,6 +8,7 @@
 	background-color: $link-blue;
 	border: 2px solid $link-blue;
 	text-align: left;
+	font-size: 1em;
 	@include media(portrait) {
 		width: 100%;
 		margin-top: 0em;
