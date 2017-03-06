@@ -99,7 +99,7 @@ a {
 	color: $link-blue;
 	text-decoration:none;
 	&:hover {
-		border-bottom: 2px solid #0073b9;
+		border-bottom: 2px solid $link-blue;
 		text-decoration:none;
 
 	}
