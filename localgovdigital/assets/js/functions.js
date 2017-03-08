@@ -16,6 +16,11 @@ jQuery(document).ready(function($) {
     $('.has-dropdown > a').on("click", function (e) {
         e.stopPropagation();
         e.preventDefault();
+        //console.log('yes');
+        var distance_from_right = ($(window).width() - ($(this).offset().left + $(this).outerWidth()));
+        if(distance_from_right < '300') {
+            $(this).next('ul').addClass('drop-left');
+        }
         var $this = $(this).next('ul');
         $('.dropdown').not($this).slideUp();
         $this.slideToggle('1500', 'swing');
