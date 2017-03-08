@@ -30,16 +30,16 @@
         </section>
     </div>
     <div id="global__brand-nav">
-            <div class="small-10 medium-3 column brand">
+            <div class="small-12 medium-3 column brand">
                 <img src="/wp-content/uploads/2017/01/lgd_logo-1-e1485652490381.png" alt="LocalGov Digital">
+                <ul class="toggle-area" aria-hidden="true">
+                    <li id="mobile-menu">
+                        <i class="fa fa-nav"></i>
+                    </li>
+                </ul>
             </div>
-            <div class="small-2 medium-9 column main-nav">
+            <div class="small-12 medium-9 column main-nav">
                 <nav class="navbar" data-topbar role="navigation">
-                    <ul class="toggle-area" aria-hidden="true">
-                        <li id="mobile-menu">
-                            <i class="fa fa-nav"></i>
-                        </li>
-                    </ul>
                     <section>
                         <?php wp_nav_menu( array( 'theme_location' => 'main_nav' ) ); ?>
                     </section>

@@ -5,8 +5,14 @@
 	display: block;
 	clear:both;
 	padding-right: 0;
+	@include media(small) {
+		padding-left: 0;
+	}
 	ul {
 		float: right;
+		@include media(small) {
+			width: 100%;
+		}
 		li {
 			position: relative;
 			border-left: 1px solid $light-grey;
@@ -14,6 +20,13 @@
 			height: 3em;
 			min-width:100px;
 			vertical-align: top;
+			@include media(small) {
+				min-width: inherit;
+				padding: 3% 0;
+				width: 20%;
+				vertical-align: middle;
+				height: inherit;
+			}
 			a {
 				border-left:none;
 				border-right:none;
@@ -40,11 +53,21 @@
 #global__brand-nav {
 	border-top:1px solid $light-grey;
 	border-bottom:1px solid $light-grey;
-	display: table;
 	width: 100%;
 	padding: 2em 0;
 	display: flex;
+	@include media(portrait) {
+		display: inline-block;
+		clear: both;
+	}
+	@include media(xsmall) {
+		padding: 2em 0 1em;
+	}
 	.brand {
+		@include media(portrait) {
+			width: 100%;
+			padding-left:1em;
+		}
 		img{
 			width: 100%;
 			height: auto;
@@ -52,9 +75,20 @@
 			position: relative;
 			top:50%;
 			margin-top: -1.6em;
+			@include media(portrait) {
+				margin-top: 0.2em;
+			}
+			@include media(xsmall) {
+				max-width: 225px;
+			}
 		}
 	}
 	.main-nav {
+		@include media(portrait) {
+			.navbar{
+				margin-right:0;
+			}
+		}
 		float: right;
 		padding-right: 0;
 		padding-top: 0.4em;

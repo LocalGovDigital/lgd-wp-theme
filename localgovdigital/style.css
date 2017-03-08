@@ -93,8 +93,14 @@ ul {
   display: block;
   clear: both;
   padding-right: 0; }
+  @media screen and (max-width: 40em) {
+    #global__top-links {
+      padding-left: 0; } }
   #global__top-links ul {
     float: right; }
+    @media screen and (max-width: 40em) {
+      #global__top-links ul {
+        width: 100%; } }
     #global__top-links ul li {
       position: relative;
       border-left: 1px solid #ececec;
@@ -102,6 +108,13 @@ ul {
       height: 3em;
       min-width: 100px;
       vertical-align: top; }
+      @media screen and (max-width: 40em) {
+        #global__top-links ul li {
+          min-width: inherit;
+          padding: 3% 0;
+          width: 20%;
+          vertical-align: middle;
+          height: inherit; } }
       #global__top-links ul li a {
         border-left: none;
         border-right: none;
@@ -201,10 +214,20 @@ ul {
 #global__brand-nav {
   border-top: 1px solid #ececec;
   border-bottom: 1px solid #ececec;
-  display: table;
   width: 100%;
   padding: 2em 0;
   display: flex; }
+  @media screen and (max-width: 48em) {
+    #global__brand-nav {
+      display: inline-block;
+      clear: both; } }
+  @media screen and (max-width: 30em) {
+    #global__brand-nav {
+      padding: 2em 0 1em; } }
+  @media screen and (max-width: 48em) {
+    #global__brand-nav .brand {
+      width: 100%;
+      padding-left: 1em; } }
   #global__brand-nav .brand img {
     width: 100%;
     height: auto;
@@ -212,10 +235,19 @@ ul {
     position: relative;
     top: 50%;
     margin-top: -1.6em; }
+    @media screen and (max-width: 48em) {
+      #global__brand-nav .brand img {
+        margin-top: 0.2em; } }
+    @media screen and (max-width: 30em) {
+      #global__brand-nav .brand img {
+        max-width: 225px; } }
   #global__brand-nav .main-nav {
     float: right;
     padding-right: 0;
     padding-top: 0.4em; }
+    @media screen and (max-width: 48em) {
+      #global__brand-nav .main-nav .navbar {
+        margin-right: 0; } }
     #global__brand-nav .main-nav nav {
       float: right;
       margin-right: 1em; }
@@ -229,6 +261,32 @@ ul {
 .fa-nav:before {
   content: "\f0c9"; }
 
+#global__brand-nav .brand .toggle-area {
+  list-style: none;
+  display: none;
+  position: relative;
+  margin: 0; }
+  @media screen and (max-width: 48em) {
+    #global__brand-nav .brand .toggle-area {
+      display: block;
+      padding-left: 0em;
+      padding-right: 0.9375em;
+      float: right; } }
+  #global__brand-nav .brand .toggle-area li {
+    margin-bottom: 5px;
+    margin-right: 0;
+    margin-top: 5px;
+    padding: 5px 7px 4px;
+    width: 37px; }
+    @media screen and (max-width: 30em) {
+      #global__brand-nav .brand .toggle-area li {
+        margin-top: 0; } }
+    #global__brand-nav .brand .toggle-area li:hover {
+      transition: all 0.5s ease 0s;
+      cursor: pointer; }
+    #global__brand-nav .brand .toggle-area li i {
+      color: #565656;
+      font-size: 1.6em; }
 #global__brand-nav .main-nav {
   height: auto; }
   @media screen and (max-width: 48em) {
@@ -236,29 +294,6 @@ ul {
       padding: 0; } }
   #global__brand-nav .main-nav .navbar {
     padding: 0; }
-    #global__brand-nav .main-nav .navbar .toggle-area {
-      list-style: none;
-      display: none;
-      position: relative;
-      margin: 0; }
-      @media screen and (max-width: 48em) {
-        #global__brand-nav .main-nav .navbar .toggle-area {
-          display: block;
-          padding-left: 0.9375em;
-          padding-right: 0.9375em; } }
-      #global__brand-nav .main-nav .navbar .toggle-area li {
-        float: left;
-        margin-bottom: 5px;
-        margin-right: 0;
-        margin-top: 5px;
-        padding: 5px 7px 4px;
-        width: 37px; }
-        #global__brand-nav .main-nav .navbar .toggle-area li:hover {
-          transition: all 0.5s ease 0s;
-          cursor: pointer; }
-        #global__brand-nav .main-nav .navbar .toggle-area li i {
-          color: #565656;
-          font-size: 1.6em; }
   #global__brand-nav .main-nav section {
     position: relative; }
     @media screen and (max-width: 48em) {
