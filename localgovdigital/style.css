@@ -89,6 +89,56 @@ ul {
 /*
 * Default Style SASS
 */
+#global__brand-nav {
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  width: 100%;
+  padding: 2em 0;
+  display: flex; }
+  @media screen and (max-width: 48em) {
+    #global__brand-nav {
+      display: inline-block;
+      clear: both; } }
+  @media screen and (max-width: 30em) {
+    #global__brand-nav {
+      padding: 2em 0 1em; } }
+  @media screen and (max-width: 48em) {
+    #global__brand-nav .brand {
+      width: 100%;
+      padding-left: 1em; } }
+  #global__brand-nav .brand img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    position: relative;
+    top: 50%;
+    margin-top: -1.6em; }
+    @media screen and (max-width: 48em) {
+      #global__brand-nav .brand img {
+        margin-top: 0.2em; } }
+    @media screen and (max-width: 30em) {
+      #global__brand-nav .brand img {
+        max-width: 225px; } }
+  #global__brand-nav .main-nav {
+    float: right;
+    padding-right: 0;
+    padding-top: 0.4em; }
+    @media screen and (max-width: 48em) {
+      #global__brand-nav .main-nav .navbar {
+        margin-right: 0; } }
+    #global__brand-nav .main-nav nav {
+      float: right;
+      margin-right: 1em; }
+
+#global__breadcrumb {
+  margin: 1em 0; }
+
+.fa-search:before {
+  content: "\f002"; }
+
+.fa-nav:before {
+  content: "\f0c9"; }
+
 #global__top-links {
   display: block;
   clear: both;
@@ -210,56 +260,6 @@ ul {
           height: 1px;
           width: 1px;
           overflow: hidden; }
-
-#global__brand-nav {
-  border-top: 1px solid #ececec;
-  border-bottom: 1px solid #ececec;
-  width: 100%;
-  padding: 2em 0;
-  display: flex; }
-  @media screen and (max-width: 48em) {
-    #global__brand-nav {
-      display: inline-block;
-      clear: both; } }
-  @media screen and (max-width: 30em) {
-    #global__brand-nav {
-      padding: 2em 0 1em; } }
-  @media screen and (max-width: 48em) {
-    #global__brand-nav .brand {
-      width: 100%;
-      padding-left: 1em; } }
-  #global__brand-nav .brand img {
-    width: 100%;
-    height: auto;
-    max-width: 300px;
-    position: relative;
-    top: 50%;
-    margin-top: -1.6em; }
-    @media screen and (max-width: 48em) {
-      #global__brand-nav .brand img {
-        margin-top: 0.2em; } }
-    @media screen and (max-width: 30em) {
-      #global__brand-nav .brand img {
-        max-width: 225px; } }
-  #global__brand-nav .main-nav {
-    float: right;
-    padding-right: 0;
-    padding-top: 0.4em; }
-    @media screen and (max-width: 48em) {
-      #global__brand-nav .main-nav .navbar {
-        margin-right: 0; } }
-    #global__brand-nav .main-nav nav {
-      float: right;
-      margin-right: 1em; }
-
-#global__breadcrumb {
-  margin: 1em 0; }
-
-.fa-search:before {
-  content: "\f002"; }
-
-.fa-nav:before {
-  content: "\f0c9"; }
 
 #global__brand-nav .brand .toggle-area {
   list-style: none;
@@ -446,6 +446,33 @@ ul {
 #home__intro {
   padding: 3em 0;
   border-bottom: 5px solid #ececec; }
+  #home__intro .popular-links h2 {
+    padding-bottom: 0; }
+  #home__intro .popular-links ul {
+    margin: 0;
+    padding: 0; }
+    #home__intro .popular-links ul li {
+      padding-left: 0;
+      line-height: 2.5em; }
+
+#home__whats-new {
+  padding: 5em 0; }
+  #home__whats-new .feature-news {
+    padding-right: 4%; }
+    #home__whats-new .feature-news p {
+      margin-bottom: 0.5em; }
+    #home__whats-new .feature-news .small-date {
+      color: #565656; }
+  #home__whats-new .news-list {
+    border-left: 2px dotted #ececec;
+    padding-left: 4%; }
+    #home__whats-new .news-list h2 {
+      padding-top: 0;
+      padding-bottom: 0; }
+    #home__whats-new .news-list ul {
+      margin-left: 0; }
+      #home__whats-new .news-list ul h3 {
+        padding-bottom: 0; }
 
 /*
 * Features SASS

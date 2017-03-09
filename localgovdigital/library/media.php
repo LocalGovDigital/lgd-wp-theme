@@ -1,4 +1,7 @@
 <?php
+//*** Featured image support
+add_theme_support( 'post-thumbnails' );
+
 //*** Responsive image support
 function content_image_sizes_attr( $sizes, $size ) {
   $width = $size[0];

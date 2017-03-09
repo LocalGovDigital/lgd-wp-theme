@@ -1,11 +1,55 @@
-
 // GENERAL STYLES FOR SECTIONS, CONTAINERS OR FEATURES
 // LGD General content
 
 // Home Page Styling
-// Home intro
-
+// Home page intro
 #home__intro {
 	padding: 3em 0;
 	border-bottom: 5px solid $light-grey;
+	.popular-links {
+		h2{
+			padding-bottom: 0;
+		}
+		ul{
+			margin: 0;
+			padding: 0;
+			li{
+				padding-left: 0;
+				line-height:2.5em;
+			}
+		}
+	}
 }
+
+// Home page news section
+#home__whats-new {
+	padding: 5em 0;
+	.feature-news{
+		padding-right: 4%;
+		h2 {
+
+		}
+		p {
+			margin-bottom: 0.5em;
+		}
+		.small-date {
+			color: $content-black;
+		}
+	}
+	.news-list {
+		border-left: 2px dotted $light-grey;
+		padding-left: 4%;
+		h2 {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+		ul {
+			margin-left: 0;
+			h3 {
+				padding-bottom: 0;
+			}
+		}
+	}
+
+}
+

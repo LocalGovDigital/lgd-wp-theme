@@ -1,55 +1,6 @@
 // HEADER STYLING
-// Branding
 
-#global__top-links{
-	display: block;
-	clear:both;
-	padding-right: 0;
-	@include media(small) {
-		padding-left: 0;
-	}
-	ul {
-		float: right;
-		@include media(small) {
-			width: 100%;
-		}
-		li {
-			position: relative;
-			border-left: 1px solid $light-grey;
-			padding: 0.8em 1em 0;
-			height: 3em;
-			min-width:100px;
-			vertical-align: top;
-			@include media(small) {
-				min-width: inherit;
-				padding: 3% 0;
-				width: 20%;
-				vertical-align: middle;
-				height: inherit;
-			}
-			a {
-				border-left:none;
-				border-right:none;
-				color: $content-black;
-				padding: 0.3rem 0.7rem;
-				&:focus {
-					outline: none;
-					border-bottom: 2px solid $orange;
-				}
-			}
-			&.menu-twitter a {
-				@include social_icons(twitter, $light-black, $light-blue, 1.5em);
-			}
-			&.menu-google-plus a {
-				@include social_icons(gplus, $light-black, $light-blue, 1.5em);
-			}
-			&.menu-slack a {
-				@include social_icons(slack, $light-black, $light-blue, 1.5em);
-			}
-		}
-	}
-}
-
+// Branding and main navigation
 #global__brand-nav {
 	border-top:1px solid $light-grey;
 	border-bottom:1px solid $light-grey;
@@ -99,6 +50,7 @@
 	}
 }
 
+// Breadcrumb trails
 #global__breadcrumb{
 	margin: 1em 0;
 }
