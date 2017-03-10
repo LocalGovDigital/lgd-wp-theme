@@ -43,15 +43,16 @@ get_header(); ?>
                         </div>
                     <?php else :
                     // else create $news_list variable with all other posts in the loop
-                    $news_list = '
+                    $news_list = $news_list.'
                         <li>
                             <h3><a href="'.get_the_permalink().'" title="'.get_the_title().'">'.get_the_title().'</a></h3>
                             <span class="small-date">'.get_the_date().'</span>
                         </li>
-                    '.$news_list;
+                    ';
                     endif;
                     $i++;
                 endwhile; endif;
+                wp_reset_postdata();
                 ?>
                 <div class="small-12 medium-5 column news-list">
                     <h2>What's new in LocalGov</h2>
@@ -70,10 +71,11 @@ get_header(); ?>
             <div class="small-12 medium-4 column">
                 <div class="service-banner">
                     <div class="service-banner-image">
-                        <img src="http://placehold.it/450x200">
+                        <img class="banner_image_1" <?php ar_responsive_image(get_field( 'banner_1_image' ),'thumb-640','640px'); ?>  alt="<?php get_field('banner_1_title');?>" />
                     </div>
                     <div class="service-banner-content">
-                        <h2>Digital service standard</h2>
+                        <h2><?php get_field('banner_1_title');?></h2>
+                        <?php get_field('banner_1_intro');?>
                         <ul>
                             <li><a href="#">View the standard</a></li>
                             <li><a href="#">Guidance notes</a></li>
@@ -125,7 +127,25 @@ get_header(); ?>
                 <p>Your thoughts, your challenges, your successes and your work</p>
             </div>
             <div class="small-12 column digital-voice-listings">
-                <ul>
+                <?php
+                // query the first 6 voice articles
+                $the_query = new WP_Query( array( 'post_type' => 'voice_posts', 'posts_per_page' => '6' ) );
+                // loop through all posts
+                if ( $the_query->have_posts() ) : ?>
+                    <ul>
+                    <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                        <li>
+                            <h3><a href="#">Voice article title text</a></h3>
+                            <p>Author name</p>
+                            <span class="small-date">12 February 2017</span>
+                        </li>
+                    <?php
+                    endwhile; ?>
+                    </ul>
+                <?php endif;
+                wp_reset_postdata();
+                ?>
+
                     <li>
                         <h3><a href="#">Voice article title text</a></h3>
                         <p>Author name</p>
