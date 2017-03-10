@@ -23,13 +23,10 @@ require_once( 'library/enqueue-scripts.php' );
 require_once( 'library/media.php' );
 
 /** Add theme support */
-//( 'library/theme-support.php' );
+require_once( 'library/theme-support.php' );
 
 /** Add Nav Options to Customer */
 require_once( 'library/custom-nav.php' );
 
 /** Add other custom theme functions */
 require_once( 'library/theme-functions.php' );
-
-
-?>
