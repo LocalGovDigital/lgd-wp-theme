@@ -1,10 +1,10 @@
 <?php
 /**
- * Template Name: Voice Landing
+ * Template Name: Pipeline Landing
  */
 
 $args = array(
-    'post_type'=> 'voice_post',
+    'post_type'=> 'project',
     'orderby'    => 'date',
     'order'    => 'DESC',
     'posts_per_page' => 15,
@@ -18,7 +18,7 @@ get_header(); ?>
 	<?php
 	if ( $the_query->have_posts() ) :
 		while ( $the_query->have_posts() ) : $the_query->the_post();
-			get_template_part( 'template-parts/page/content', 'voice-post' );
+			get_template_part( 'template-parts/post/content', 'project' );
 		endwhile;
 	else :
 		get_template_part( 'template-parts/post/content', 'none' );
