@@ -98,3 +98,30 @@ add_filter( 'gform_validation_message', 'change_message', 10, 2 );
 function change_message( $message, $form ) {
     return '<div class="top-error-panel" aria-labelledby="error-summary-heading" role="group"><h2 id="error-summary-heading">Sorry, there is an issue with what you have entered</h2><p class="error-summary-intro">Please review what has been entered in the fields marked as having an issue before continuing</p><!--<p>The following fields have been incorrectly completed</p><ul><li></li></ul>--></div>';
 }
+
+/**
+ * Replaces "[...]" (appended to automatically generated excerpts) with ... and
+ * a 'Continue reading' link.
+ *
+ * @since Twenty Seventeen 1.0
+ *
+ * @return string 'Continue reading' link prepended with an ellipsis.
+ */
+function lgd_excerpt_more( $link ) {
+	global $post;
+
+	if ( is_admin() ) {
+		return $link;
+	}
+
+    if ( 'voice_post' == $post->post_type ) {
+        return '';
+    }
+
+	$link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
+		esc_url( get_permalink( get_the_ID() ) ),
+		sprintf( 'Continue reading<span class="screen-reader-text"> "%s"</span>', get_the_title( get_the_ID() ) )
+	);
+	return ' &hellip; ' . $link;
+}
+add_filter( 'excerpt_more', 'lgd_excerpt_more' );
