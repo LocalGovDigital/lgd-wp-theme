@@ -71,8 +71,16 @@ get_header(); ?>
             <div class="small-12 medium-4 column">
                 <div class="service-banner">
                     <div class="service-banner-image">
-                        <img class="banner_image_1" <?php ar_responsive_image(get_field( 'banner_1_image' ),'thumb-640','640px'); ?>  alt="<?php the_field('banner_1_title');?>" />
-                    </div>
+                        <?php
+                        $img = get_field('banner_1_image');
+                        ?>
+                        <img srcset="<?php echo $img['sizes']['medium']; ?> 300w,
+                                <?php echo $img['sizes']['medium_large']; ?> 768w,
+                                <?php echo $img['sizes']['large']; ?> 1024w"
+                                src="<?php echo $img['sizes']['medium']; ?>"
+                                alt="<?php the_field('banner_1_title');?>">
+
+                     </div>
                     <div class="service-banner-content">
                         <h2><?php the_field('banner_1_title');?></h2>
                         <?php the_field('banner_1_intro_text');?>
@@ -82,21 +90,39 @@ get_header(); ?>
             <div class="small-12 medium-4 column">
                 <div class="service-banner">
                     <div class="service-banner-image">
-                        <img src="http://placehold.it/450x200">
+                        <?php
+                        $img = get_field('banner_2_image');
+                        ?>
+                        <img srcset="<?php echo $img['sizes']['medium']; ?> 300w,
+                                <?php echo $img['sizes']['medium_large']; ?> 768w,
+                                <?php echo $img['sizes']['large']; ?> 1024w"
+                             src="<?php echo $img['sizes']['medium']; ?>"
+                             alt="<?php the_field('banner_2_title');?>">
+
                     </div>
                     <div class="service-banner-content">
-                        <h2>Regional peer groups</h2>
-                        <ul>
-                            <li><a href="#">Current peer groups</a></li>
-                            <li><a href="#">Next events</a></li>
-                            <li><a href="#">Set up a group</a></li>
-                            <li><a href="#">Sponsor and event</a></li>
-                        </ul>
+                        <h2><?php the_field('banner_2_title');?></h2>
+                        <?php the_field('banner_2_intro_text');?>
                     </div>
                 </div>
             </div>
             <div class="small-12 medium-4 column">
                 <div class="service-banner">
+                    <div class="service-banner-image">
+                        <?php
+                        $img = get_field('banner_3_image');
+                        ?>
+                        <img srcset="<?php echo $img['sizes']['medium']; ?> 300w,
+                                <?php echo $img['sizes']['medium_large']; ?> 768w,
+                                <?php echo $img['sizes']['large']; ?> 1024w"
+                             src="<?php echo $img['sizes']['medium']; ?>"
+                             alt="<?php the_field('banner_3_title');?>">
+
+                    </div>
+                    <div class="service-banner-content">
+                        <h2><?php the_field('banner_3_title');?></h2>
+                        <?php the_field('banner_3_intro_text');?>
+                    </div>
                     <div class="service-banner-image">
                         <img src="http://placehold.it/450x200">
                     </div>
@@ -129,9 +155,9 @@ get_header(); ?>
                     <ul>
                     <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
                         <li>
-                            <h3><a href="#">..Voice article title text</a></h3>
-                            <p>Author name</p>
-                            <span class="small-date">12 February 2017</span>
+                            <h3><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
+                            <?php the_author();?>
+                            <span class="small-date"><?php the_date();?></span>
                         </li>
                     <?php
                     endwhile; ?>

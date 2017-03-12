@@ -48,7 +48,7 @@ if($image_id != '') {
     $image_srcset = wp_get_attachment_image_srcset( $image_id, $image_size );
 
     // generate the markup for the responsive image
-    echo 'src="'.$image_src.'" srcset="'.$image_srcset.'" sizes="(max-width: '.$max_width.') 100vw, '.$max_width.'"';
+    echo 'src="'.$image_src.'" srcset="'.$image_srcset.'" sizes="(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 88vw, 1200px, '.$max_width.'"';
 
     }
 }
