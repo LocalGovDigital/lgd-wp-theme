@@ -24,7 +24,7 @@ function foundationpress_theme_support() {
 	// RSS thingy
 	add_theme_support( 'automatic-feed-links' );
 	// Disable comments feed
-    add_filter( 'feed_links_show_comments_feed', '__return_false' );
+	add_filter( 'feed_links_show_comments_feed', '__return_false' );
 
 	// Remove links and generator
 	remove_action( 'wp_head', 'rsd_link' );
@@ -59,7 +59,7 @@ function foundationpress_theme_support() {
 	add_filter( 'tiny_mce_plugins', 'disable_embeds_tiny_mce_plugin' );
 
 	// Remove all embeds rewrite rules.
-	add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
+	//add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
 
 	// Remove filter of the oEmbed result before any HTTP requests are made.
 	remove_filter( 'pre_oembed_result', 'wp_filter_pre_oembed_result', 10 );
@@ -67,3 +67,15 @@ function foundationpress_theme_support() {
 
 add_action( 'after_setup_theme', 'foundationpress_theme_support' );
 endif;
+
+/**
+ * Removes the 'wpembed' TinyMCE plugin.
+ *
+ * @since 1.0.0
+ *
+ * @param array $plugins List of TinyMCE plugins.
+ * @return array The modified list.
+ */
+function disable_embeds_tiny_mce_plugin( $plugins ) {
+	return array_diff( $plugins, array( 'wpembed' ) );
+}
