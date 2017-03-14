@@ -474,6 +474,23 @@ ul {
       #home__whats-new .news-list ul h3 {
         padding-bottom: 0; }
 
+#home__product-banners {
+  background-color: #ececec;
+  padding: 10em 0; }
+  #home__product-banners .lgd-products {
+    display: flex; }
+    #home__product-banners .lgd-products .product-banner {
+      background-color: #fff; }
+      #home__product-banners .lgd-products .product-banner .product-banner-content {
+        padding: 0 10% 5%; }
+        #home__product-banners .lgd-products .product-banner .product-banner-content h2 {
+          margin-bottom: 0;
+          padding-top: 1em; }
+        #home__product-banners .lgd-products .product-banner .product-banner-content ul {
+          margin-left: 0; }
+          #home__product-banners .lgd-products .product-banner .product-banner-content ul li {
+            line-height: 2.5em; }
+
 /*
 * Features SASS
 */

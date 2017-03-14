@@ -66,11 +66,11 @@ get_header(); ?>
         </div>
     </section>
 
-    <section id="home__service-banners">
-        <div class="row">
+    <section id="home__product-banners">
+        <div class="row lgd-products">
             <div class="small-12 medium-4 column">
-                <div class="service-banner">
-                    <div class="service-banner-image">
+                <div class="product-banner">
+                    <div class="product-banner-image">
                         <?php
                         $img = get_field('banner_1_image');
                         ?>
@@ -81,15 +81,15 @@ get_header(); ?>
                                 alt="<?php the_field('banner_1_title');?>">
 
                      </div>
-                    <div class="service-banner-content">
+                    <div class="product-banner-content">
                         <h2><?php the_field('banner_1_title');?></h2>
                         <?php the_field('banner_1_intro_text');?>
                     </div>
                 </div>
             </div>
             <div class="small-12 medium-4 column">
-                <div class="service-banner">
-                    <div class="service-banner-image">
+                <div class="product-banner">
+                    <div class="product-banner-image">
                         <?php
                         $img = get_field('banner_2_image');
                         ?>
@@ -100,15 +100,15 @@ get_header(); ?>
                              alt="<?php the_field('banner_2_title');?>">
 
                     </div>
-                    <div class="service-banner-content">
+                    <div class="product-banner-content">
                         <h2><?php the_field('banner_2_title');?></h2>
                         <?php the_field('banner_2_intro_text');?>
                     </div>
                 </div>
             </div>
             <div class="small-12 medium-4 column">
-                <div class="service-banner">
-                    <div class="service-banner-image">
+                <div class="product-banner">
+                    <div class="product-banner-image">
                         <?php
                         $img = get_field('banner_3_image');
                         ?>
@@ -119,21 +119,9 @@ get_header(); ?>
                              alt="<?php the_field('banner_3_title');?>">
 
                     </div>
-                    <div class="service-banner-content">
+                    <div class="product-banner-content">
                         <h2><?php the_field('banner_3_title');?></h2>
                         <?php the_field('banner_3_intro_text');?>
-                    </div>
-                    <div class="service-banner-image">
-                        <img src="http://placehold.it/450x200">
-                    </div>
-                    <div class="service-banner-content">
-                        <h2>LocalGovMakers</h2>
-                        <ul>
-                            <li><a href="#">View the standard</a></li>
-                            <li><a href="#">Guidance notes</a></li>
-                            <li><a href="#">Case studies</a></li>
-                            <li><a href="#">Background</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>

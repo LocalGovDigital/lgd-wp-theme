@@ -53,3 +53,28 @@
 
 }
 
+// Home page product banners section
+#home__product-banners {
+	background-color: $light-grey;
+	padding: 10em 0;
+	.lgd-products {
+		display: flex;
+		.product-banner {
+			background-color: $white;
+			.product-banner-content{
+				padding: 0 10% 5%;
+				h2{
+					margin-bottom: 0;
+					padding-top: 1em;
+				}
+				ul {
+					margin-left: 0;
+					li{
+						line-height: 2.5em;
+					}
+				}
+			}
+
+		}
+	}
+}
