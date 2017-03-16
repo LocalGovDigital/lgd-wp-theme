@@ -56,25 +56,77 @@
 // Home page product banners section
 #home__product-banners {
 	background-color: $light-grey;
-	padding: 10em 0;
-	.lgd-products {
-		display: flex;
-		.product-banner {
-			background-color: $white;
-			.product-banner-content{
-				padding: 0 10% 5%;
-				h2{
-					margin-bottom: 0;
-					padding-top: 1em;
-				}
-				ul {
+	padding: 7em 0;
+	@include feature-banner();
+}
+
+
+// Home page local voice section
+#home__digital-voice {
+	padding: 5em 0;
+	h2 {
+		padding-top: 0;
+	}
+	.digital-voice-listings{
+		ul{
+			margin-left: 0;
+			margin-bottom: 2em;
+			margin-top: 2em;
+			display: flex;
+			-webkit-flex-wrap: wrap;
+			flex-wrap: wrap;
+			li {
+				transition: all 0.5s ease 0s;
+				float: left;
+				margin-left: 2%;
+				margin-bottom: 2em;
+				width: 32%;
+				border: 1px solid $mid-grey;
+				border-left: 3px solid $light-grey;
+				&:nth-child(1), &:nth-child(4){
 					margin-left: 0;
-					li{
-						line-height: 2.5em;
+				}
+				&:hover{
+					transition: all 0.5s ease 0s;
+					background-color: $xlight-blue;
+					cursor: pointer;
+					border-left: 3px solid $mid-grey;
+				}
+				a{
+					transition: all 0.5s ease 0s;
+					display: block;
+					width: 100%;
+					height: 100%;
+					padding: 1.5em 7% 2.0em;
+					margin-bottom: 3px;
+					h3{
+						font-size: 1.2em;
+						padding-top: 0;
+						color: $link-blue;
+					}
+					color: inherit;
+					&:hover{
+						transition: all 0.5s ease 0s;
+						border: none;
+
 					}
 				}
-			}
 
+
+			}
+		}
+		.digital-voice-button {
+			.button {
+				margin-top: 0;
+			}
 		}
 	}
+}
+
+// Home page event banners section
+#home__event-banners {
+	background-color: $light-grey;
+	padding: 7em 0;
+	@include feature-banner();
+	border-bottom: 10px solid $mid-grey;
 }
