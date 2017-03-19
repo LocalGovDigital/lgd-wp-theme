@@ -20,8 +20,10 @@
                 <?php wp_nav_menu( array( 'theme_location' => 'footer_nav' ) ); ?>
             </div>
         </div>
+    </section>
+    <section id="footer__terms-links">
         <div class="row">
-            <div class="small-12 medium-6 columns">
+            <div class="small-12 medium-6 columns copyright">
                 <p>&copy; Copyright LocalGov Digital </p>
             </div>
             <div class="small-12 medium-6 columns">

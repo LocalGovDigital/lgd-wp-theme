@@ -13,7 +13,7 @@ jQuery(document).ready(function($) {
     });
 
     // open desktop menu dropdown
-    $('.has-dropdown > a').on("click", function (e) {
+    $('.navbar .has-dropdown > a').on("click", function (e) {
         e.stopPropagation();
         e.preventDefault();
         //console.log('yes');
@@ -22,7 +22,7 @@ jQuery(document).ready(function($) {
             $(this).next('ul').addClass('drop-left');
         }
         var $this = $(this).next('ul');
-        $('.dropdown').not($this).slideUp();
+        $('.navbar .dropdown').not($this).slideUp();
         $this.slideToggle('1500', 'swing');
         //console.log('1');
     });
@@ -30,10 +30,10 @@ jQuery(document).ready(function($) {
     // close menu dropdown
     $(document).click(function (e) {
         e.stopPropagation();
-        var container = $(".has-dropdown");
+        var container = $(".navbar .has-dropdown");
         //check if the clicked area is dropDown or not
         if (container.has(e.target).length === 0) {
-            $('.dropdown').slideUp();
+            $('.navbar .dropdown').slideUp();
             //console.log('2');
         }
     });
@@ -47,6 +47,7 @@ jQuery(document).ready(function($) {
             $('.navbar > section').removeAttr('style');
         }
     });
+
 
 
     // SITE FUNCTIONS
