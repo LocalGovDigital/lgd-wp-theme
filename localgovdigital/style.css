@@ -520,6 +520,15 @@ ul {
       display: flex; }
     #home__product-banners .lgd-feature-banner .feature-banner {
       background-color: #fff; }
+      #home__product-banners .lgd-feature-banner .feature-banner .feature-banner-image {
+        height: 200px;
+        overflow: hidden;
+        position: relative; }
+        #home__product-banners .lgd-feature-banner .feature-banner .feature-banner-image img {
+          max-width: 100%;
+          min-height: 200px;
+          position: absolute;
+          vertical-align: middle; }
       #home__product-banners .lgd-feature-banner .feature-banner .feature-banner-content {
         padding: 0 10% 5%; }
         #home__product-banners .lgd-feature-banner .feature-banner .feature-banner-content h2 {
@@ -585,6 +594,15 @@ ul {
       display: flex; }
     #home__event-banners .lgd-feature-banner .feature-banner {
       background-color: #fff; }
+      #home__event-banners .lgd-feature-banner .feature-banner .feature-banner-image {
+        height: 200px;
+        overflow: hidden;
+        position: relative; }
+        #home__event-banners .lgd-feature-banner .feature-banner .feature-banner-image img {
+          max-width: 100%;
+          min-height: 200px;
+          position: absolute;
+          vertical-align: middle; }
       #home__event-banners .lgd-feature-banner .feature-banner .feature-banner-content {
         padding: 0 10% 5%; }
         #home__event-banners .lgd-feature-banner .feature-banner .feature-banner-content h2 {

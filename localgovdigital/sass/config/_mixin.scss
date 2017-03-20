@@ -84,6 +84,17 @@ $breakpoints: (
     }
     .feature-banner {
       background-color: $white;
+      .feature-banner-image {
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        img {
+          max-width: 100%;
+          min-height: 200px;
+          position: absolute;
+          vertical-align: middle;
+        }
+      }
       .feature-banner-content{
         padding: 0 10% 5%;
         h2{
