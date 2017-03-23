@@ -196,7 +196,7 @@ get_header(); ?>
                                 <?php echo $img['sizes']['medium_large']; ?> 768w,
                                 <?php echo $img['sizes']['large']; ?> 1024w"
                              src="<?php echo $img['sizes']['medium']; ?>"
-                             alt="<?php the_field('gdu_banner_1_title');?>">
+                             alt="<?php the_field('gdu_banner_2_title');?>">
                     </div>
                     <div class="feature-banner-content">
                         <h2><?php the_field('gdu_banner_2_title');?></h2>
@@ -216,7 +216,7 @@ get_header(); ?>
                                 <?php echo $img['sizes']['medium_large']; ?> 768w,
                                 <?php echo $img['sizes']['large']; ?> 1024w"
                              src="<?php echo $img['sizes']['medium']; ?>"
-                             alt="<?php the_field('gdu_banner_1_title');?>">
+                             alt="<?php the_field('gdu_banner_3_title');?>">
                     </div>
                     <div class="feature-banner-content">
                         <h2><?php the_field('gdu_banner_3_title');?></h2>
@@ -228,6 +228,7 @@ get_header(); ?>
             </div>
         </div>
     </section>
+
     
 </main>
 <?php get_footer();
