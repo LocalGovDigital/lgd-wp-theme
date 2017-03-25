@@ -6,6 +6,9 @@
 #home__intro {
 	padding: 3em 0;
 	border-bottom: 5px solid $light-grey;
+	@include media(portrait) {
+		padding: 0 0 3em;
+	}
 	.popular-links {
 		h2{
 			padding-bottom: 0;
@@ -18,14 +21,27 @@
 				line-height:2.5em;
 			}
 		}
+		@include media(small) {
+			border-top: 1px solid $light-grey;
+		}
 	}
 }
 
 // Home page news section
 #home__whats-new {
 	padding: 5em 0;
+	@include media(portrait) {
+		padding: 2em 0 3em;
+	}
 	.feature-news{
 		padding-right: 4%;
+		@include media(portrait) {
+			padding-bottom: 2em;
+			padding-right: 2%;
+		}
+		@include media(small) {
+			width:100%;
+		}
 		h2 {
 
 		}
@@ -39,6 +55,12 @@
 	.news-list {
 		border-left: 2px dotted $light-grey;
 		padding-left: 4%;
+		@include media(portrait) {
+			padding: 2em 2%;
+		}
+		@include media(small) {
+			display: none;
+		}
 		h2 {
 			padding-top: 0;
 			padding-bottom: 0;
@@ -49,6 +71,7 @@
 				padding-bottom: 0;
 			}
 		}
+
 	}
 
 }

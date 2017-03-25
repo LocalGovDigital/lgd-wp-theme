@@ -86,6 +86,16 @@ ul {
 .row .row, form .row .row {
   margin: 0; }
 
+@media screen and (max-width: 40em) {
+  .desktop-only {
+    display: none; } }
+
+.mobile-only {
+  display: none; }
+  @media screen and (max-width: 40em) {
+    .mobile-only {
+      display: block; } }
+
 /*
 * Default Style SASS
 */
@@ -293,10 +303,15 @@ ul {
 #global__brand-nav .main-nav {
   height: auto; }
   @media screen and (max-width: 48em) {
-    #global__brand-nav .main-nav .column {
-      padding: 0; } }
+    #global__brand-nav .main-nav {
+      width: 100%; }
+      #global__brand-nav .main-nav .column {
+        padding: 0; } }
   #global__brand-nav .main-nav .navbar {
     padding: 0; }
+    @media screen and (max-width: 48em) {
+      #global__brand-nav .main-nav .navbar {
+        float: none; } }
   #global__brand-nav .main-nav section {
     position: relative; }
     @media screen and (max-width: 48em) {
@@ -321,13 +336,6 @@ ul {
         float: left;
         position: relative;
         min-height: 1.8em; }
-        @media screen and (max-width: 48em) {
-          #global__brand-nav .main-nav section ul > li {
-            width: 100%;
-            border-bottom: 1px solid vlight-grey;
-            border-right: none;
-            height: auto;
-            min-height: auto; } }
         #global__brand-nav .main-nav section ul > li:first-child {
           border-left: 1px solid #ececec; }
           @media screen and (max-width: 48em) {
@@ -343,6 +351,15 @@ ul {
           #global__brand-nav .main-nav section ul > li a:focus {
             outline: none;
             border-bottom: 2px solid #d68600; }
+        @media screen and (max-width: 48em) {
+          #global__brand-nav .main-nav section ul > li {
+            width: 100%;
+            border-bottom: 1px solid vlight-grey;
+            border-right: none;
+            height: auto;
+            min-height: auto; }
+            #global__brand-nav .main-nav section ul > li a {
+              padding: 0.5em 0.6em; } }
     @media screen and (max-width: 48em) {
       #global__brand-nav .main-nav section .has-dropdown {
         padding: 0; } }
@@ -358,6 +375,9 @@ ul {
       padding-right: 10px;
       padding-top: 3px;
       font-size: 0.9em; }
+      @media screen and (max-width: 48em) {
+        #global__brand-nav .main-nav section .has-dropdown:before {
+          padding-right: 2.7em; } }
     #global__brand-nav .main-nav section .has-dropdown > .dropdown {
       display: none;
       height: auto;
@@ -483,6 +503,9 @@ ul {
 #home__intro {
   padding: 3em 0;
   border-bottom: 5px solid #ececec; }
+  @media screen and (max-width: 48em) {
+    #home__intro {
+      padding: 0 0 3em; } }
   #home__intro .popular-links h2 {
     padding-bottom: 0; }
   #home__intro .popular-links ul {
@@ -491,11 +514,24 @@ ul {
     #home__intro .popular-links ul li {
       padding-left: 0;
       line-height: 2.5em; }
+  @media screen and (max-width: 40em) {
+    #home__intro .popular-links {
+      border-top: 1px solid #ececec; } }
 
 #home__whats-new {
   padding: 5em 0; }
+  @media screen and (max-width: 48em) {
+    #home__whats-new {
+      padding: 2em 0 3em; } }
   #home__whats-new .feature-news {
     padding-right: 4%; }
+    @media screen and (max-width: 48em) {
+      #home__whats-new .feature-news {
+        padding-bottom: 2em;
+        padding-right: 2%; } }
+    @media screen and (max-width: 40em) {
+      #home__whats-new .feature-news {
+        width: 100%; } }
     #home__whats-new .feature-news p {
       margin-bottom: 0.5em; }
     #home__whats-new .feature-news .small-date {
@@ -503,6 +539,12 @@ ul {
   #home__whats-new .news-list {
     border-left: 2px dotted #ececec;
     padding-left: 4%; }
+    @media screen and (max-width: 48em) {
+      #home__whats-new .news-list {
+        padding: 2em 2%; } }
+    @media screen and (max-width: 40em) {
+      #home__whats-new .news-list {
+        display: none; } }
     #home__whats-new .news-list h2 {
       padding-top: 0;
       padding-bottom: 0; }
@@ -519,7 +561,8 @@ ul {
     #home__product-banners .lgd-feature-banner .column {
       display: flex; }
     #home__product-banners .lgd-feature-banner .feature-banner {
-      background-color: #fff; }
+      background-color: #fff;
+      width: 100%; }
       #home__product-banners .lgd-feature-banner .feature-banner .feature-banner-image {
         height: 200px;
         overflow: hidden;
@@ -593,7 +636,8 @@ ul {
     #home__event-banners .lgd-feature-banner .column {
       display: flex; }
     #home__event-banners .lgd-feature-banner .feature-banner {
-      background-color: #fff; }
+      background-color: #fff;
+      width: 100%; }
       #home__event-banners .lgd-feature-banner .feature-banner .feature-banner-image {
         height: 200px;
         overflow: hidden;
@@ -768,7 +812,7 @@ label, legend {
   border: 2px solid #0073b9;
   text-align: left;
   font-size: 1em; }
-  @media screen and (max-width: 48em) {
+  @media screen and (max-width: 30em) {
     .button {
       width: 100%;
       margin-top: 0em; } }

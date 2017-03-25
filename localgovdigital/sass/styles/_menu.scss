@@ -103,13 +103,16 @@
 		height: auto;
 		//min-height:50px;
 		@include media(portrait) {
+			width: 100%;
 			.column {
 				padding: 0;
 			}
 		}
 		.navbar {
 			padding: 0;
-
+			@include media(portrait) {
+				float: none;
+			}
 		}
 		section {
 			position: relative;
@@ -141,13 +144,6 @@
 					position: relative;
 					//transition: all 0.5s ease 0s;
 					min-height: 1.8em;
-					@include media(portrait) {
-						width: 100%;
-						border-bottom: 1px solid vlight-grey;
-						border-right: none;
-						height: auto;
-						min-height: auto;
-					}
 					&:first-child {
 						border-left: 1px solid $light-grey;
 						@include media(portrait) {
@@ -164,6 +160,16 @@
 						&:focus {
 							outline: none;
 							border-bottom: 2px solid $orange;
+						}
+					}
+					@include media(portrait) {
+						width: 100%;
+						border-bottom: 1px solid vlight-grey;
+						border-right: none;
+						height: auto;
+						min-height: auto;
+						a {
+							padding: 0.5em 0.6em;
 						}
 					}
 
@@ -187,6 +193,9 @@
 					padding-right: 10px;
 					padding-top: 3px;
 					font-size: 0.9em;
+					@include media(portrait) {
+						padding-right: 2.7em;
+					}
 				}
 				> .dropdown {
 					display: none;

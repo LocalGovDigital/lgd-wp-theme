@@ -14,9 +14,9 @@ Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-rea
 /*
 * Config SASS
 */
+@import "sass/config/mixin";
 @import "sass/config/config";
 @import "sass/config/functions";
-@import "sass/config/mixin";
 @import "sass/config/includes";
 @import "sass/config/grid";
 

@@ -51,6 +51,20 @@ jQuery(document).ready(function($) {
 
 
     // SITE FUNCTIONS
+    // Consultation questions notes show / hide for all devices
+    $('.mobile-only a.open-news').on("click", function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        $(this).nextAll('.news-list').slideToggle('slow', 'swing');
+    });
+
+    $(window).resize(function() {
+        var docWidth = $(document).width();
+        //console.log(docWidth);
+        if(docWidth > '768' ) {
+            $('.news-list').removeAttr('style');
+        }
+    });
 
     // Consultation questions notes show / hide for all devices
     $('.guidance-item a.open').on("click", function (e) {

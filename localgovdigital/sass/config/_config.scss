@@ -132,4 +132,17 @@ ul {
 	margin: 0;
 }
 
+.desktop-only {
+	@include media(small) {
+		display: none;
+	}
+}
+
+.mobile-only {
+	display: none;
+	@include media(small) {
+		display: block;
+	}
+}
+
 

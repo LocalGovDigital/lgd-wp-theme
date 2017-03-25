@@ -26,6 +26,8 @@ get_header(); ?>
     <?php endwhile; endif;?>
     <section id="home__whats-new">
         <div class="row">
+            <div class="small-12 medium-7 column feature-news">
+                <div class="mobile-only"><h2>What's new in LocalGov</h2></div>
                 <?php
                 // query the first 6 posts within 'news' category
                 $the_query = new WP_Query( array( 'category_name' => 'news', 'posts_per_page' => '6' ) );
@@ -35,12 +37,12 @@ get_header(); ?>
                 if ( $the_query->have_posts() ) : while ($the_query->have_posts()) : $the_query->the_post();
                     // if the first item, display as feature
                     if ($i == '1') : ?>
-                        <div class="small-12 medium-7 column feature-news">
-                            <?php the_post_thumbnail(); ?>
-                            <h3><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
-                            <?php the_excerpt();?>
-                            <span class="small-date"><?php the_date();?></span>
-                        </div>
+
+                        <a href="<?php the_permalink();?>"><?php the_post_thumbnail(); ?></a>
+                        <h3><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
+                        <?php the_excerpt();?>
+                        <span class="small-date"><?php the_date();?></span>
+
                     <?php else :
                     // else create $news_list variable with all other posts in the loop
                     $news_list = $news_list.'
@@ -54,9 +56,11 @@ get_header(); ?>
                 endwhile; endif;
                 wp_reset_postdata();
                 ?>
+                <div class="mobile-only"><a href="#" class="button secondary open-news">More news</a></div>
+            </div>
                 <div class="small-12 medium-5 column news-list">
-                    <h2>What's new in LocalGov</h2>
-                    <ul>
+                    <div class="desktop-only"><h2>What's new in LocalGov</h2></div>
+                    <ul class="news-list-items">
                         <?php
                         // display all other posts
                         echo $news_list;
