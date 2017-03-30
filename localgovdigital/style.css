@@ -558,6 +558,9 @@ ul {
   padding: 7em 0; }
   #home__product-banners .lgd-feature-banner {
     display: flex; }
+    @media screen and (max-width: 40em) {
+      #home__product-banners .lgd-feature-banner {
+        flex-flow: wrap; } }
     #home__product-banners .lgd-feature-banner .column {
       display: flex; }
     #home__product-banners .lgd-feature-banner .feature-banner {
@@ -568,10 +571,15 @@ ul {
         overflow: hidden;
         position: relative; }
         #home__product-banners .lgd-feature-banner .feature-banner .feature-banner-image img {
-          max-width: 100%;
-          min-height: 200px;
           position: absolute;
-          vertical-align: middle; }
+          right: 50%;
+          top: 50%;
+          left: 50%;
+          bottom: 50%;
+          height: 200px;
+          width: auto;
+          transform: translate(-50%, -50%);
+          max-width: inherit; }
       #home__product-banners .lgd-feature-banner .feature-banner .feature-banner-content {
         padding: 0 10% 5%; }
         #home__product-banners .lgd-feature-banner .feature-banner .feature-banner-content h2 {
@@ -609,6 +617,10 @@ ul {
         background-color: #F2FAFF;
         cursor: pointer;
         border-left: 3px solid #d5d5d5; }
+      @media screen and (max-width: 40em) {
+        #home__digital-voice .digital-voice-listings ul li {
+          width: 100%;
+          margin-left: 0; } }
       #home__digital-voice .digital-voice-listings ul li a {
         transition: all 0.5s ease 0s;
         display: block;
@@ -633,6 +645,9 @@ ul {
   border-bottom: 10px solid #d5d5d5; }
   #home__event-banners .lgd-feature-banner {
     display: flex; }
+    @media screen and (max-width: 40em) {
+      #home__event-banners .lgd-feature-banner {
+        flex-flow: wrap; } }
     #home__event-banners .lgd-feature-banner .column {
       display: flex; }
     #home__event-banners .lgd-feature-banner .feature-banner {
@@ -643,10 +658,15 @@ ul {
         overflow: hidden;
         position: relative; }
         #home__event-banners .lgd-feature-banner .feature-banner .feature-banner-image img {
-          max-width: 100%;
-          min-height: 200px;
           position: absolute;
-          vertical-align: middle; }
+          right: 50%;
+          top: 50%;
+          left: 50%;
+          bottom: 50%;
+          height: 200px;
+          width: auto;
+          transform: translate(-50%, -50%);
+          max-width: inherit; }
       #home__event-banners .lgd-feature-banner .feature-banner .feature-banner-content {
         padding: 0 10% 5%; }
         #home__event-banners .lgd-feature-banner .feature-banner .feature-banner-content h2 {

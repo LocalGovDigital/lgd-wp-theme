@@ -79,8 +79,12 @@ $breakpoints: (
 @mixin feature-banner () {
   .lgd-feature-banner {
     display: flex;
+    @include media(small) {
+      flex-flow: wrap;
+    }
     .column {
       display: flex;
+
     }
     .feature-banner {
       background-color: $white;
@@ -90,10 +94,15 @@ $breakpoints: (
         overflow: hidden;
         position: relative;
         img {
-          max-width: 100%;
-          min-height: 200px;
           position: absolute;
-          vertical-align: middle;
+          right: 50%;
+          top: 50%;
+          left: 50%;
+          bottom: 50%;
+          height: 200px;
+          width: auto;
+          transform: translate(-50%, -50%);
+          max-width: inherit;
         }
       }
       .feature-banner-content{

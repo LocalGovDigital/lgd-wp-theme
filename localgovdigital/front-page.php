@@ -74,6 +74,9 @@ get_header(); ?>
         <div class="row lgd-feature-banner">
             <div class="small-12 medium-4 column">
                 <div class="feature-banner">
+                    <?php
+                    $img = get_field('banner_1_image');
+                    ?>
                     <div class="feature-banner-image">
                         <?php
                         $img = get_field('banner_1_image');

@@ -115,6 +115,10 @@
 					cursor: pointer;
 					border-left: 3px solid $mid-grey;
 				}
+				@include media(small) {
+					width:100%;
+					margin-left: 0;
+				}
 				a{
 					transition: all 0.5s ease 0s;
 					display: block;
