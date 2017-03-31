@@ -39,8 +39,10 @@
 			padding-bottom: 2em;
 			padding-right: 2%;
 		}
+
 		@include media(small) {
 			width:100%;
+			padding-bottom: 0;
 		}
 		h2 {
 
@@ -51,15 +53,23 @@
 		.small-date {
 			color: $content-black;
 		}
+		.open-news{
+			margin-top:2em;
+		}
 	}
 	.news-list {
 		border-left: 2px dotted $light-grey;
 		padding-left: 4%;
 		@include media(portrait) {
 			padding: 2em 2%;
+			height: 480px;
+			overflow-y: scroll;
+			padding: 0 4%;
 		}
 		@include media(small) {
 			display: none;
+			overflow: visible;
+			padding: 0 2%;
 		}
 		h2 {
 			padding-top: 0;
@@ -80,6 +90,9 @@
 #home__product-banners {
 	background-color: $light-grey;
 	padding: 7em 0;
+	@include media(small_landscape) {
+		padding: 5em 0;
+	}
 	@include feature-banner();
 }
 
@@ -89,15 +102,22 @@
 	padding: 5em 0;
 	h2 {
 		padding-top: 0;
+		@include media(medium) {
+			padding-bottom: 0;
+		}
 	}
 	.digital-voice-listings{
 		ul{
 			margin-left: 0;
-			margin-bottom: 2em;
 			margin-top: 2em;
+			margin-bottom: 2em;
 			display: flex;
 			-webkit-flex-wrap: wrap;
 			flex-wrap: wrap;
+			@include media(portrait) {
+				margin-bottom: 0em;
+				margin-top: 0em;
+			}
 			li {
 				transition: all 0.5s ease 0s;
 				float: left;
@@ -114,6 +134,15 @@
 					background-color: $xlight-blue;
 					cursor: pointer;
 					border-left: 3px solid $mid-grey;
+				}
+				@include media(medium) {
+					width: 49%;
+					&:nth-child(1), &:nth-child(3), &:nth-child(5){
+						margin-left: 0;
+					}
+					&:nth-child(4) {
+						margin-left: 2%;
+					}
 				}
 				@include media(small) {
 					width:100%;
@@ -154,6 +183,12 @@
 #home__event-banners {
 	background-color: $light-grey;
 	padding: 7em 0;
+	@include media(small_landscape) {
+		padding: 5em 0;
+	}
 	@include feature-banner();
 	border-bottom: 10px solid $mid-grey;
+	.button {
+		margin-top: 1.5em;
+	}
 }

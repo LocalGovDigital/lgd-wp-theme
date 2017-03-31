@@ -318,12 +318,18 @@
 	#menu-footer-nav {
 		display: flex;
 		flex-flow: wrap;
+		@include media(small) {
+			display: block;
+		}
 		> li {
 			width: 50%;
 			float: left;
 			margin-bottom: 2em;
 			a {
 				line-height: 1.5em;
+			}
+			@include media(small) {
+				width:100%;
 			}
 			&.has-dropdown {
 				ul {
@@ -352,18 +358,35 @@
 // Footer terms styles
 #footer__terms-links {
 	padding-top: 3em;
-	.copyright {
-
-	}
 	.menu-terms-container {
-		ul {
+		float: left;
+		margin-bottom: 0.5em;
+		@include media(large) {
 			float: right;
+			margin-bottom: 0;
+		}
+		ul {
+			float: left;
+			@include media(large) {
+				float: right;
+			}
 			li {
 				vertical-align: top;
+				@include media(small) {
+					display: block;
+				}
 				a {
 					padding-bottom: 0;
 					padding-top: 0;
 					line-height: 1.5em;
+					@include media(small) {
+						padding-left: 0;
+					}
+				}
+				&:nth-child(1) {
+					a {
+						padding-left: 0;
+					}
 				}
 			}
 		}

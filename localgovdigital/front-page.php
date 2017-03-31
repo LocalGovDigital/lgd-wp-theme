@@ -84,7 +84,7 @@ get_header(); ?>
                         <img srcset="<?php echo $img['sizes']['medium']; ?> 300w,
                                 <?php echo $img['sizes']['medium_large']; ?> 768w,
                                 <?php echo $img['sizes']['large']; ?> 1024w"
-                                src="<?php echo $img['sizes']['medium']; ?>"
+                                src="<?php echo $img['sizes']['medium_large']; ?>"
                                 alt="<?php the_field('banner_1_title');?>">
 
                      </div>

@@ -16,18 +16,18 @@
 <footer id="global__footer_content">
     <section id="footer__nav-links">
         <div class="row">
-            <div class="small-12 medium-6 columns">
+            <div class="medium-12 large-6 columns">
                 <?php wp_nav_menu( array( 'theme_location' => 'footer_nav' ) ); ?>
             </div>
         </div>
     </section>
     <section id="footer__terms-links">
         <div class="row">
-            <div class="small-12 medium-6 columns copyright">
-                <p>&copy; Copyright LocalGov Digital </p>
-            </div>
-            <div class="small-12 medium-6 columns">
+            <div class="medium-12 large-6 large-push-6 columns">
                 <?php wp_nav_menu( array( 'theme_location' => 'footer_terms' ) ); ?>
+            </div>
+            <div class="medium-12 large-6 large-pull-6 columns copyright">
+                <p>&copy; Copyright LocalGov Digital </p>
             </div>
         </div>
     </section>

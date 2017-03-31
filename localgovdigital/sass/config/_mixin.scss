@@ -79,34 +79,63 @@ $breakpoints: (
 @mixin feature-banner () {
   .lgd-feature-banner {
     display: flex;
-    @include media(small) {
-      flex-flow: wrap;
+    @include media(small_landscape) {
+      display: block;
     }
     .column {
       display: flex;
-
+      @include media(small_landscape) {
+        display: block;
+        width: 100%;
+      }
     }
     .feature-banner {
       background-color: $white;
       width:100%;
+      @include media(small_landscape) {
+        overflow: hidden;
+        width: 100%;
+        margin-bottom: 1em;
+        display: flex;
+      }
+      @include media(small) {
+        display: block;
+      }
       .feature-banner-image {
-        height: 200px;
         overflow: hidden;
         position: relative;
+        min-height: 278px;
+        @include media(small_landscape) {
+          display: block;
+          width: 50%;
+          float: left;
+        }
+        @include media(small) {
+          display: none;
+        }
         img {
           position: absolute;
           right: 50%;
           top: 50%;
           left: 50%;
           bottom: 50%;
-          height: 200px;
           width: auto;
           transform: translate(-50%, -50%);
           max-width: inherit;
+          max-height: 100%;
         }
       }
       .feature-banner-content{
         padding: 0 10% 5%;
+        @include media(small_landscape) {
+          display: block;
+          width: 50%;
+          float: left;
+          padding: 0 5% 5%;
+        }
+        @include media(small) {
+          width: 100%;
+        }
         h2{
           margin-bottom: 0;
           padding-top: 1em;

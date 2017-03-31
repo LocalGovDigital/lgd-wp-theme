@@ -5,12 +5,12 @@ function lgd_scripts() {
 
 	/* jQuery javascript */
 	wp_deregister_script('jquery');
-	wp_enqueue_script('js', 'https://cdn.jsdelivr.net/g/jquery@3.1.1,foundation@6.2.4,modernizr@3.3.1', array(), null, true );
-    //wp_enqueue_script('jquery');
+	wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.2.1.min.js', array(), null, false );
+
 
 	/* Add global javascript */
 	wp_enqueue_script('site_functions', get_template_directory_uri() . '/assets/js/functions.js', array(), null, true );
-
+    wp_enqueue_script('js', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', array(), null, true );
 
 	/** Enqueue global styles. */
 

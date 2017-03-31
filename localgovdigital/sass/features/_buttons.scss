@@ -87,6 +87,14 @@
 	&.large {
 		font-size: 1.25rem;
 	}
+	&.opened {
+		&::before{
+			transform: rotate(90deg);
+			transform-origin: center center 0;
+			right: 0.6em;
+			margin-top: -0.5em;
+		}
+	}
 }
 
 p {
