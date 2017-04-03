@@ -144,6 +144,7 @@ ul {
   margin: 1em 0; }
 
 #global__footer_content {
+  border-top: 10px solid #d5d5d5;
   padding-top: 5em; }
 
 .fa-search:before {
@@ -720,8 +721,7 @@ ul {
 
 #home__event-banners {
   background-color: #ececec;
-  padding: 7em 0;
-  border-bottom: 10px solid #d5d5d5; }
+  padding: 7em 0; }
   @media screen and (max-width: 61.875em) {
     #home__event-banners {
       padding: 5em 0; } }
