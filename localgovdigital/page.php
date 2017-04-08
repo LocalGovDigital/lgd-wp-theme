@@ -10,6 +10,28 @@
 
 get_header(); ?>
 
+<!--page specific content -->
+<a name="content-start"></a>
+<main>
+    <section id="global__content">
+        <div class="row">
+            <div id="guidance__consultation-questions" class="small-12 medium-8 columns body_content">
+                <?php if (have_posts() ) : while ( have_posts() ): the_post(); ?>
+                    <h1><?php the_title(); ?></h1>
+                    <?php the_content(); ?>
+                <?php endwhile; endif;?>
+                <?php //comments_template(); ?>
+            </div>
+            <?php get_sidebar(); ?>
+        </div><!-- Foundation .row end -->
+    </section>
+</main>
+<!--end page specific content -->
+<?php get_footer(); ?>
+
+
+
+<?php /* Old twenty seventeen template for reference
 <div class="container">
   <div class="row">
     <main class="col-sm-12" role="main">
@@ -29,4 +51,4 @@ get_header(); ?>
   </div>
 </div>
 
-<?php get_footer();
+<?php get_footer();*/?>

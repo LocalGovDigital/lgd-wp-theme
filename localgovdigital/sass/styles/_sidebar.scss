@@ -1,1 +1,39 @@
 // SIDEBAR STYLES
+#global__sidebar {
+	@include media(portrait) {
+		width: 100%;
+		background-color: $light-grey;
+		border-bottom: 2px solid $light-grey;
+		padding: 3em 1em;
+	}
+	aside{
+		padding: 0em 1.5em;
+		@include media(portrait) {
+			border-top: 10px solid $content-black;
+			padding: 0em 1.5em 1.5em 1.5em;
+		}
+		.sidebar_content {
+			border-top: 10px solid $content-black;
+			@include media(portrait) {
+				border-top: none;
+			}
+			margin-top: 0.8em;
+			padding-top: 0.5em;
+			h3 {
+				font-size: 1.9em;
+				padding-top: 0.3em;
+			}
+			ul{
+				margin: 1em 0;
+
+				li{
+					list-style: none !important;
+					padding: 0 0 1em 0em;
+					@include media(small_landscape) {
+						padding: 0 0 1em 0em;
+					}
+				}
+			}
+		}
+	}
+}
