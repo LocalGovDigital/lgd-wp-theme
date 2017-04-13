@@ -191,3 +191,33 @@
 		margin-top: 1.5em;
 	}
 }
+
+// Global content styles
+#global__content {
+	padding-top: 4em;
+}
+
+// Standards list items
+#standards__overview {
+	.standards-list {
+		.standards-item {
+			border-top: 1px solid $light-grey;
+			padding-top: 3em;
+			margin-bottom: 2em;
+			overflow: hidden;
+
+			.standards_number {
+				font-weight: bold;
+				font-size: 1.5em;
+				padding-top: 0.15em;
+				display: block;
+			}
+			h2 {
+				font-size: 1.5em;
+				padding-top: 0;
+				font-weight: bold;
+			}
+
+		}
+	}
+}

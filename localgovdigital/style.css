@@ -823,6 +823,24 @@ ul {
   #home__event-banners .button {
     margin-top: 1.5em; }
 
+#global__content {
+  padding-top: 4em; }
+
+#standards__overview .standards-list .standards-item {
+  border-top: 1px solid #ececec;
+  padding-top: 3em;
+  margin-bottom: 2em;
+  overflow: hidden; }
+  #standards__overview .standards-list .standards-item .standards_number {
+    font-weight: bold;
+    font-size: 1.5em;
+    padding-top: 0.15em;
+    display: block; }
+  #standards__overview .standards-list .standards-item h2 {
+    font-size: 1.5em;
+    padding-top: 0;
+    font-weight: bold; }
+
 /*
 * Features SASS
 */

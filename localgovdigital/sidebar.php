@@ -8,6 +8,20 @@
 <div id="global__sidebar" class="small-12 medium-4 columns">
     <aside>
         <div class="sidebar_content">
+            <?php if(get_field('add_custom_links')) :
+                echo get_field('add_custom_links');
+            endif; ?>
+
+            <?php
+            get_field('document_description');
+            if(get_field('upload_document')) :
+                $document = get_field('upload_document');
+
+                if($document) : ?>
+                    <a href="<?php echo $document['url']; ?>"><?php echo get_field('document_description'); ?></a>
+                <?php endif;
+            endif; ?>
+
             <?php /*
             // creates the supporting documents list from the ACF repeater field in the viewed cms page
             if (have_rows('documents')): ?>
