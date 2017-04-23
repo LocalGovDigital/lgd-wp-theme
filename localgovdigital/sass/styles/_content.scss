@@ -199,6 +199,9 @@
 
 // Standards list items
 #standards__overview {
+	h2{
+		font-size: 1.3em;
+	}
 	.standards-list {
 		.standards-item {
 			border-top: 1px solid $light-grey;
@@ -208,16 +211,50 @@
 
 			.standards_number {
 				font-weight: bold;
-				font-size: 1.5em;
+				font-size: 1.8em;
 				padding-top: 0.15em;
 				display: block;
 			}
 			h2 {
-				font-size: 1.5em;
+				font-size: 1.8em;
 				padding-top: 0;
+				padding-bottom: 0;
 				font-weight: bold;
+			}
+			p {
+				margin-bottom: 1em;
+				font-size: 1.2em;
 			}
 
 		}
 	}
+}
+
+// Standards detail page
+#standards__detail {
+	.lgdss-title {
+		font-size: 1.2em;
+		margin-top: 0.5em;
+	}
+	.standard-point {
+		border-top: 1px solid $light-grey;
+		border-bottom: 1px solid $light-grey;
+		margin: 2em 0 3em;
+		padding: 2.2em 0 2em;
+		.standard-intro {
+			font-size: 1.3em;
+		}
+	}
+	.standard-guidelines {
+		h2 {
+			font-size:1.5em;
+		}
+
+	}
+	.standard-assessment {
+		h2 {
+			font-size:1.5em;
+		}
+	}
+
 }

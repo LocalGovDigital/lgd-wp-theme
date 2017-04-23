@@ -145,7 +145,8 @@ ul {
 
 #global__footer_content {
   border-top: 10px solid #d5d5d5;
-  padding-top: 5em; }
+  padding-top: 5em;
+  margin-top: 2em; }
 
 @media screen and (max-width: 48em) {
   #global__sidebar {
@@ -162,7 +163,7 @@ ul {
   #global__sidebar aside .sidebar_content {
     border-top: 10px solid #565656;
     margin-top: 0.8em;
-    padding-top: 0.5em; }
+    padding-top: 1.5em; }
     @media screen and (max-width: 48em) {
       #global__sidebar aside .sidebar_content {
         border-top: none; } }
@@ -177,6 +178,8 @@ ul {
         @media screen and (max-width: 61.875em) {
           #global__sidebar aside .sidebar_content ul li {
             padding: 0 0 1em 0em; } }
+    #global__sidebar aside .sidebar_content a {
+      font-size: 1.2em; }
 
 .fa-search:before {
   content: "\f002"; }
@@ -826,6 +829,8 @@ ul {
 #global__content {
   padding-top: 4em; }
 
+#standards__overview h2 {
+  font-size: 1.3em; }
 #standards__overview .standards-list .standards-item {
   border-top: 1px solid #ececec;
   padding-top: 3em;
@@ -833,13 +838,32 @@ ul {
   overflow: hidden; }
   #standards__overview .standards-list .standards-item .standards_number {
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.8em;
     padding-top: 0.15em;
     display: block; }
   #standards__overview .standards-list .standards-item h2 {
-    font-size: 1.5em;
+    font-size: 1.8em;
     padding-top: 0;
+    padding-bottom: 0;
     font-weight: bold; }
+  #standards__overview .standards-list .standards-item p {
+    margin-bottom: 1em;
+    font-size: 1.2em; }
+
+#standards__detail .lgdss-title {
+  font-size: 1.2em;
+  margin-top: 0.5em; }
+#standards__detail .standard-point {
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  margin: 2em 0 3em;
+  padding: 2.2em 0 2em; }
+  #standards__detail .standard-point .standard-intro {
+    font-size: 1.3em; }
+#standards__detail .standard-guidelines h2 {
+  font-size: 1.5em; }
+#standards__detail .standard-assessment h2 {
+  font-size: 1.5em; }
 
 /*
 * Features SASS

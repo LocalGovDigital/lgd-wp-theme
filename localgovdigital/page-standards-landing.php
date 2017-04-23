@@ -22,7 +22,7 @@ get_header(); ?>
                         <?php if ( have_posts() ) : while ( $standards_query->have_posts() ) : $standards_query->the_post(); ?>
                             <div class="standards-item">
                                 <div class="small-1 columns"><span class="standards_number"><?php echo get_field('number');?>.</span></div>
-                                <div class="small-11 columns"><h2><?php the_title();?></h2><?php the_content();?><p><a href="<?php get_the_permalink();?>">Read more about point <?php echo get_field('number');?></a></p></div>
+                                <div class="small-11 columns"><h2><?php the_title();?></h2><?php the_content();?><p><a href="<?php the_permalink();?>">Read more about point <?php echo get_field('number');?></a></p></div>
                             </div>
                         <?php endwhile; else : ?>
 
