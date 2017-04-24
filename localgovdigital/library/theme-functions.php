@@ -1,6 +1,31 @@
 <?php
 /** Custom functions */
 
+//** Initiates breadcrumb trails */
+
+function my_bcn_allowed_html($allowed_html)
+{
+    $allowed_html['li'] = array(
+        'title' => true,
+        'class' => true,
+        'id' => true,
+        'dir' => true,
+        'align' => true,
+        'lang' => true,
+        'xml:lang' => true,
+        'aria-hidden' => true,
+        'data-icon' => true,
+        'itemref' => true,
+        'itemid' => true,
+        'itemprop' => true,
+        'itemscope' => true,
+        'itemtype' => true
+    );
+    return $allowed_html;
+}
+add_filter('bcn_allowed_html', 'my_bcn_allowed_html');
+
+
 //** Identify active consultations from list of pages
 function get_children_with_meta( $parent_id, $metakey ) {
     // query all pages with a specified parent ($parent_id) that have a value for custom field id name($metakey) and order by the page structure and ascending

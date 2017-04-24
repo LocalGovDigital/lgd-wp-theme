@@ -46,7 +46,20 @@
                 </nav>
             </div>
     </div>
+    <?php if(!is_front_page()) :?>
+    <div id="global__breadcrumb" typeof="BreadcrumbList" vocab="http://schema.org/">
+        <div class="row">
+            <div class="small-12 column">
+                <?php if(function_exists('bcn_display'))
+                {
+                    bcn_display();
+                }?>
+            </div>
+        </div>
+    </div>
+    <?php endif;?>
 </header>
+
 <?php /*if (!is_home() && function_exists('bcn_display')) : ?>
 <div id="global__breadcrumb" class="container">
 	<ol class="breadcrumb" typeof="BreadcrumbList" vocab="https://schema.org/">

@@ -13,14 +13,27 @@
             endif; ?>
 
             <?php
-            get_field('document_description');
             if(get_field('upload_document')) :
+                get_field('document_description');
                 $document = get_field('upload_document');
 
                 if($document) : ?>
                     <a href="<?php echo $document['url']; ?>"><?php echo get_field('document_description'); ?></a>
                 <?php endif;
             endif; ?>
+
+            <?php if(get_post_type() == 'standards') : ?>
+                <div class="sidebar-standards-list">
+                    <ul>
+                    <?php $standards_query = new WP_Query( array( 'post_type' => 'standards', 'posts_per_page' => '-1', 'meta_key' => 'number', 'orderby'	=> 'meta_value_num', 'order' => 'ASC') );?>
+                    <?php if ( have_posts() ) : while ( $standards_query->have_posts() ) : $standards_query->the_post(); ?>
+                        <li>
+                            <a href="<?php the_permalink();?>"><?php echo get_field('number');?>. <?php the_title();?></a>
+                        </li>
+                    <?php endwhile; endif; wp_reset_query(); ?>
+                    </ul>
+                </div>
+            <?php endif; ?>
 
             <?php /*
             // creates the supporting documents list from the ACF repeater field in the viewed cms page

@@ -141,7 +141,7 @@ ul {
       margin-right: 1em; }
 
 #global__breadcrumb {
-  margin: 1em 0; }
+  margin: 2em 0; }
 
 #global__footer_content {
   border-top: 10px solid #d5d5d5;
@@ -827,7 +827,7 @@ ul {
     margin-top: 1.5em; }
 
 #global__content {
-  padding-top: 4em; }
+  padding-top: 1em; }
 
 #standards__overview h2 {
   font-size: 1.3em; }
@@ -851,8 +851,9 @@ ul {
     font-size: 1.2em; }
 
 #standards__detail .lgdss-title {
-  font-size: 1.2em;
-  margin-top: 0.5em; }
+  font-size: 1.5em;
+  margin-top: 0.5em;
+  color: #7f7f7f; }
 #standards__detail .standard-point {
   border-top: 1px solid #ececec;
   border-bottom: 1px solid #ececec;
