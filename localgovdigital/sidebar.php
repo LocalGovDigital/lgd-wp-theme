@@ -34,6 +34,11 @@
                     </ul>
                 </div>
             <?php endif; ?>
+            
+            <?php if(get_the_ID() == '3196') :
+                $project_count = wp_count_posts( 'project' )->publish; ?>
+                <p><span class="" style="font-size: 3em; display: block;"><?php echo $project_count; ?></span> total projects</p>
+            <?php endif; ?>
 
             <?php /*
             // creates the supporting documents list from the ACF repeater field in the viewed cms page

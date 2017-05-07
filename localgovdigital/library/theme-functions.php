@@ -150,3 +150,21 @@ function lgd_excerpt_more( $link ) {
 	return ' &hellip; ' . $link;
 }
 add_filter( 'excerpt_more', 'lgd_excerpt_more' );
+
+function list_signed_up_lgdss( $atts ) {
+    $list = '';
+	$terms= get_terms( array(
+        'taxonomy' => 'organisation',
+        'meta_key' => 'signed_up_to_standard',
+        'meta_value' => '1'
+        ) );
+    if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+        $list .= '<ul>';
+        foreach ( $terms as $term ) {
+            $list .= '<li>' . $term->name . '</li>';
+        }
+        $list .= '</ul>';
+    }
+    return $list;
+}
+add_shortcode( 'lgdss_signed_up', 'list_signed_up_lgdss' );
