@@ -26,6 +26,7 @@ get_header(); ?>
 	                    <?php if ($the_query->have_posts() ) : while ( $the_query->have_posts() ): $the_query->the_post(); 
 	                    	get_template_part( 'template-parts/post/content', 'project' ); ?>
 	                    <?php endwhile; endif;?>
+	                    <?php wp_reset_query(); ?>
                     </div>
                 </div>
                 <?php get_sidebar(); ?>

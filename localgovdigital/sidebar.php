@@ -7,6 +7,12 @@
 
 <div id="global__sidebar" class="small-12 medium-4 columns">
     <aside>
+        <?php //if ( is_active_sidebar( 'sidebar-widgets' ) ) : ?>
+        	<ul id="sidebar-widgets">
+        		<?php dynamic_sidebar( 'sidebar-widgets' ); ?>
+        	</ul>
+        <?php //endif; ?>
+        
         <div class="sidebar_content">
             <?php if(get_field('add_custom_links')) :
                 echo get_field('add_custom_links');
@@ -35,9 +41,9 @@
                 </div>
             <?php endif; ?>
             
-            <?php if(get_the_ID() == '3196') :
+            <?php if(get_the_ID() == '2755') :
                 $project_count = wp_count_posts( 'project' )->publish; ?>
-                <p><span class="" style="font-size: 3em; display: block;"><?php echo $project_count; ?></span> total projects</p>
+                <p><span class="" style="font-size: 5em; display: block;"><?php echo $project_count; ?></span> projects</p>
             <?php endif; ?>
 
             <?php /*
