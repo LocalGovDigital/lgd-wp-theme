@@ -25,6 +25,15 @@ function my_bcn_allowed_html($allowed_html)
 }
 add_filter('bcn_allowed_html', 'my_bcn_allowed_html');
 
+//** find child pages of parent */
+function page_children($parent_id, $limit = -1) {
+    return get_posts(array(
+        'post_type' => 'page',
+        'post_parent' => $parent_id,
+        'posts_per_page' => $limit
+    ));
+}
+
 
 //** Identify active consultations from list of pages
 function get_children_with_meta( $parent_id, $metakey ) {

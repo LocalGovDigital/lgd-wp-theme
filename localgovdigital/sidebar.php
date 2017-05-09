@@ -46,6 +46,16 @@
                 <p><span class="" style="font-size: 5em; display: block;"><?php echo $project_count; ?></span> projects</p>
             <?php endif; ?>
 
+            <?php
+                $parents = get_post_ancestors( $post->ID );
+                //print_r($parents);
+                if($parents) {
+                    $sibling_pages = page_children($parents);
+                    //print_r($sibling_pages);
+
+                }
+            ?>
+
             <?php /*
             // creates the supporting documents list from the ACF repeater field in the viewed cms page
             if (have_rows('documents')): ?>
