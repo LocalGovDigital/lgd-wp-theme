@@ -197,6 +197,13 @@
 	padding-top: 1em;
 }
 
+.formatted-intro {
+	font-size: 1.3em;
+	margin-bottom: 2em;
+	padding: 0.5em 0;
+}
+
+
 // Standards list items
 #standards__overview {
 	h2{
@@ -255,6 +262,26 @@
 	.standard-assessment {
 		h2 {
 			font-size:1.5em;
+		}
+	}
+
+}
+
+// Peer groups list page
+.peer-list {
+	margin-left: 0;
+	li{
+		border-top: 1px solid $light-grey;
+		padding-top: 3em;
+		margin-bottom: 2em;
+		overflow: hidden;
+		h2 {
+			font-weight: bold;
+		}
+		&:last-child {
+			border-bottom: 1px solid $light-grey;
+			padding-bottom: 2em;
+			margin-bottom: 4em;
 		}
 	}
 

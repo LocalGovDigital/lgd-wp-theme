@@ -829,6 +829,11 @@ ul {
 #global__content {
   padding-top: 1em; }
 
+.formatted-intro {
+  font-size: 1.3em;
+  margin-bottom: 2em;
+  padding: 0.5em 0; }
+
 #standards__overview h2 {
   font-size: 1.3em; }
 #standards__overview .standards-list .standards-item {
@@ -865,6 +870,20 @@ ul {
   font-size: 1.5em; }
 #standards__detail .standard-assessment h2 {
   font-size: 1.5em; }
+
+.peer-list {
+  margin-left: 0; }
+  .peer-list li {
+    border-top: 1px solid #ececec;
+    padding-top: 3em;
+    margin-bottom: 2em;
+    overflow: hidden; }
+    .peer-list li h2 {
+      font-weight: bold; }
+    .peer-list li:last-child {
+      border-bottom: 1px solid #ececec;
+      padding-bottom: 2em;
+      margin-bottom: 4em; }
 
 /*
 * Features SASS
