@@ -270,11 +270,17 @@
 // Peer groups list page
 .peer-list {
 	margin-left: 0;
+	display: flex;
+	flex-flow: wrap;
 	li{
-		border-top: 1px solid $light-grey;
+		border: 1px solid $light-grey;
 		padding-top: 3em;
 		margin-bottom: 2em;
 		overflow: hidden;
+		width: 48%;
+		margin-right: 2%;
+		float: left;
+		padding: 1.5em 2em;
 		h2 {
 			font-weight: bold;
 		}

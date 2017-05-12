@@ -872,12 +872,18 @@ ul {
   font-size: 1.5em; }
 
 .peer-list {
-  margin-left: 0; }
+  margin-left: 0;
+  display: flex;
+  flex-flow: wrap; }
   .peer-list li {
-    border-top: 1px solid #ececec;
+    border: 1px solid #ececec;
     padding-top: 3em;
     margin-bottom: 2em;
-    overflow: hidden; }
+    overflow: hidden;
+    width: 48%;
+    margin-right: 2%;
+    float: left;
+    padding: 1.5em 2em; }
     .peer-list li h2 {
       font-weight: bold; }
     .peer-list li:last-child {
