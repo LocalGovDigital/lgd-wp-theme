@@ -56,6 +56,18 @@
                 }
             ?>
 
+            <?php
+            if($post->post_parent)
+                $children = wp_list_pages("title_li=&sort_column=menu_order&child_of=".$post->post_parent."&echo=0");
+            else
+                $children = wp_list_pages("title_li=&sort_column=menu_order&child_of=".$post->ID."&echo=0");
+            if ($children) { ?>
+                <ul id="subnav">
+                    <?php echo $children; ?>
+                </ul>
+            <?php } ?>
+
+
             <?php /*
             // creates the supporting documents list from the ACF repeater field in the viewed cms page
             if (have_rows('documents')): ?>
