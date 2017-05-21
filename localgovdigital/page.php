@@ -18,9 +18,11 @@ get_header(); ?>
                 <div id="global__body_content" class="small-12 medium-8 columns body_content">
                     <?php if (have_posts() ) : while ( have_posts() ): the_post(); ?>
                         <h1><?php the_title(); ?></h1>
+                        <?php if(the_field('intro_text')) : ?>
                         <div class="formatted-intro">
                             <?php the_field('intro_text'); ?>
                         </div>
+                        <?php endif;?>
                         <?php the_content(); ?>
                     <?php endwhile; endif;?>
                     <?php //comments_template(); ?>

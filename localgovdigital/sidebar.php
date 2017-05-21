@@ -7,18 +7,22 @@
 
 <div id="global__sidebar" class="small-12 medium-4 columns">
     <aside>
-        <?php //if ( is_active_sidebar( 'sidebar-widgets' ) ) : ?>
-        	<ul id="sidebar-widgets">
-        		<?php dynamic_sidebar( 'sidebar-widgets' ); ?>
-        	</ul>
-        <?php //endif; ?>
-        
+
         <div class="sidebar_content">
-            <?php if(get_field('add_custom_links')) :
+
+            <?php //if ( is_active_sidebar( 'sidebar-widgets' ) ) : ?>
+                <ul id="sidebar-widgets">
+                    <?php dynamic_sidebar( 'sidebar-widgets' ); ?>
+                </ul>
+            <?php //endif; ?>
+        
+
+            <?php // adds custom links to sidebar if specified
+            if(get_field('add_custom_links')) :
                 echo get_field('add_custom_links');
             endif; ?>
 
-            <?php
+            <?php // adds document download links if available
             if(get_field('upload_document')) :
                 get_field('document_description');
                 $document = get_field('upload_document');
@@ -26,37 +30,25 @@
                 if($document) : ?>
                     <a href="<?php echo $document['url']; ?>"><?php echo get_field('document_description'); ?></a>
                 <?php endif;
+
             endif; ?>
 
-            <?php if(get_post_type() == 'standards') : ?>
-                <div class="sidebar-standards-list">
-                    <ul>
-                    <?php $standards_query = new WP_Query( array( 'post_type' => 'standards', 'posts_per_page' => '-1', 'meta_key' => 'number', 'orderby'	=> 'meta_value_num', 'order' => 'ASC') );?>
-                    <?php if ( have_posts() ) : while ( $standards_query->have_posts() ) : $standards_query->the_post(); ?>
-                        <li>
-                            <a href="<?php the_permalink();?>"><?php echo get_field('number');?>. <?php the_title();?></a>
-                        </li>
-                    <?php endwhile; endif; wp_reset_query(); ?>
-                    </ul>
-                </div>
-            <?php endif; ?>
-            
-            <?php if(get_the_ID() == '2755') :
-                $project_count = wp_count_posts( 'project' )->publish; ?>
-                <p><span class="" style="font-size: 5em; display: block;"><?php echo $project_count; ?></span> projects</p>
+
+            <?php // adds links to points in the LGDSS if on the standards pages
+                if(get_post_type() == 'standards') : ?>
+                    <div class="sidebar-standards-list">
+                        <ul>
+                        <?php $standards_query = new WP_Query( array( 'post_type' => 'standards', 'posts_per_page' => '-1', 'meta_key' => 'number', 'orderby'	=> 'meta_value_num', 'order' => 'ASC') );?>
+                        <?php if ( have_posts() ) : while ( $standards_query->have_posts() ) : $standards_query->the_post(); ?>
+                            <li>
+                                <a href="<?php the_permalink();?>"><?php echo get_field('number');?>. <?php the_title();?></a>
+                            </li>
+                        <?php endwhile; endif; wp_reset_query(); ?>
+                        </ul>
+                    </div>
             <?php endif; ?>
 
-            <?php
-                $parents = get_post_ancestors( $post->ID );
-                //print_r($parents);
-                if($parents) {
-                    $sibling_pages = page_children($parents);
-                    //print_r($sibling_pages);
-
-                }
-            ?>
-
-            <?php
+            <?php // adds parent and children page links to sidebar
             if($post->post_parent)
                 $children = wp_list_pages("title_li=&sort_column=menu_order&child_of=".$post->post_parent."&echo=0");
             else
@@ -67,6 +59,14 @@
                 </ul>
             <?php } ?>
 
+            <?php // PIPELINE
+
+            // Shows project counts?? Ben to confirm
+
+            if(get_the_ID() == '2755') :
+                $project_count = wp_count_posts( 'project' )->publish; ?>
+                <p><span class="" style="font-size: 5em; display: block;"><?php echo $project_count; ?></span> projects</p>
+            <?php endif; ?>
 
             <?php /*
             // creates the supporting documents list from the ACF repeater field in the viewed cms page
