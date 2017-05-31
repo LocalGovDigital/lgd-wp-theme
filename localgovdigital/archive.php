@@ -32,6 +32,8 @@ get_header(); ?>
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
+			$postformat = 'test'.get_post_format();
+echo 'postformat' . $postformat;
 				/*
 				 * Include the Post-Format-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
@@ -41,11 +43,11 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_pagination( array(
+			/*the_posts_pagination( array(
 				'prev_text' => lgd_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'lgd' ) . '</span>',
-				'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'lgd' ) . '</span>' . lgd_get_svg( array( 'icon' => 'arrow-right' ) ),
+				'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'lgd' ) . '</span>' )
 				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'lgd' ) . ' </span>',
-			) );
+			) );*/
 
 		else :
 

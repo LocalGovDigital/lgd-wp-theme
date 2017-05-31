@@ -717,7 +717,7 @@ ul {
       width: 32%;
       border: 1px solid #d5d5d5;
       border-left: 3px solid #ececec; }
-      #home__digital-voice .digital-voice-listings ul li:nth-child(1), #home__digital-voice .digital-voice-listings ul li:nth-child(4) {
+      #home__digital-voice .digital-voice-listings ul li:nth-child(odd) {
         margin-left: 0; }
       #home__digital-voice .digital-voice-listings ul li:hover {
         transition: all 0.5s ease 0s;
@@ -752,6 +752,11 @@ ul {
           border: none; }
   #home__digital-voice .digital-voice-listings .digital-voice-button .button {
     margin-top: 0; }
+
+.body_content #home__digital-voice {
+  padding: 0em 0; }
+  .body_content #home__digital-voice li a h2 {
+    color: #0073b9; }
 
 #home__event-banners {
   background-color: #ececec;
@@ -829,6 +834,11 @@ ul {
 #global__content {
   padding-top: 1em; }
 
+.formatted-intro {
+  font-size: 1.3em;
+  margin-bottom: 2em;
+  padding: 0.5em 0; }
+
 #standards__overview h2 {
   font-size: 1.3em; }
 #standards__overview .standards-list .standards-item {
@@ -865,6 +875,26 @@ ul {
   font-size: 1.5em; }
 #standards__detail .standard-assessment h2 {
   font-size: 1.5em; }
+
+.peer-list {
+  margin-left: 0;
+  display: flex;
+  flex-flow: wrap; }
+  .peer-list li {
+    border: 1px solid #ececec;
+    padding-top: 3em;
+    margin-bottom: 2em;
+    overflow: hidden;
+    width: 48%;
+    margin-right: 2%;
+    float: left;
+    padding: 1.5em 2em; }
+    .peer-list li h2 {
+      font-weight: bold; }
+    .peer-list li:last-child {
+      border-bottom: 1px solid #ececec;
+      padding-bottom: 2em;
+      margin-bottom: 4em; }
 
 /*
 * Features SASS

@@ -18,7 +18,7 @@
 			echo lgd_get_svg( array( 'icon' => 'thumb-tack' ) );
 		endif;
 	?>
-	<header class="entry-header">
+	<header class="entry-header">....
 		<?php
 			if ( 'post' === get_post_type() ) :
 				echo '<div class="entry-meta">';
@@ -26,7 +26,7 @@
 						lgd_posted_on();
 					else :
 						echo lgd_time_link();
-						lgd_edit_link();
+						// hidden for now - lgd_edit_link();
 					endif;
 				echo '</div><!-- .entry-meta -->';
 			endif;

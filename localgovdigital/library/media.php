@@ -2,6 +2,12 @@
 //*** Featured image support
 add_theme_support( 'post-thumbnails' );
 
+add_action( 'after_setup_theme', 'wp_extra_image_sizes_setup' );
+function wp_extra_image_sizes_setup() {
+    add_image_size( 'event-header', 1200, 400, true ); // (cropped)
+    add_image_size( 'small-event-header', 768, 256, true ); // (cropped)
+}
+
 //*** Responsive image support
 function content_image_sizes_attr( $sizes, $size ) {
   $width = $size[0];

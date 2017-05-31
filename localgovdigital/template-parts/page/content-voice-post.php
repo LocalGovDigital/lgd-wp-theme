@@ -4,15 +4,12 @@
  */
 
 ?>
-<div class="column">
-	<div class="card">
-		<div class="card-section">
-			<div class="meta">
-				<?php echo lgd_time_link(); ?> - 
-				<a href="<?php echo get_post_custom_values( 'syndication_source_uri')[0]; ?>"><?php echo get_post_custom_values( 'syndication_source' )[0]; ?></a>
-			</div>
-			<?php the_title( sprintf( '<h3><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
-			<p><?php echo wp_trim_excerpt( ); ?></p>
-		</div>
-	</div>
-</div>
+
+<li>
+    <a href="<?php echo get_post_custom_values( 'syndication_source_uri')[0]; ?>">
+        <?php the_title( sprintf( '<h2>', esc_url( get_permalink() ) ), '</h2>' ); ?>
+        <p><?php echo wp_trim_excerpt( ); ?></p>
+        <strong><?php echo get_post_custom_values( 'syndication_source' )[0]; ?></strong><br>
+        <span class="small-date"><?php the_date();?></span>
+    </a>
+</li>
