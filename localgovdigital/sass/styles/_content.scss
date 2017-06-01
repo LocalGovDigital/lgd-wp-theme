@@ -98,7 +98,7 @@
 
 
 // Home page local voice section
-#home__digital-voice {
+#global__digital-listings {
 	padding: 5em 0;
 	h2 {
 		padding-top: 0;
@@ -106,7 +106,7 @@
 			padding-bottom: 0;
 		}
 	}
-	.digital-voice-listings{
+	.digital-listings{
 		ul{
 			margin-left: 0;
 			margin-top: 2em;
@@ -126,6 +126,7 @@
 				width: 32%;
 				border: 1px solid $mid-grey;
 				border-left: 3px solid $light-grey;
+				list-style: none;
 				&:nth-child(odd){
 					margin-left: 0;
 				}
@@ -176,10 +177,44 @@
 				margin-top: 0;
 			}
 		}
+
+		.first-item {
+			margin: 3em 0;
+			overflow: hidden;
+			.first-item-left {
+				width: 50%;
+				float: left;
+				@include media(small) {
+					width: 100%;
+				}
+			}
+			.first-item-right {
+				width: 45%;
+				float: left;
+				padding-left: 5%;
+				.formatted-intro {
+					margin-bottom: 0;
+					padding-bottom: 0;
+				}
+				@include media(small) {
+					width: 100%;
+					padding-left: 0;
+					margin-top: 2em;
+
+				}
+
+			}
+		}
+
+		.digital-listings-items {
+			&.news {
+				margin-top: 3em;
+			}
+		}
 	}
 }
 
-.body_content #home__digital-voice {
+.body_content #global__digital-listings {
 	padding: 0em 0;
 	li {
 		a {
@@ -302,4 +337,14 @@
 		}
 	}
 
+}
+
+// Global content styles
+#global__body_content {
+	ul {
+		li{
+			list-style: circle;
+			padding-left: 1em;
+		}
+	}
 }

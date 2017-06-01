@@ -313,6 +313,35 @@
 	}
 }
 
+// Breadcrumb trail styling
+#global__breadcrumb {
+	ul {
+		padding: 0;
+		margin: 0;
+		li {
+			list-style: none;
+			float: left;
+			padding-right: 1.8em;
+			position: relative;
+			&:before {
+				font-family: FontAwesome;
+				content: "\f105";
+				color: $light-grey;
+				position: absolute;
+				font-size: 1.1em;
+				top: 0;
+				right: 0.6em;
+			}
+			&:last-child {
+				&:before {
+					content:"";
+				}
+			}
+		}
+	}
+}
+
+
 // Footer nav styles
 #footer__nav-links {
 	#menu-footer-nav {

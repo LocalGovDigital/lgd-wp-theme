@@ -19,8 +19,8 @@ get_header(); ?>
     <section id="global__content">
         <div class="row">
             <div id="global__body_content" class="small-12 columns body_content">
-                <div id="home__digital-voice">
-                    <div class="small-12 column digital-voice-listings">
+                <div id="global__digital-listings">
+                    <div class="small-12 column digital-listings">
                         <h1><?php the_title();?></h1>
                         <div class="small-12 medium-9">
                         <?php if(get_field('intro_text')) : ?>

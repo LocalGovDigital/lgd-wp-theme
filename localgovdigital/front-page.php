@@ -135,13 +135,13 @@ get_header(); ?>
         </div>
     </section>
 
-    <section id="home__digital-voice">
+    <section id="global__digital-listings">
         <div class="row">
             <div class="small-12 column digital-voice-title">
                 <h2>LocalGov Digital Voice</h2>
                 <p>Your thoughts, your challenges, your successes and your work</p>
             </div>
-            <div class="small-12 column digital-voice-listings">
+            <div class="small-12 column digital-listings">
                 <?php
                 // query the first 6 voice articles
                 $the_query = new WP_Query( array( 'post_type' => 'voice_post', 'posts_per_page' => '6' ) );

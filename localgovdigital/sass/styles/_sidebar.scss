@@ -37,6 +37,18 @@
 			a {
 				font-size: 1.2em;
 			}
+			#sidebar-widgets{
+				.widget_recent_entries{
+					li {
+						a {
+							font-size: 1em;
+						}
+						.post-date {
+							display: block;
+						}
+					}
+				}
+			}
 		}
 	}
 }

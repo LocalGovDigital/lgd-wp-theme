@@ -141,6 +141,8 @@ function change_message( $message, $form ) {
  *
  * @return string 'Continue reading' link prepended with an ellipsis.
  */
+
+/* MD - HAVE HIDDEN AS BREAKING OTHER LISTS LIKE NEWS - let me know if this is a problem?
 function lgd_excerpt_more( $link ) {
 	global $post;
 
@@ -159,6 +161,7 @@ function lgd_excerpt_more( $link ) {
 	return ' &hellip; ' . $link;
 }
 add_filter( 'excerpt_more', 'lgd_excerpt_more' );
+*/
 
 function list_signed_up_lgdss( $atts ) {
     $list = '';

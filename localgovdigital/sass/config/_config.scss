@@ -122,6 +122,9 @@ ul {
 	clear: both; 		
 }
 
+hr {
+	border-color: currentcolor currentcolor $light-grey;
+}
 
 /*
 * Overwrite Row and grid block margin rules 

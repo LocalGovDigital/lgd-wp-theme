@@ -50,10 +50,11 @@
     <div id="global__breadcrumb" typeof="BreadcrumbList" vocab="http://schema.org/">
         <div class="row">
             <div class="small-12 column">
-                <?php if(function_exists('bcn_display'))
-                {
-                    bcn_display();
-                }?>
+                <?php if(function_exists('bcn_display')) :?>
+                <ul aria-label="breadcrumb" role="navigation">
+                    <?php bcn_display($return = false, $linked = true, $reverse = false, $force = false); ?>
+                </ul>
+                <?php endif;?>
             </div>
         </div>
     </div>

@@ -78,6 +78,9 @@ ul {
   display: table;
   clear: both; }
 
+hr {
+  border-color: currentcolor currentcolor #ececec; }
+
 /*
 * Overwrite Row and grid block margin rules 
 * for Foundation
@@ -180,6 +183,10 @@ ul {
             padding: 0 0 1em 0em; } }
     #global__sidebar aside .sidebar_content a {
       font-size: 1.2em; }
+    #global__sidebar aside .sidebar_content #sidebar-widgets .widget_recent_entries li a {
+      font-size: 1em; }
+    #global__sidebar aside .sidebar_content #sidebar-widgets .widget_recent_entries li .post-date {
+      display: block; }
 
 .fa-search:before {
   content: "\f002"; }
@@ -501,6 +508,25 @@ ul {
   #global__brand-nav .main-nav .title.back.js-generated, #global__brand-nav .main-nav .parent-link.hide-for-large-up {
     display: none !important; }
 
+#global__breadcrumb ul {
+  padding: 0;
+  margin: 0; }
+  #global__breadcrumb ul li {
+    list-style: none;
+    float: left;
+    padding-right: 1.8em;
+    position: relative; }
+    #global__breadcrumb ul li:before {
+      font-family: FontAwesome;
+      content: "\f105";
+      color: #ececec;
+      position: absolute;
+      font-size: 1.1em;
+      top: 0;
+      right: 0.6em; }
+    #global__breadcrumb ul li:last-child:before {
+      content: ""; }
+
 #footer__nav-links #menu-footer-nav {
   display: flex;
   flex-flow: wrap; }
@@ -691,14 +717,14 @@ ul {
           #home__product-banners .lgd-feature-banner .feature-banner .feature-banner-content ul li {
             line-height: 2.5em; }
 
-#home__digital-voice {
+#global__digital-listings {
   padding: 5em 0; }
-  #home__digital-voice h2 {
+  #global__digital-listings h2 {
     padding-top: 0; }
     @media screen and (min-width: 40.063em) {
-      #home__digital-voice h2 {
+      #global__digital-listings h2 {
         padding-bottom: 0; } }
-  #home__digital-voice .digital-voice-listings ul {
+  #global__digital-listings .digital-listings ul {
     margin-left: 0;
     margin-top: 2em;
     margin-bottom: 2em;
@@ -706,36 +732,37 @@ ul {
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap; }
     @media screen and (max-width: 48em) {
-      #home__digital-voice .digital-voice-listings ul {
+      #global__digital-listings .digital-listings ul {
         margin-bottom: 0em;
         margin-top: 0em; } }
-    #home__digital-voice .digital-voice-listings ul li {
+    #global__digital-listings .digital-listings ul li {
       transition: all 0.5s ease 0s;
       float: left;
       margin-left: 2%;
       margin-bottom: 2em;
       width: 32%;
       border: 1px solid #d5d5d5;
-      border-left: 3px solid #ececec; }
-      #home__digital-voice .digital-voice-listings ul li:nth-child(odd) {
+      border-left: 3px solid #ececec;
+      list-style: none; }
+      #global__digital-listings .digital-listings ul li:nth-child(odd) {
         margin-left: 0; }
-      #home__digital-voice .digital-voice-listings ul li:hover {
+      #global__digital-listings .digital-listings ul li:hover {
         transition: all 0.5s ease 0s;
         background-color: #F2FAFF;
         cursor: pointer;
         border-left: 3px solid #d5d5d5; }
       @media screen and (min-width: 40.063em) {
-        #home__digital-voice .digital-voice-listings ul li {
+        #global__digital-listings .digital-listings ul li {
           width: 49%; }
-          #home__digital-voice .digital-voice-listings ul li:nth-child(1), #home__digital-voice .digital-voice-listings ul li:nth-child(3), #home__digital-voice .digital-voice-listings ul li:nth-child(5) {
+          #global__digital-listings .digital-listings ul li:nth-child(1), #global__digital-listings .digital-listings ul li:nth-child(3), #global__digital-listings .digital-listings ul li:nth-child(5) {
             margin-left: 0; }
-          #home__digital-voice .digital-voice-listings ul li:nth-child(4) {
+          #global__digital-listings .digital-listings ul li:nth-child(4) {
             margin-left: 2%; } }
       @media screen and (max-width: 40em) {
-        #home__digital-voice .digital-voice-listings ul li {
+        #global__digital-listings .digital-listings ul li {
           width: 100%;
           margin-left: 0; } }
-      #home__digital-voice .digital-voice-listings ul li a {
+      #global__digital-listings .digital-listings ul li a {
         transition: all 0.5s ease 0s;
         display: block;
         width: 100%;
@@ -743,19 +770,42 @@ ul {
         padding: 1.5em 7% 2.0em;
         margin-bottom: 3px;
         color: inherit; }
-        #home__digital-voice .digital-voice-listings ul li a h3 {
+        #global__digital-listings .digital-listings ul li a h3 {
           font-size: 1.2em;
           padding-top: 0;
           color: #0073b9; }
-        #home__digital-voice .digital-voice-listings ul li a:hover {
+        #global__digital-listings .digital-listings ul li a:hover {
           transition: all 0.5s ease 0s;
           border: none; }
-  #home__digital-voice .digital-voice-listings .digital-voice-button .button {
+  #global__digital-listings .digital-listings .digital-voice-button .button {
     margin-top: 0; }
+  #global__digital-listings .digital-listings .first-item {
+    margin: 3em 0;
+    overflow: hidden; }
+    #global__digital-listings .digital-listings .first-item .first-item-left {
+      width: 50%;
+      float: left; }
+      @media screen and (max-width: 40em) {
+        #global__digital-listings .digital-listings .first-item .first-item-left {
+          width: 100%; } }
+    #global__digital-listings .digital-listings .first-item .first-item-right {
+      width: 45%;
+      float: left;
+      padding-left: 5%; }
+      #global__digital-listings .digital-listings .first-item .first-item-right .formatted-intro {
+        margin-bottom: 0;
+        padding-bottom: 0; }
+      @media screen and (max-width: 40em) {
+        #global__digital-listings .digital-listings .first-item .first-item-right {
+          width: 100%;
+          padding-left: 0;
+          margin-top: 2em; } }
+  #global__digital-listings .digital-listings .digital-listings-items.news {
+    margin-top: 3em; }
 
-.body_content #home__digital-voice {
+.body_content #global__digital-listings {
   padding: 0em 0; }
-  .body_content #home__digital-voice li a h2 {
+  .body_content #global__digital-listings li a h2 {
     color: #0073b9; }
 
 #home__event-banners {
@@ -895,6 +945,10 @@ ul {
       border-bottom: 1px solid #ececec;
       padding-bottom: 2em;
       margin-bottom: 4em; }
+
+#global__body_content ul li {
+  list-style: circle;
+  padding-left: 1em; }
 
 /*
 * Features SASS
