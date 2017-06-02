@@ -13,8 +13,8 @@ function sidebar_widgets() {
 	  'id' => 'sidebar-widgets',
 	  'name' => __( 'Sidebar widgets', 'GESP' ),
 	  'description' => __( 'Drag widgets to this sidebar container.', 'GESP' ),
-	  'before_widget' => '<article id="%1$s" class="row widget %2$s"><div class="small-12 columns">',
-	  'after_widget' => '</div></article>',
+	  'before_widget' => '<article id="%1$s" class="widget %2$s">',
+	  'after_widget' => '</article>',
 	  'before_title' => '<h3>',
 	  'after_title' => '</h3>',
 	));
@@ -33,8 +33,8 @@ function sidebar_widgets() {
 	  'id' => 'pipeline-project-widgets',
 	  'name' => __( 'Pipeline project widgets', 'GESP' ),
 	  'description' => __( 'Drag widgets to this sidebar container.', 'GESP' ),
-	  'before_widget' => '<article id="%1$s" class="row widget %2$s"><div class="small-12 columns">',
-	  'after_widget' => '</div></article>',
+	  'before_widget' => '<article id="%1$s" class="widget %2$s">',
+	  'after_widget' => '</article>',
 	  'before_title' => '<h3>',
 	  'after_title' => '</h3>',
 	));

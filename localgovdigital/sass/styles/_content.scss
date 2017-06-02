@@ -19,6 +19,7 @@
 			li{
 				padding-left: 0;
 				line-height:2.5em;
+				font-size: 1.2em;
 			}
 		}
 		@include media(small) {
@@ -217,6 +218,7 @@
 .body_content #global__digital-listings {
 	padding: 0em 0;
 	li {
+		padding-left: 0;
 		a {
 			h2 {
 				color: $link-blue;
@@ -241,6 +243,15 @@
 // Global content styles
 #global__content {
 	padding-top: 1em;
+	padding-bottom: 4em;
+	@include media(portrait) {
+		padding-bottom: 0em;
+		padding-top: 0;
+		.body_content {
+			padding-bottom: 2em;
+			width: 100%;
+		}
+	}
 }
 
 .formatted-intro {
@@ -327,6 +338,9 @@
 		margin-right: 2%;
 		float: left;
 		padding: 1.5em 2em;
+		@include media(portrait) {
+			width:100%;
+		}
 		h2 {
 			font-weight: bold;
 		}
@@ -334,6 +348,9 @@
 			border-bottom: 1px solid $light-grey;
 			padding-bottom: 2em;
 			margin-bottom: 4em;
+			@include media(portrait) {
+				margin-bottom: 2em;
+			}
 		}
 	}
 

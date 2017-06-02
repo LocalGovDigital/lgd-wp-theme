@@ -148,8 +148,7 @@ hr {
 
 #global__footer_content {
   border-top: 10px solid #d5d5d5;
-  padding-top: 5em;
-  margin-top: 2em; }
+  padding-top: 5em; }
 
 @media screen and (max-width: 48em) {
   #global__sidebar {
@@ -157,19 +156,24 @@ hr {
     background-color: #ececec;
     border-bottom: 2px solid #ececec;
     padding: 3em 1em; } }
+  @media screen and (max-width: 48em) and (max-width: 48em) {
+    #global__sidebar {
+      padding: 2em 1em; } }
+
 #global__sidebar aside {
   padding: 0em 1.5em; }
   @media screen and (max-width: 48em) {
     #global__sidebar aside {
-      border-top: 10px solid #565656;
-      padding: 0em 1.5em 1.5em 1.5em; } }
+      padding: 0em; } }
   #global__sidebar aside .sidebar_content {
     border-top: 10px solid #565656;
     margin-top: 0.8em;
     padding-top: 1.5em; }
     @media screen and (max-width: 48em) {
       #global__sidebar aside .sidebar_content {
-        border-top: none; } }
+        border-top: none;
+        margin-top: 0;
+        padding-top: 0; } }
     #global__sidebar aside .sidebar_content h3 {
       font-size: 1.9em;
       padding-top: 0.3em; }
@@ -598,7 +602,8 @@ hr {
     padding: 0; }
     #home__intro .popular-links ul li {
       padding-left: 0;
-      line-height: 2.5em; }
+      line-height: 2.5em;
+      font-size: 1.2em; }
   @media screen and (max-width: 40em) {
     #home__intro .popular-links {
       border-top: 1px solid #ececec; } }
@@ -805,8 +810,10 @@ hr {
 
 .body_content #global__digital-listings {
   padding: 0em 0; }
-  .body_content #global__digital-listings li a h2 {
-    color: #0073b9; }
+  .body_content #global__digital-listings li {
+    padding-left: 0; }
+    .body_content #global__digital-listings li a h2 {
+      color: #0073b9; }
 
 #home__event-banners {
   background-color: #ececec;
@@ -882,7 +889,15 @@ hr {
     margin-top: 1.5em; }
 
 #global__content {
-  padding-top: 1em; }
+  padding-top: 1em;
+  padding-bottom: 4em; }
+  @media screen and (max-width: 48em) {
+    #global__content {
+      padding-bottom: 0em;
+      padding-top: 0; }
+      #global__content .body_content {
+        padding-bottom: 2em;
+        width: 100%; } }
 
 .formatted-intro {
   font-size: 1.3em;
@@ -939,12 +954,18 @@ hr {
     margin-right: 2%;
     float: left;
     padding: 1.5em 2em; }
+    @media screen and (max-width: 48em) {
+      .peer-list li {
+        width: 100%; } }
     .peer-list li h2 {
       font-weight: bold; }
     .peer-list li:last-child {
       border-bottom: 1px solid #ececec;
       padding-bottom: 2em;
       margin-bottom: 4em; }
+      @media screen and (max-width: 48em) {
+        .peer-list li:last-child {
+          margin-bottom: 2em; } }
 
 #global__body_content ul li {
   list-style: circle;
