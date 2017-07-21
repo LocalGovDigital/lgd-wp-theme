@@ -1,32 +1,32 @@
 <?php
 /**
- * Template Name: Eventbrite Events
+ * Template Name: Eventbrite List
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php //the_title(); ?>
-				</h1>
-			</header><!-- .page-header -->
+<!--page specific content -->
+<a name="content-start"></a>
+<main>
+    <section id="global__content">
+        <div class="row">
+            <div id="global__body_content" class="small-12 medium-8 columns body_content">
+                <h1><?php the_title(); ?>...</h1>
 
-			<?php /*
+			<?php
 				// Set up and call our Eventbrite query.
 				$events = new Eventbrite_Query( apply_filters( 'eventbrite_query_args', array(
-					// 'display_private' => false, // boolean
-                    'status' => 'live',         // string (only available for display_private true)
-					// 'nopaging' => false,        // boolean
-					// 'limit' => null,            // integer
-					// 'organizer_id' => null,     // integer
-					// 'p' => null,                // integer
-					// 'post__not_in' => null,     // array of integers
-					// 'venue_id' => null,         // integer
-					// 'category_id' => null,      // integer
-					// 'subcategory_id' => null,   // integer
-					// 'format_id' => null,        // integer
+					 //'display_private' => false, // boolean
+					 'status' => 'live',         // string (only available for display_private true)
+					 //'nopaging' => false,        // boolean
+					 //'limit' => null,            // integer
+					 //'organizer_id' => null,     // integer
+					 //'p' => null,                // integer
+					 //'post__not_in' => null,     // array of integers
+					 //'venue_id' => null,         // integer
+					 //'category_id' => null,      // integer
+					 //'subcategory_id' => null,   // integer
+					 //'format_id' => null,        // integer
 				) ) );
 
 				if ( $events->have_posts() ) :
@@ -65,10 +65,12 @@ get_header(); ?>
 
 				// Return $post to its rightful owner.
 				wp_reset_postdata();
-			*/?>
+			?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php //get_sidebar(); ?>
+            </div>
+            <?php get_sidebar(); ?>
+        </div><!-- Foundation .row end -->
+    </section>
+</main>
+<!--end page specific content -->
 <?php get_footer(); ?>
