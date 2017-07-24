@@ -5,12 +5,14 @@
 
 get_header(); ?>
 
-<a name="content-start"></a>
-<main>
-    <section id="global__content">
-        <div class="row">
-            <div id="global__body_content" class="small-12 medium-8 columns body_content">
-                <h1><?php the_title(); ?></h1>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+			<header class="page-header">
+				<h1 class="page-title">
+					<?php the_title(); ?>
+				</h1>
+			</header><!-- .page-header -->
+
 			<?php
 				// Set up and call our Eventbrite query.
 				$events = new Eventbrite_Query( apply_filters( 'eventbrite_query_args', array(
@@ -27,58 +29,28 @@ get_header(); ?>
 					// 'format_id' => null,        // integer
 				) ) );
 
-				//print_r($events);
-
 				if ( $events->have_posts() ) :
 					while ( $events->have_posts() ) : $events->the_post(); ?>
-                        <?php $title = get_the_title();
-                        if (strpos($title, 'Peer') !== false)  {?>
-                            <article id="event-<?php the_ID(); ?>" <?php post_class(); ?>
-                            <header class="entry-header">
-                                <?php //the_post_thumbnail(); ?>
 
-                                <?php //the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+						<article id="event-<?php the_ID(); ?>" <?php post_class(); ?>>
+							<header class="entry-header">
+								<?php the_post_thumbnail(); ?>
 
-                                <div class="entry-meta">
-                                    <?php //eventbrite_event_meta(); ?>
-                                </div><!-- .entry-meta -->
-                            </header><!-- .entry-header -->
+								<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
-                            <div class="entry-content">
-                                <?php //eventbrite_ticket_form_widget(); ?>
-                            </div><!-- .entry-content -->
+								<div class="entry-meta">
+									<?php eventbrite_event_meta(); ?>
+								</div><!-- .entry-meta -->
+							</header><!-- .entry-header -->
 
-                            <footer class="entry-footer">
-                                <?php //eventbrite_edit_post_link( __( 'Edit', 'eventbrite_api' ), '<span class="edit-link">', '</span>' ); ?>
-                            </footer><!-- .entry-footer -->
-                            </article><!-- #post-## -->
-                        <?php } elseif(strpos($title, 'Camp') !== false)  {?>
-                <article id="event-<?php the_ID(); ?>" <?php post_class(); ?>
-                <header class="entry-header">
-                    <?php //the_post_thumbnail(); ?>
+							<div class="entry-content">
+								<?php eventbrite_ticket_form_widget(); ?>
+							</div><!-- .entry-content -->
 
-                    <?php //the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-
-                    <div class="entry-meta">
-                        <?php //eventbrite_event_meta(); ?>
-                    </div><!-- .entry-meta -->
-                </header><!-- .entry-header -->
-
-                <div class="entry-content">
-                    <?php //eventbrite_ticket_form_widget(); ?>
-                </div><!-- .entry-content -->
-
-                <footer class="entry-footer">
-                    <?php //eventbrite_edit_post_link( __( 'Edit', 'eventbrite_api' ), '<span class="edit-link">', '</span>' ); ?>
-                </footer><!-- .entry-footer -->
-                </article><!-- #post-## -->
-                       <? } else { ?>
-                            Sorry no events
-                      <?  }
-
-                        ?>
-
-
+							<footer class="entry-footer">
+								<?php eventbrite_edit_post_link( __( 'Edit', 'eventbrite_api' ), '<span class="edit-link">', '</span>' ); ?>
+							</footer><!-- .entry-footer -->
+						</article><!-- #post-## -->
 
 					<?php endwhile;
 
@@ -95,10 +67,8 @@ get_header(); ?>
 				wp_reset_postdata();
 			?>
 
-            </div>
-            <?php get_sidebar(); ?>
-        </div><!-- Foundation .row end -->
-    </section>
-</main>
-<!--end page specific content -->
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
