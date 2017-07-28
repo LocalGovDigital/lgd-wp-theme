@@ -37,6 +37,7 @@ get_header(); ?>
 				$events = new Eventbrite_Query( apply_filters( 'eventbrite_query_args', array(
 					 'display_private' => true, // boolean
 					 'status' => 'all',      // string (only available for display_private true)
+                    'sort_by' => 'date',
 					// 'nopaging' => false,        // boolean
 					// 'limit' => null,            // integer
 					// 'organizer_id' => null,     // integer
