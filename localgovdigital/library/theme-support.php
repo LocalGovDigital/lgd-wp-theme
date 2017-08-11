@@ -79,3 +79,4 @@ endif;
 function disable_embeds_tiny_mce_plugin( $plugins ) {
 	return array_diff( $plugins, array( 'wpembed' ) );
 }
+

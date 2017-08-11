@@ -29,15 +29,15 @@ get_header(); ?>
     <section id="global__content">
         <div class="row">
             <div id="global__body_content" class="small-12 medium-8 columns body_content">
-                <h1><?php the_title(); ?>...</h1>
+                <h1><?php the_title(); ?></h1>
 
 
 			<?php
+
 				// Set up and call our Eventbrite query.
 				$events = new Eventbrite_Query( apply_filters( 'eventbrite_query_args', array(
-					 'display_private' => true, // boolean
-					 'status' => 'all',      // string (only available for display_private true)
-                    'sort_by' => 'date',
+                    'display_private' => true, // boolean
+                    'status' => 'live',      // string (only available for display_private true)
 					// 'nopaging' => false,        // boolean
 					// 'limit' => null,            // integer
 					// 'organizer_id' => null,     // integer
@@ -49,32 +49,41 @@ get_header(); ?>
 					// 'format_id' => null,        // integer
 				) ) );
 
+                /*$events_by_id = array();
+                foreach( $events as $event ) {
+                    $postid = the_ID().'>>';
+                    $events_by_id[ $postid ][] = $event;
+
+                }
+
+                print_r($events_by_id);*/
+
 				//print_r($events);
                 //rsort($events);
+                $ids = array();
 				if ( $events->have_posts() ) :
-					while ( $events->have_posts() ) : $events->the_post(); ?>
-                        EVENT..
-
-                        <?php $title = get_the_title();
+					while ( $events->have_posts() ) : $events->the_post();
+                        $title = get_the_title();
                         if (strpos($title, 'Peer') !== false)  {?>
-                            <article id="event-<?php the_ID(); ?>" <?php post_class(); ?>
-                            <header class="entry-header">.
-                                <?php the_post_thumbnail(); ?>
+                            <article id="event-<?php the_ID(); ?>" <?php post_class(); ?>>
+                                <div class="row">
+                                <div class="event-image columns small-12 medium-5">
+                                    <?php the_post_thumbnail(); ?>
+                                </div><!-- .entry-header -->
 
-                                <?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+                                <div class="event-content columns small-12 medium-7">
+                                    <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-                                <div class="entry-meta">
-                                    <?php eventbrite_event_meta(); ?>
-                                </div><!-- .entry-meta -->
-                            </header><!-- .entry-header -->
 
-                            <div class="entry-content">
-                                <?php //eventbrite_ticket_form_widget(); ?>
-                            </div><!-- .entry-content -->
+                                </div><!-- .entry-content -->
+                                    <div class="entry-meta columns small-12">
+                                        <?php eventbrite_event_meta(); ?>
+                                    </div><!-- .entry-meta -->
 
-                            <footer class="entry-footer">
-                                <?php //eventbrite_edit_post_link( __( 'Edit', 'eventbrite_api' ), '<span class="edit-link">', '</span>' ); ?>
-                            </footer><!-- .entry-footer -->
+                                </div>
+                                <div class="event-booking-widget columns small-12">
+                                    <?php eventbrite_ticket_form_widget(); ?>
+                                </div>
                             </article><!-- #post-## -->
                         <?php } /*elseif(strpos($title, 'Camp') !== false)  {?>
                 <article id="event-<?php the_ID(); ?>" <?php post_class(); ?>
@@ -98,7 +107,7 @@ get_header(); ?>
                 </article><!-- #post-## -->
                        <? } else { ?>
                             Sorry no events
-                      <?  }*/
+                      <?  } */
 
                         ?>
 

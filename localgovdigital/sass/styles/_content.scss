@@ -365,3 +365,22 @@
 		}
 	}
 }
+
+// Eventbrite lists
+.event-content {
+	h2 {
+		font-size: 1.4rem;
+		line-height: 1.6rem;
+	}
+}
+
+.entry-meta {
+	margin-top: 1em;
+}
+
+.event-booking-widget {
+	margin-top: 3em;
+	padding-bottom: 3em;
+	border-bottom: 1px solid $light-grey;
+}
+
