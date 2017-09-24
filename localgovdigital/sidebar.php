@@ -59,6 +59,22 @@
                 </ul>
             <?php } ?>
 
+            <?php
+            if (is_tax('peer_group')) : ?>
+<ul>
+<?php $leads = pods( 'peer_group', get_queried_object()->term_id )->field('leads');
+
+foreach ($leads as $lead) {
+$leaduser = pods('user', $lead['ID']); ?>
+<li><h4><a href="<?php echo get_author_posts_url( $lead['ID'], $leaduser->display('user_nicename') ); ?>"><?php echo $leaduser->display('display_name'); ?></a></h4>
+<?php echo $leaduser->display('job_title'); ?><br>
+<?php echo $leaduser->display('organisation'); ?>
+</li>
+<?php } 
+?>
+</ul>
+            <?php endif; ?>
+
             <?php // PIPELINE
 
             // Shows project counts?? Ben to confirm

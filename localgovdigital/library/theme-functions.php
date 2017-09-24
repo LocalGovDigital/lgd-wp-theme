@@ -180,3 +180,22 @@ function list_signed_up_lgdss( $atts ) {
     return $list;
 }
 add_shortcode( 'lgdss_signed_up', 'list_signed_up_lgdss' );
+
+// Hide peer group update category from home
+function exclude_categories($query) {
+    if ( is_home() ) {
+        $query->set('cat', '-1,-22');
+    }
+    return $query;
+}
+add_filter('pre_get_posts', 'exclude_categories');
+
+function lgd_list_users( $fieldName ) {
+    $list = '';
+    $userIds = get_post_custom_values( $fieldName );
+    foreach ( $userIds as $key => $value ) {
+        $user = get_user_by( 'id', $value );
+        $list .= sprintf( '<li>%1$s %2$s</li>', $user->first_name, $user->last_name );
+    }
+    echo $list;
+}

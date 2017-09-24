@@ -31,5 +31,5 @@ require_once( 'library/custom-nav.php' );
 /** Add other custom theme functions */
 require_once( 'library/theme-functions.php' );
 
-
-
+/** Add custom permalink */
+require_once( 'library/permalinks.php' );
