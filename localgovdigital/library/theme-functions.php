@@ -199,3 +199,12 @@ function lgd_list_users( $fieldName ) {
     }
     echo $list;
 }
+
+function override_page_title($title)
+{
+    if ( is_tax('peer_group') && is_archive() ) {
+        $title = str_replace('Archives', 'peer group', $title);
+    }
+    return $title;
+}
+add_filter('wpseo_title', 'override_page_title');

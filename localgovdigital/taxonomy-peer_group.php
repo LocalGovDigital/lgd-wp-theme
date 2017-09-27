@@ -16,7 +16,7 @@ get_header(); ?>
         <section id="global__content">
             <div class="row">
                 <div id="global__digital-listings" class="small-12 medium-8 columns body_content">
-                        <h1><?php the_title(); ?></h1>
+                        <h1><?php echo single_term_title(); ?> peer group</h1>
 <?php echo get_the_archive_description(); ?>
 <ul class="digital-listings-items news">
                     <?php if (have_posts() ) : while ( have_posts() ): the_post(); ?>
