@@ -6,6 +6,8 @@ $breakpoints: (
   portrait: 'screen and (max-width : 48em)',
   small_landscape: 'screen and (max-width : 61.875em)',
   large: 'screen and (min-width : 64.063em)',
+  upto_xlarge: 'screen and (max-width : 75em)',
+  xlarge: 'screen and (min-width : 75em)',
 );
 
 

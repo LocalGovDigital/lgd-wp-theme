@@ -14,57 +14,9 @@
 	}
 }
 
-// Top nav styles
-#global__top-links{
-	display: block;
-	clear:both;
-	padding-right: 0;
-	@include media(small) {
-		padding-left: 0;
-	}
-	ul {
-		float: right;
-		@include media(small) {
-			width: 100%;
-		}
-		li {
-			position: relative;
-			border-left: 1px solid $light-grey;
-			padding: 0.8em 1em 0;
-			height: 3em;
-			min-width:100px;
-			vertical-align: top;
-			@include media(small) {
-				min-width: inherit;
-				padding: 3% 0;
-				width: 20%;
-				vertical-align: middle;
-				height: inherit;
-			}
-			a {
-				border-left:none;
-				border-right:none;
-				color: $content-black;
-				padding: 0.3rem 0.7rem;
-				&:focus {
-					outline: none;
-					border-bottom: 2px solid $orange;
-				}
-			}
-			&.menu-twitter a {
-				@include social_icons(twitter, $light-black, $light-blue, 1.5em);
-			}
-			&.menu-google-plus a {
-				@include social_icons(gplus, $light-black, $light-blue, 1.5em);
-			}
-			&.menu-slack a {
-				@include social_icons(slack, $light-black, $light-blue, 1.5em);
-			}
-		}
-	}
-}
 
-// Main nav styles
+
+// Main header styles
 #global__brand-nav {
 	.brand {
 		.toggle-area {
@@ -108,13 +60,74 @@
 				padding: 0;
 			}
 		}
+		.top-links{
+			display: block;
+			clear:both;
+			padding-right: 0;
+			width: 100%;
+			float: right;
+			@include media(small) {
+				padding-left: 0;
+			}
+			ul {
+				float: right;
+				@include media(portrait) {
+					width: 100%;
+				}
+				li {
+					position: relative;
+					border-left: 1px solid $light-grey;
+					border-bottom: 1px solid $light-grey;
+					padding: 0.8em 1em 0;
+					height: 3em;
+					min-width:100px;
+					vertical-align: top;
+					&:last-child {
+						border-right: 1px solid $light-grey;
+					}
+					@include media(portrait) {
+						min-width: inherit;
+						padding: 3% 0;
+						width: 33%;
+						vertical-align: middle;
+						max-width: 33%;
+						display: block;
+						float: left;
+					}
+					a {
+						border-left:none;
+						border-right:none;
+						color: $content-black;
+						padding: 0.3rem 0.7rem;
+						&:focus {
+							outline: none;
+							border-bottom: 2px solid $orange;
+						}
+					}
+					&.menu-twitter a {
+						@include social_icons(twitter, $light-black, $light-blue, 1.5em);
+					}
+					&.menu-google-plus a {
+						@include social_icons(gplus, $light-black, $light-blue, 1.5em);
+					}
+					&.menu-slack a {
+						@include social_icons(slack, $light-black, $light-blue, 1.5em);
+					}
+				}
+			}
+		}
 		.navbar {
 			padding: 0;
+			width: 100%;
+			margin: 2.5em 0;
+			@include media(upto_xlarge) {
+				margin: 3em 0 2em;
+			}
 			@include media(portrait) {
 				float: none;
 			}
-		}
-		section {
+			section {
+			float: right;
 			position: relative;
 			@include media(portrait) {
 				display: none;
@@ -164,10 +177,10 @@
 					}
 					@include media(portrait) {
 						width: 100%;
-						border-bottom: 1px solid vlight-grey;
+						border-bottom: 1px solid $vlight-grey;
 						border-right: none;
 						height: auto;
-						min-height: auto;
+						//min-height: auto;
 						a {
 							padding: 0.5em 0.6em;
 						}
@@ -306,6 +319,7 @@
 				}
 
 			}
+		}
 		}
 		.title.back.js-generated, .parent-link.hide-for-large-up {
 			display: none !important;

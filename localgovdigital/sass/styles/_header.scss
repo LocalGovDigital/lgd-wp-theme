@@ -3,21 +3,33 @@
 // Branding and main navigation
 #global__brand-nav {
 	border-top:1px solid $light-grey;
-	border-bottom:1px solid $light-grey;
 	width: 100%;
-	padding: 2em 0;
-	display: flex;
-	@include media(portrait) {
-		display: inline-block;
-		clear: both;
-	}
-	@include media(xsmall) {
-		padding: 2em 0 1em;
-	}
+	padding: 0 0 2em 0;
+	position: relative;
+	max-width: 1300px;
+	margin: 0 auto;
 	.brand {
+		position: absolute;
+		top:3.5em;
+		@include media(upto_xlarge) {
+			top:1.5em;
+			left:0.5em;
+		}
 		@include media(portrait) {
+			top:2em;
 			width: 100%;
 			padding-left:1em;
+			position: relative;
+			margin-bottom: 2em;
+		}
+		@include media(small) {
+			padding-left:0em;
+		}
+		a {
+			text-decoration: none;
+			&:hover {
+				border-bottom: none;
+			}
 		}
 		img{
 			width: 100%;
@@ -25,30 +37,54 @@
 			max-width: 300px;
 			position: relative;
 			top:50%;
-			margin-top: -1.6em;
-			@include media(portrait) {
-				margin-top: 0.2em;
-			}
-			@include media(xsmall) {
-				max-width: 225px;
+			@include media(small) {
+				width: 70%;
 			}
 		}
 	}
 	.main-nav {
-		@include media(portrait) {
-			.navbar{
-				margin-right:0;
-			}
-		}
+		width: 100%;
 		float: right;
 		padding-right: 0;
-		padding-top: 0.4em;
 		nav {
 			float: right;
-			margin-right: 1em;
+
 		}
 	}
 }
+
+#global__brand-lines {
+	height:10px;
+	margin-bottom: 5px;
+	ul {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	.brand-lines {
+		height:10px;
+		margin-right: 0.2%;
+		float: left;
+		width: 33.2%;
+		&:last-child {
+			margin-right: 0;
+		}
+		&.brand-red {
+			background-color: $error-red;
+		}
+
+		&.brand-green {
+			background-color: $green;
+		}
+
+		&.brand-blue {
+			background-color: $link-blue;
+		}
+	}
+
+}
+
+
 
 // Breadcrumb trails
 #global__breadcrumb{

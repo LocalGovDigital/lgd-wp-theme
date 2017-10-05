@@ -46,27 +46,35 @@
 <a href="#content-start" class="screen-reader-text">skip to main content</a>
 
 <header id="header__<?php if ( is_front_page() ) { echo 'front-page'; } else {  echo 'page'; } ?>">
-    <div id="global__top-links" class="small-12 column" >
-        <section>
-            <?php wp_nav_menu( array( 'theme_location' => 'top_links' ) ); ?>
-        </section>
-    </div>
     <div id="global__brand-nav">
-            <div class="small-12 medium-3 column brand">
-                <img src="/wp-content/uploads/2017/01/lgd_logo-1-e1485652490381.png" alt="LocalGov Digital">
-                <ul class="toggle-area" aria-hidden="true">
-                    <li id="mobile-menu">
-                        <i class="fa fa-nav"></i>
-                    </li>
-                </ul>
+        <div class="main-nav">
+            <div class="top-links">
+                <section>
+                    <?php wp_nav_menu( array( 'theme_location' => 'top_links' ) ); ?>
+                </section>
             </div>
-            <div class="small-12 medium-9 column main-nav">
-                <nav class="navbar" data-topbar role="navigation">
-                    <section>
-                        <?php wp_nav_menu( array( 'theme_location' => 'main_nav' ) ); ?>
-                    </section>
-                </nav>
-            </div>
+            <nav class="navbar" data-topbar role="navigation">
+                <section>
+                    <?php wp_nav_menu( array( 'theme_location' => 'main_nav' ) ); ?>
+                </section>
+            </nav>
+        </div>
+        <div class="brand">
+            <a href="/"><img src="/wp-content/uploads/2017/01/lgd_logo-1-e1485652490381.png" alt="LocalGov Digital"></a>
+            <ul class="toggle-area" aria-hidden="true">
+                <li id="mobile-menu">
+                    <i class="fa fa-nav"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="global__brand-lines">
+        <ul>
+            <li class="brand-lines brand-red"></li>
+            <li class="brand-lines brand-green"></li>
+            <li class="brand-lines brand-blue"></div>
+        </ul>
+
     </div>
     <?php if(!is_front_page()) :?>
     <div id="global__breadcrumb" typeof="BreadcrumbList" vocab="http://schema.org/">
