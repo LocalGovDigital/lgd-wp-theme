@@ -18,6 +18,63 @@
 
 // Main header styles
 #global__brand-nav {
+
+	.top-links{
+		display: block;
+		clear:both;
+		padding-right: 0;
+		width: 100%;
+		float: right;
+		@include media(small) {
+			padding-left: 0;
+		}
+		ul {
+			float: right;
+			@include media(portrait) {
+				width: 100%;
+			}
+			li {
+				position: relative;
+				border-left: 1px solid $light-grey;
+				border-bottom: 1px solid $light-grey;
+				padding: 0.8em 1em 0;
+				height: 3em;
+				min-width:100px;
+				vertical-align: top;
+				&:last-child {
+					border-right: 1px solid $light-grey;
+				}
+				@include media(portrait) {
+					min-width: inherit;
+					padding: 3% 0;
+					width: 33%;
+					vertical-align: middle;
+					max-width: 33%;
+					display: block;
+					float: left;
+				}
+				a {
+					border-left:none;
+					border-right:none;
+					color: $content-black;
+					padding: 0.3rem 0.7rem;
+					&:focus {
+						outline: none;
+						border-bottom: 2px solid $orange;
+					}
+				}
+				&.menu-twitter a {
+					@include social_icons(twitter, $light-black, $light-blue, 1.5em);
+				}
+				&.menu-google-plus a {
+					@include social_icons(gplus, $light-black, $light-blue, 1.5em);
+				}
+				&.menu-slack a {
+					@include social_icons(slack, $light-black, $light-blue, 1.5em);
+				}
+			}
+		}
+	}
 	.brand {
 		.toggle-area {
 			list-style: none;
@@ -60,68 +117,13 @@
 				padding: 0;
 			}
 		}
-		.top-links{
-			display: block;
-			clear:both;
-			padding-right: 0;
-			width: 100%;
-			float: right;
-			@include media(small) {
-				padding-left: 0;
-			}
-			ul {
-				float: right;
-				@include media(portrait) {
-					width: 100%;
-				}
-				li {
-					position: relative;
-					border-left: 1px solid $light-grey;
-					border-bottom: 1px solid $light-grey;
-					padding: 0.8em 1em 0;
-					height: 3em;
-					min-width:100px;
-					vertical-align: top;
-					&:last-child {
-						border-right: 1px solid $light-grey;
-					}
-					@include media(portrait) {
-						min-width: inherit;
-						padding: 3% 0;
-						width: 33%;
-						vertical-align: middle;
-						max-width: 33%;
-						display: block;
-						float: left;
-					}
-					a {
-						border-left:none;
-						border-right:none;
-						color: $content-black;
-						padding: 0.3rem 0.7rem;
-						&:focus {
-							outline: none;
-							border-bottom: 2px solid $orange;
-						}
-					}
-					&.menu-twitter a {
-						@include social_icons(twitter, $light-black, $light-blue, 1.5em);
-					}
-					&.menu-google-plus a {
-						@include social_icons(gplus, $light-black, $light-blue, 1.5em);
-					}
-					&.menu-slack a {
-						@include social_icons(slack, $light-black, $light-blue, 1.5em);
-					}
-				}
-			}
-		}
+
 		.navbar {
 			padding: 0;
 			width: 100%;
 			margin: 2.5em 0;
 			@include media(upto_xlarge) {
-				margin: 3em 0 2em;
+				margin: 2em 0 2em;
 			}
 			@include media(portrait) {
 				float: none;
@@ -170,19 +172,31 @@
 						line-height: 135%;
 						text-decoration: none;
 						box-sizing: border-box;
+						&:hover {
+							@include media(portrait) {
+								border-bottom: none;
+								background-color: $light-grey;
+							}
+						}
 						&:focus {
 							outline: none;
 							border-bottom: 2px solid $orange;
+							@include media(portrait) {
+								border-bottom: none;
+								background-color: $orange;
+								color: $white;
+							}
 						}
+
 					}
 					@include media(portrait) {
 						width: 100%;
-						border-bottom: 1px solid $vlight-grey;
+						border-bottom: 1px solid $light-grey;
 						border-right: none;
 						height: auto;
 						//min-height: auto;
 						a {
-							padding: 0.5em 0.6em;
+							padding: 1em;
 						}
 					}
 
@@ -194,9 +208,17 @@
 				}
 				a {
 					padding-right: 29px;
+					@include media(portrait) {
+						padding:1em;
+					}
 					&:focus {
 						outline: none;
 						border-bottom: 2px solid $orange;
+						@include media(portrait) {
+							border-bottom: none;
+							background-color: $orange;
+							color: $white;
+						}
 					}
 				}
 				&:before {
@@ -208,6 +230,7 @@
 					font-size: 0.9em;
 					@include media(portrait) {
 						padding-right: 2.7em;
+						padding-top: 1em;
 					}
 				}
 				> .dropdown {
@@ -235,6 +258,7 @@
 						box-shadow: none;
 						padding: 0;
 						border-top: 1px solid $light-grey;
+
 					}
 					&.drop-left {
 						left: auto;
@@ -244,6 +268,7 @@
 						width: 100%;
 						border: none;
 						min-height: 2.2em;
+						padding-left: 2em;
 						@include media(small_landscape) {
 							min-height: 40px;
 						}
@@ -258,19 +283,26 @@
 							margin-left: 0.2em;
 							margin-top: 0.2em;
 							@include media(portrait) {
-								color: $light-grey;
+								margin-top: 1em;
+							}
+						}
+						&:focus {
+							&:before {
+								color: $white;
+								transition: all 0.5s ease 0s;
+								margin-left: 0.5em;
 							}
 						}
 						&:hover {
 							&:before {
 								transition: all 0.5s ease 0s;
-								color: $vlight-blue;
 								margin-left: 0.5em;
 							}
 							@include media(portrait) {
-								background-color: $xlight-blue
+								background-color: $light-grey;
 							}
 						}
+
 						a {
 							color: $light-black;
 							display: block;
@@ -280,8 +312,14 @@
 							@include media(portrait) {
 								color: $content-black;
 							}
+							&:hover {
+								border-bottom: none;
+								background-color: $light-grey;
+							}
 							&:focus {
-
+								border-bottom: none;
+								background-color: $orange;
+								color: $white;
 							}
 						}
 						.menu-item-description {

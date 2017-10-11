@@ -6,12 +6,19 @@
 #home__intro {
 	padding: 3em 0;
 	border-bottom: 5px solid $light-grey;
+	background-color: $light-black;
+	color: $white;
+	margin-top: -5px;
+	h1 {
+		color: $white;
+	}
 	@include media(portrait) {
 		padding: 0 0 3em;
 	}
 	.popular-links {
 		h2{
 			padding-bottom: 0;
+			color: $white;
 		}
 		ul{
 			margin: 0;
@@ -20,6 +27,13 @@
 				padding-left: 0;
 				line-height:2.5em;
 				font-size: 1.2em;
+				color: $white;
+				a {
+					color: $white;
+					&:hover {
+						border-bottom-color: $white;
+					}
+				}
 			}
 		}
 		@include media(small) {

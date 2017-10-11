@@ -99,9 +99,17 @@ hr {
     .mobile-only {
       display: block; } }
 
+.hidden-spacer {
+  text-indent: -999em;
+  height: 0px; }
+
 /*
 * Default Style SASS
 */
+header {
+  display: inline-block;
+  width: 100%; }
+
 #global__brand-nav {
   border-top: 1px solid #ececec;
   width: 100%;
@@ -222,6 +230,134 @@ hr {
 .fa-nav:before {
   content: "\f0c9"; }
 
+#global__brand-nav .top-links {
+  display: block;
+  clear: both;
+  padding-right: 0;
+  width: 100%;
+  float: right; }
+  @media screen and (max-width: 40em) {
+    #global__brand-nav .top-links {
+      padding-left: 0; } }
+  #global__brand-nav .top-links ul {
+    float: right; }
+    @media screen and (max-width: 48em) {
+      #global__brand-nav .top-links ul {
+        width: 100%; } }
+    #global__brand-nav .top-links ul li {
+      position: relative;
+      border-left: 1px solid #ececec;
+      border-bottom: 1px solid #ececec;
+      padding: 0.8em 1em 0;
+      height: 3em;
+      min-width: 100px;
+      vertical-align: top; }
+      #global__brand-nav .top-links ul li:last-child {
+        border-right: 1px solid #ececec; }
+      @media screen and (max-width: 48em) {
+        #global__brand-nav .top-links ul li {
+          min-width: inherit;
+          padding: 3% 0;
+          width: 33%;
+          vertical-align: middle;
+          max-width: 33%;
+          display: block;
+          float: left; } }
+      #global__brand-nav .top-links ul li a {
+        border-left: none;
+        border-right: none;
+        color: #565656;
+        padding: 0.3rem 0.7rem; }
+        #global__brand-nav .top-links ul li a:focus {
+          outline: none;
+          border-bottom: 2px solid #d68600; }
+      #global__brand-nav .top-links ul li.menu-twitter a {
+        text-indent: -9999px; }
+        #global__brand-nav .top-links ul li.menu-twitter a::before {
+          text-indent: 0px;
+          color: #474747;
+          content: "\f081";
+          font-family: FontAwesome;
+          font-size: 1.5em;
+          left: 50%;
+          position: absolute;
+          top: 50%;
+          margin-top: -0.5em;
+          margin-left: -0.5em; }
+        #global__brand-nav .top-links ul li.menu-twitter a:hover {
+          text-decoration: none;
+          border-bottom: none; }
+          #global__brand-nav .top-links ul li.menu-twitter a:hover::before {
+            transition: all 0.5s ease 0s;
+            color: #0073b9; }
+        #global__brand-nav .top-links ul li.menu-twitter a:focus {
+          border-bottom: none; }
+          #global__brand-nav .top-links ul li.menu-twitter a:focus::before {
+            color: #d68600; }
+        #global__brand-nav .top-links ul li.menu-twitter a a {
+          clip: rect(1px, 1px, 1px, 1px);
+          position: absolute !important;
+          height: 1px;
+          width: 1px;
+          overflow: hidden; }
+      #global__brand-nav .top-links ul li.menu-google-plus a {
+        text-indent: -9999px; }
+        #global__brand-nav .top-links ul li.menu-google-plus a::before {
+          text-indent: 0px;
+          color: #474747;
+          content: "\f0d4";
+          font-family: FontAwesome;
+          font-size: 1.5em;
+          left: 50%;
+          position: absolute;
+          top: 50%;
+          margin-top: -0.5em;
+          margin-left: -0.5em; }
+        #global__brand-nav .top-links ul li.menu-google-plus a:hover {
+          text-decoration: none;
+          border-bottom: none; }
+          #global__brand-nav .top-links ul li.menu-google-plus a:hover::before {
+            transition: all 0.5s ease 0s;
+            color: #0073b9; }
+        #global__brand-nav .top-links ul li.menu-google-plus a:focus {
+          border-bottom: none; }
+          #global__brand-nav .top-links ul li.menu-google-plus a:focus::before {
+            color: #d68600; }
+        #global__brand-nav .top-links ul li.menu-google-plus a a {
+          clip: rect(1px, 1px, 1px, 1px);
+          position: absolute !important;
+          height: 1px;
+          width: 1px;
+          overflow: hidden; }
+      #global__brand-nav .top-links ul li.menu-slack a {
+        text-indent: -9999px; }
+        #global__brand-nav .top-links ul li.menu-slack a::before {
+          text-indent: 0px;
+          color: #474747;
+          content: "\f198";
+          font-family: FontAwesome;
+          font-size: 1.5em;
+          left: 50%;
+          position: absolute;
+          top: 50%;
+          margin-top: -0.5em;
+          margin-left: -0.5em; }
+        #global__brand-nav .top-links ul li.menu-slack a:hover {
+          text-decoration: none;
+          border-bottom: none; }
+          #global__brand-nav .top-links ul li.menu-slack a:hover::before {
+            transition: all 0.5s ease 0s;
+            color: #0073b9; }
+        #global__brand-nav .top-links ul li.menu-slack a:focus {
+          border-bottom: none; }
+          #global__brand-nav .top-links ul li.menu-slack a:focus::before {
+            color: #d68600; }
+        #global__brand-nav .top-links ul li.menu-slack a a {
+          clip: rect(1px, 1px, 1px, 1px);
+          position: absolute !important;
+          height: 1px;
+          width: 1px;
+          overflow: hidden; }
 #global__brand-nav .brand .toggle-area {
   list-style: none;
   display: none;
@@ -255,141 +391,13 @@ hr {
       width: 100%; }
       #global__brand-nav .main-nav .column {
         padding: 0; } }
-  #global__brand-nav .main-nav .top-links {
-    display: block;
-    clear: both;
-    padding-right: 0;
-    width: 100%;
-    float: right; }
-    @media screen and (max-width: 40em) {
-      #global__brand-nav .main-nav .top-links {
-        padding-left: 0; } }
-    #global__brand-nav .main-nav .top-links ul {
-      float: right; }
-      @media screen and (max-width: 48em) {
-        #global__brand-nav .main-nav .top-links ul {
-          width: 100%; } }
-      #global__brand-nav .main-nav .top-links ul li {
-        position: relative;
-        border-left: 1px solid #ececec;
-        border-bottom: 1px solid #ececec;
-        padding: 0.8em 1em 0;
-        height: 3em;
-        min-width: 100px;
-        vertical-align: top; }
-        #global__brand-nav .main-nav .top-links ul li:last-child {
-          border-right: 1px solid #ececec; }
-        @media screen and (max-width: 48em) {
-          #global__brand-nav .main-nav .top-links ul li {
-            min-width: inherit;
-            padding: 3% 0;
-            width: 33%;
-            vertical-align: middle;
-            max-width: 33%;
-            display: block;
-            float: left; } }
-        #global__brand-nav .main-nav .top-links ul li a {
-          border-left: none;
-          border-right: none;
-          color: #565656;
-          padding: 0.3rem 0.7rem; }
-          #global__brand-nav .main-nav .top-links ul li a:focus {
-            outline: none;
-            border-bottom: 2px solid #d68600; }
-        #global__brand-nav .main-nav .top-links ul li.menu-twitter a {
-          text-indent: -9999px; }
-          #global__brand-nav .main-nav .top-links ul li.menu-twitter a::before {
-            text-indent: 0px;
-            color: #474747;
-            content: "\f081";
-            font-family: FontAwesome;
-            font-size: 1.5em;
-            left: 50%;
-            position: absolute;
-            top: 50%;
-            margin-top: -0.5em;
-            margin-left: -0.5em; }
-          #global__brand-nav .main-nav .top-links ul li.menu-twitter a:hover {
-            text-decoration: none;
-            border-bottom: none; }
-            #global__brand-nav .main-nav .top-links ul li.menu-twitter a:hover::before {
-              transition: all 0.5s ease 0s;
-              color: #0073b9; }
-          #global__brand-nav .main-nav .top-links ul li.menu-twitter a:focus {
-            border-bottom: none; }
-            #global__brand-nav .main-nav .top-links ul li.menu-twitter a:focus::before {
-              color: #d68600; }
-          #global__brand-nav .main-nav .top-links ul li.menu-twitter a a {
-            clip: rect(1px, 1px, 1px, 1px);
-            position: absolute !important;
-            height: 1px;
-            width: 1px;
-            overflow: hidden; }
-        #global__brand-nav .main-nav .top-links ul li.menu-google-plus a {
-          text-indent: -9999px; }
-          #global__brand-nav .main-nav .top-links ul li.menu-google-plus a::before {
-            text-indent: 0px;
-            color: #474747;
-            content: "\f0d4";
-            font-family: FontAwesome;
-            font-size: 1.5em;
-            left: 50%;
-            position: absolute;
-            top: 50%;
-            margin-top: -0.5em;
-            margin-left: -0.5em; }
-          #global__brand-nav .main-nav .top-links ul li.menu-google-plus a:hover {
-            text-decoration: none;
-            border-bottom: none; }
-            #global__brand-nav .main-nav .top-links ul li.menu-google-plus a:hover::before {
-              transition: all 0.5s ease 0s;
-              color: #0073b9; }
-          #global__brand-nav .main-nav .top-links ul li.menu-google-plus a:focus {
-            border-bottom: none; }
-            #global__brand-nav .main-nav .top-links ul li.menu-google-plus a:focus::before {
-              color: #d68600; }
-          #global__brand-nav .main-nav .top-links ul li.menu-google-plus a a {
-            clip: rect(1px, 1px, 1px, 1px);
-            position: absolute !important;
-            height: 1px;
-            width: 1px;
-            overflow: hidden; }
-        #global__brand-nav .main-nav .top-links ul li.menu-slack a {
-          text-indent: -9999px; }
-          #global__brand-nav .main-nav .top-links ul li.menu-slack a::before {
-            text-indent: 0px;
-            color: #474747;
-            content: "\f198";
-            font-family: FontAwesome;
-            font-size: 1.5em;
-            left: 50%;
-            position: absolute;
-            top: 50%;
-            margin-top: -0.5em;
-            margin-left: -0.5em; }
-          #global__brand-nav .main-nav .top-links ul li.menu-slack a:hover {
-            text-decoration: none;
-            border-bottom: none; }
-            #global__brand-nav .main-nav .top-links ul li.menu-slack a:hover::before {
-              transition: all 0.5s ease 0s;
-              color: #0073b9; }
-          #global__brand-nav .main-nav .top-links ul li.menu-slack a:focus {
-            border-bottom: none; }
-            #global__brand-nav .main-nav .top-links ul li.menu-slack a:focus::before {
-              color: #d68600; }
-          #global__brand-nav .main-nav .top-links ul li.menu-slack a a {
-            clip: rect(1px, 1px, 1px, 1px);
-            position: absolute !important;
-            height: 1px;
-            width: 1px;
-            overflow: hidden; }
   #global__brand-nav .main-nav .navbar {
     padding: 0;
     width: 100%;
     margin: 2.5em 0; }
     @media screen and (max-width: 75em) {
       #global__brand-nav .main-nav .navbar {
-        margin: 3em 0 2em; } }
+        margin: 2em 0 2em; } }
     @media screen and (max-width: 48em) {
       #global__brand-nav .main-nav .navbar {
         float: none; } }
@@ -430,25 +438,42 @@ hr {
             line-height: 135%;
             text-decoration: none;
             box-sizing: border-box; }
+            @media screen and (max-width: 48em) {
+              #global__brand-nav .main-nav .navbar section ul > li a:hover {
+                border-bottom: none;
+                background-color: #ececec; } }
             #global__brand-nav .main-nav .navbar section ul > li a:focus {
               outline: none;
               border-bottom: 2px solid #d68600; }
+              @media screen and (max-width: 48em) {
+                #global__brand-nav .main-nav .navbar section ul > li a:focus {
+                  border-bottom: none;
+                  background-color: #d68600;
+                  color: #fff; } }
           @media screen and (max-width: 48em) {
             #global__brand-nav .main-nav .navbar section ul > li {
               width: 100%;
-              border-bottom: 1px solid #fcfcfc;
+              border-bottom: 1px solid #ececec;
               border-right: none;
               height: auto; }
               #global__brand-nav .main-nav .navbar section ul > li a {
-                padding: 0.5em 0.6em; } }
+                padding: 1em; } }
       @media screen and (max-width: 48em) {
         #global__brand-nav .main-nav .navbar section .has-dropdown {
           padding: 0; } }
       #global__brand-nav .main-nav .navbar section .has-dropdown a {
         padding-right: 29px; }
+        @media screen and (max-width: 48em) {
+          #global__brand-nav .main-nav .navbar section .has-dropdown a {
+            padding: 1em; } }
         #global__brand-nav .main-nav .navbar section .has-dropdown a:focus {
           outline: none;
           border-bottom: 2px solid #d68600; }
+          @media screen and (max-width: 48em) {
+            #global__brand-nav .main-nav .navbar section .has-dropdown a:focus {
+              border-bottom: none;
+              background-color: #d68600;
+              color: #fff; } }
       #global__brand-nav .main-nav .navbar section .has-dropdown:before {
         font-family: FontAwesome;
         content: "\f107";
@@ -458,7 +483,8 @@ hr {
         font-size: 0.9em; }
         @media screen and (max-width: 48em) {
           #global__brand-nav .main-nav .navbar section .has-dropdown:before {
-            padding-right: 2.7em; } }
+            padding-right: 2.7em;
+            padding-top: 1em; } }
       #global__brand-nav .main-nav .navbar section .has-dropdown > .dropdown {
         display: none;
         height: auto;
@@ -491,7 +517,8 @@ hr {
         #global__brand-nav .main-nav .navbar section .has-dropdown > .dropdown li {
           width: 100%;
           border: none;
-          min-height: 2.2em; }
+          min-height: 2.2em;
+          padding-left: 2em; }
           @media screen and (max-width: 61.875em) {
             #global__brand-nav .main-nav .navbar section .has-dropdown > .dropdown li {
               min-height: 40px; } }
@@ -507,14 +534,17 @@ hr {
             margin-top: 0.2em; }
             @media screen and (max-width: 48em) {
               #global__brand-nav .main-nav .navbar section .has-dropdown > .dropdown li:before {
-                color: #ececec; } }
+                margin-top: 1em; } }
+          #global__brand-nav .main-nav .navbar section .has-dropdown > .dropdown li:focus:before {
+            color: #fff;
+            transition: all 0.5s ease 0s;
+            margin-left: 0.5em; }
           #global__brand-nav .main-nav .navbar section .has-dropdown > .dropdown li:hover:before {
             transition: all 0.5s ease 0s;
-            color: #9BD6F2;
             margin-left: 0.5em; }
           @media screen and (max-width: 48em) {
             #global__brand-nav .main-nav .navbar section .has-dropdown > .dropdown li:hover {
-              background-color: #F2FAFF; } }
+              background-color: #ececec; } }
           #global__brand-nav .main-nav .navbar section .has-dropdown > .dropdown li a {
             color: #474747;
             display: block;
@@ -524,6 +554,13 @@ hr {
             @media screen and (max-width: 48em) {
               #global__brand-nav .main-nav .navbar section .has-dropdown > .dropdown li a {
                 color: #565656; } }
+            #global__brand-nav .main-nav .navbar section .has-dropdown > .dropdown li a:hover {
+              border-bottom: none;
+              background-color: #ececec; }
+            #global__brand-nav .main-nav .navbar section .has-dropdown > .dropdown li a:focus {
+              border-bottom: none;
+              background-color: #d68600;
+              color: #fff; }
           #global__brand-nav .main-nav .navbar section .has-dropdown > .dropdown li .menu-item-description {
             font-weight: normal;
             display: block;
@@ -626,19 +663,30 @@ hr {
 
 #home__intro {
   padding: 3em 0;
-  border-bottom: 5px solid #ececec; }
+  border-bottom: 5px solid #ececec;
+  background-color: #474747;
+  color: #fff;
+  margin-top: -5px; }
+  #home__intro h1 {
+    color: #fff; }
   @media screen and (max-width: 48em) {
     #home__intro {
       padding: 0 0 3em; } }
   #home__intro .popular-links h2 {
-    padding-bottom: 0; }
+    padding-bottom: 0;
+    color: #fff; }
   #home__intro .popular-links ul {
     margin: 0;
     padding: 0; }
     #home__intro .popular-links ul li {
       padding-left: 0;
       line-height: 2.5em;
-      font-size: 1.2em; }
+      font-size: 1.2em;
+      color: #fff; }
+      #home__intro .popular-links ul li a {
+        color: #fff; }
+        #home__intro .popular-links ul li a:hover {
+          border-bottom-color: #fff; }
   @media screen and (max-width: 40em) {
     #home__intro .popular-links {
       border-top: 1px solid #ececec; } }

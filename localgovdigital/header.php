@@ -47,17 +47,10 @@
 
 <header id="header__<?php if ( is_front_page() ) { echo 'front-page'; } else {  echo 'page'; } ?>">
     <div id="global__brand-nav">
-        <div class="main-nav">
-            <div class="top-links">
-                <section>
-                    <?php wp_nav_menu( array( 'theme_location' => 'top_links' ) ); ?>
-                </section>
-            </div>
-            <nav class="navbar" data-topbar role="navigation">
-                <section>
-                    <?php wp_nav_menu( array( 'theme_location' => 'main_nav' ) ); ?>
-                </section>
-            </nav>
+        <div class="top-links">
+            <section>
+                <?php wp_nav_menu( array( 'theme_location' => 'top_links' ) ); ?>
+            </section>
         </div>
         <div class="brand">
             <a href="/"><img src="/wp-content/uploads/2017/01/lgd_logo-1-e1485652490381.png" alt="LocalGov Digital"></a>
@@ -66,6 +59,13 @@
                     <i class="fa fa-nav"></i>
                 </li>
             </ul>
+        </div>
+        <div class="main-nav">
+            <nav class="navbar" data-topbar role="navigation">
+                <section>
+                    <?php wp_nav_menu( array( 'theme_location' => 'main_nav' ) ); ?>
+                </section>
+            </nav>
         </div>
     </div>
     <div id="global__brand-lines">
