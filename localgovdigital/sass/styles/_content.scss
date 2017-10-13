@@ -151,16 +151,30 @@
 				margin-bottom: 2em;
 				width: 32%;
 				border: 1px solid $mid-grey;
-				border-left: 3px solid $light-grey;
+				border-left: 3px solid $link-blue;
 				list-style: none;
+				position: relative;
 				&:nth-child(odd){
 					margin-left: 0;
 				}
+				&::before {
+					content:'';
+					background-color: rgba(240, 249, 255, 0);
+					transition: all 0.5s ease;
+					width: 0;
+					height: 100%;
+					position: absolute;
+					z-index: -10;
+				}
 				&:hover{
 					transition: all 0.5s ease 0s;
-					background-color: $xlight-blue;
+					border-left: 3px solid $light-black;
 					cursor: pointer;
-					border-left: 3px solid $mid-grey;
+					&::before {
+						width: 100%;
+						background-color: rgba(240, 249, 255, 1);
+						transition: all 0.5s ease;
+					}
 				}
 				@include media(medium) {
 					width: 49%;
@@ -182,6 +196,7 @@
 					height: 100%;
 					padding: 1.5em 7% 2.0em;
 					margin-bottom: 3px;
+
 					h3{
 						font-size: 1.2em;
 						padding-top: 0;
@@ -191,6 +206,7 @@
 					&:hover{
 						transition: all 0.5s ease 0s;
 						border: none;
+
 
 					}
 				}

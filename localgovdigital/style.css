@@ -535,8 +535,10 @@ header {
         #global__brand-nav .main-nav .navbar section .has-dropdown > .dropdown li {
           width: 100%;
           border: none;
-          min-height: 2.2em;
-          padding-left: 2em; }
+          min-height: 2.2em; }
+          @media screen and (max-width: 48em) {
+            #global__brand-nav .main-nav .navbar section .has-dropdown > .dropdown li {
+              padding-left: 2em; } }
           @media screen and (max-width: 61.875em) {
             #global__brand-nav .main-nav .navbar section .has-dropdown > .dropdown li {
               min-height: 40px; } }
@@ -672,9 +674,9 @@ header {
           #footer__terms-links .menu-terms-container ul li {
             display: block; } }
         #footer__terms-links .menu-terms-container ul li a {
-          padding-bottom: 0;
-          padding-top: 0;
-          line-height: 1.5em; }
+          padding: 0;
+          line-height: 1.5em;
+          margin: 0 1rem; }
           @media screen and (max-width: 40em) {
             #footer__terms-links .menu-terms-container ul li a {
               padding-left: 0; } }
@@ -860,15 +862,27 @@ header {
       margin-bottom: 2em;
       width: 32%;
       border: 1px solid #d5d5d5;
-      border-left: 3px solid #ececec;
-      list-style: none; }
+      border-left: 3px solid #0073b9;
+      list-style: none;
+      position: relative; }
       #global__digital-listings .digital-listings ul li:nth-child(odd) {
         margin-left: 0; }
+      #global__digital-listings .digital-listings ul li::before {
+        content: '';
+        background-color: rgba(240, 249, 255, 0);
+        transition: all 0.5s ease;
+        width: 0;
+        height: 100%;
+        position: absolute;
+        z-index: -10; }
       #global__digital-listings .digital-listings ul li:hover {
         transition: all 0.5s ease 0s;
-        background-color: #caebff;
-        cursor: pointer;
-        border-left: 3px solid #d5d5d5; }
+        border-left: 3px solid #474747;
+        cursor: pointer; }
+        #global__digital-listings .digital-listings ul li:hover::before {
+          width: 100%;
+          background-color: #f0f9ff;
+          transition: all 0.5s ease; }
       @media screen and (min-width: 40.063em) {
         #global__digital-listings .digital-listings ul li {
           width: 49%; }
