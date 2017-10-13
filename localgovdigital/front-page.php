@@ -40,7 +40,9 @@ get_header(); ?>
 
                         <a href="<?php the_permalink();?>"><?php the_post_thumbnail(); ?></a>
                         <h3><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
-                        <?php the_excerpt();?>
+                        <?php $excerpt = get_the_excerpt();
+                                echo $excerpt;
+                        ?>
                         <span class="small-date"><?php the_date();?></span>
 
                     <?php else :
@@ -88,7 +90,7 @@ get_header(); ?>
                                 alt="<?php the_field('banner_1_title');?>">
 
                      </div>
-                    <div class="feature-banner-content">
+                    <div class="feature-banner-content banner_1">
                         <h2><?php the_field('banner_1_title');?></h2>
                         <?php the_field('banner_1_intro_text');?>
                     </div>
@@ -107,7 +109,7 @@ get_header(); ?>
                              alt="<?php the_field('banner_2_title');?>">
 
                     </div>
-                    <div class="feature-banner-content">
+                    <div class="feature-banner-content banner_2">
                         <h2><?php the_field('banner_2_title');?></h2>
                         <?php the_field('banner_2_intro_text');?>
                     </div>
@@ -126,7 +128,7 @@ get_header(); ?>
                              alt="<?php the_field('banner_3_title');?>">
 
                     </div>
-                    <div class="feature-banner-content">
+                    <div class="feature-banner-content banner_3">
                         <h2><?php the_field('banner_3_title');?></h2>
                         <?php the_field('banner_3_intro_text');?>
                     </div>
@@ -185,7 +187,7 @@ get_header(); ?>
                              src="<?php echo $img['sizes']['medium']; ?>"
                              alt="<?php the_field('gdu_banner_1_title');?>">
                     </div>
-                    <div class="feature-banner-content">
+                    <div class="feature-banner-content banner_1">
                         <h2><?php the_field('gdu_banner_1_title');?></h2>
                         <?php the_field('gdu_banner_1_intro_text');?>
                         <hr>
@@ -205,7 +207,7 @@ get_header(); ?>
                              src="<?php echo $img['sizes']['medium']; ?>"
                              alt="<?php the_field('gdu_banner_2_title');?>">
                     </div>
-                    <div class="feature-banner-content">
+                    <div class="feature-banner-content banner_2">
                         <h2><?php the_field('gdu_banner_2_title');?></h2>
                         <?php the_field('gdu_banner_2_intro_text');?>
                         <hr>
@@ -225,7 +227,7 @@ get_header(); ?>
                              src="<?php echo $img['sizes']['medium']; ?>"
                              alt="<?php the_field('gdu_banner_3_title');?>">
                     </div>
-                    <div class="feature-banner-content">
+                    <div class="feature-banner-content banner_3">
                         <h2><?php the_field('gdu_banner_3_title');?></h2>
                         <?php the_field('gdu_banner_3_intro_text');?>
                         <hr>

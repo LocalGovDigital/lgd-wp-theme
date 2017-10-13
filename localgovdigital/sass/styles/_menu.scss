@@ -407,7 +407,8 @@
 			float: left;
 			margin-bottom: 2em;
 			a {
-				line-height: 1.5em;
+				line-height: 2em;
+
 			}
 			@include media(small) {
 				width:100%;
@@ -418,15 +419,17 @@
 					padding: 0;
 					li {
 						margin-left: 0;
+
 					}
 				}
 			}
 			> a {
 				margin: 0;
-				padding: 0;
+				padding: 0 0 0.5rem 0;
 				cursor: default;
-				color: $content-black;
-				font-weight: bold;
+				color: $white;
+				font-size: 1.3rem;
+				border-bottom: none;
 				&:hover {
 					border-bottom: none;
 				}
@@ -438,7 +441,8 @@
 
 // Footer terms styles
 #footer__terms-links {
-	padding-top: 3em;
+	padding-top: 2em;
+	background-color: $medium-black;
 	.menu-terms-container {
 		float: left;
 		margin-bottom: 0.5em;

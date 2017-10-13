@@ -15,6 +15,7 @@ header {
 	.brand {
 		position: absolute;
 		top:3.5em;
+		left: 1em;
 		@include media(upto_xlarge) {
 			top:1.5em;
 			left:0.5em;
@@ -92,7 +93,17 @@ header {
 
 // Breadcrumb trails
 #global__breadcrumb{
-	margin: 2em 0;
+	margin-top: -5px;
+	padding: 2em 0;
+	background-color: $light-black;
+	color: $white;
+	a {
+		color: $white;
+		border-bottom: 2px solid $white;
+		&:hover {
+			border-bottom: none;
+		}
+	}
 }
 
 

@@ -1,5 +1,17 @@
 // FOOTER STYLES
 #global__footer_content {
-	border-top: 10px solid $mid-grey;
+	border-top: 10px solid $medium-black;
 	padding-top: 5em;
+	background-color: $light-black;
+	color: $white;
+	a {
+		color: $white;
+		border-bottom: 2px solid $white;
+		&:hover {
+			border-bottom: none;
+		}
+	}
+	#footer__nav-links {
+		padding-bottom: 2em;
+	}
 }

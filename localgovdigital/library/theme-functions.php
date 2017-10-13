@@ -208,3 +208,4 @@ function override_page_title($title)
     return $title;
 }
 add_filter('wpseo_title', 'override_page_title');
+

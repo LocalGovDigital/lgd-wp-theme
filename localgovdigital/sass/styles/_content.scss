@@ -37,7 +37,7 @@
 			}
 		}
 		@include media(small) {
-			border-top: 1px solid $light-grey;
+			border-top: 1px solid $dark-grey;
 		}
 	}
 }
@@ -103,14 +103,25 @@
 
 // Home page product banners section
 #home__product-banners {
-	background-color: $light-grey;
+	background-color: $xlight-blue;
+	border-top: 5px solid $vlight-blue;
 	padding: 7em 0;
 	@include media(small_landscape) {
 		padding: 5em 0;
 	}
 	@include feature-banner();
+
 }
 
+.banner_1 {
+	border-top: 7px solid $error-red;
+}
+.banner_2 {
+	border-top: 7px solid $green;
+}
+.banner_3 {
+	border-top: 7px solid $link-blue;
+}
 
 // Home page local voice section
 #global__digital-listings {
@@ -243,7 +254,8 @@
 
 // Home page event banners section
 #home__event-banners {
-	background-color: $light-grey;
+	background-color: $xlight-blue;
+	border-top: 5px solid $vlight-blue;
 	padding: 7em 0;
 	@include media(small_landscape) {
 		padding: 5em 0;
