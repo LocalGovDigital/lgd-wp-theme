@@ -1,13 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.0
+ * The template for displaying news category
  */
 
 get_header(); ?>
@@ -46,7 +39,7 @@ get_header(); ?>
                                         <li>
                                             <a href="'.get_the_permalink().'">
                                                 <h2>'.get_the_title().'</h2>
-                                                <p>'.get_the_excerpt().'</p>
+                                                <p>'.wp_trim_excerpt().'</p>
                                                 <span class="small-date"><strong>'.get_the_date().'</strong></span>
                                             </a>
                                         </li>';

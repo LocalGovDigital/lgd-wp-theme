@@ -10,11 +10,11 @@
 
         <div class="sidebar_content">
 
-            <?php //if ( is_active_sidebar( 'sidebar-widgets' ) ) : ?>
+            <?php if ( is_active_sidebar( 'sidebar-widgets' ) ) : ?>
                 <ul id="sidebar-widgets">
                     <?php dynamic_sidebar( 'sidebar-widgets' ); ?>
                 </ul>
-            <?php //endif; ?>
+            <?php endif; ?>
         
 
             <?php // adds custom links to sidebar if specified
@@ -60,19 +60,53 @@
             <?php } ?>
 
             <?php
-            if (is_tax('peer_group')) : ?>
-<ul>
-<?php $leads = pods( 'peer_group', get_queried_object()->term_id )->field('leads');
 
-foreach ($leads as $lead) {
-$leaduser = pods('user', $lead['ID']); ?>
-<li><h4><a href="<?php echo get_author_posts_url( $lead['ID'], $leaduser->display('user_nicename') ); ?>"><?php echo $leaduser->display('display_name'); ?></a></h4>
-<?php echo $leaduser->display('job_title'); ?><br>
-<?php echo $leaduser->display('organisation'); ?>
-</li>
-<?php } 
-?>
-</ul>
+
+
+            if (is_tax('peer_group')) : ?>
+
+
+                    <?php $leads = pods( 'peer_group', get_queried_object()->term_id )->field('leads');
+
+                if($leads) {?>
+                    <ul>
+                        <?php foreach ($leads as $lead) {
+                        $leaduser = pods('user', $lead['ID']); ?>
+                        <li><h4>
+                                <a href="<?php echo get_author_posts_url($lead['ID'], $leaduser->display('user_nicename')); ?>"><?php echo $leaduser->display('display_name'); ?></a>
+                            </h4>
+                            <?php echo $leaduser->display('job_title'); ?><br>
+                            <?php echo $leaduser->display('organisation'); ?>
+                        </li>
+                    <?php } ?>
+                    </ul>
+               <?php } ?>
+
+                <?php
+                //displays other peer groups but not current
+                $queried_object = get_queried_object();
+                $this_id = $queried_object->term_id;
+                $terms = get_terms( array(
+                    'taxonomy' => 'peer_group',
+                    'hide_empty' => false,
+                ) );
+                if($terms) {
+                    echo '<h3>Other peer groups</h3>';
+                    echo '<ul>';
+                    foreach ($terms  as $term ) {
+
+                        if ($term->term_id != $this_id) {
+                            //echo 'termid:'.$term->term_id.' postid:'.$this_id;
+                            echo '<li><a href="'.get_site_url().'/peer-group/' . $term->slug . '">'.$term->name.'</a></li>';
+                        }
+                    }
+                    echo '</ul>';
+                    //print_r($terms);
+                }
+
+                ?>
+
+
             <?php endif; ?>
 
             <?php // PIPELINE

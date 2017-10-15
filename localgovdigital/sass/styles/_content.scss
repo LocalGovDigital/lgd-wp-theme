@@ -133,6 +133,7 @@
 		}
 	}
 	.digital-listings{
+		padding-left: 0;
 		ul{
 			margin-left: 0;
 			margin-top: 2em;
@@ -284,7 +285,7 @@
 
 // Global content styles
 #global__content {
-	padding-top: 1em;
+	padding-top: 3em;
 	padding-bottom: 4em;
 	@include media(portrait) {
 		padding-bottom: 0em;
