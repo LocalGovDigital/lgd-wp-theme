@@ -3,12 +3,15 @@
  * Template Name: Voice Landing
  */
 
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : '1';
 $args = array(
     'post_type'=> 'voice_post',
     'orderby'    => 'date',
     'order'    => 'DESC',
     'posts_per_page' => 15,
-    );              
+    'nopaging'  => false,
+    'paged'     => $paged,
+    );
 
 $the_query = new WP_Query( $args );
 
@@ -36,6 +39,8 @@ get_header(); ?>
                                 get_template_part( 'template-parts/page/content', 'voice-post' );
                             endwhile; ?>
                             </ul>
+                            <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>
+                            <div class="nav-next alignright"><?php previous_posts_link( 'Newer posts' ); ?></div>
                        <?php else :
                             get_template_part( 'template-parts/post/content', 'none' );
                         endif; ?>

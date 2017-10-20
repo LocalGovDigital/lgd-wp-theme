@@ -209,3 +209,39 @@ function override_page_title($title)
 }
 add_filter('wpseo_title', 'override_page_title');
 
+
+
+// Change Contact Form 7 Submit to Button
+
+remove_action( 'wpcf7_init', 'wpcf7_add_shortcode_submit', 20 );
+add_action( 'wpcf7_init', 'wpcf7_add_shortcode_submit_button' );
+
+function wpcf7_add_shortcode_submit_button() {
+    wpcf7_add_shortcode( 'submit', 'wpcf7_submit_button_shortcode_handler' );
+}
+
+function wpcf7_submit_button_shortcode_handler( $tag ) {
+    $tag = new WPCF7_Shortcode( $tag );
+
+    $class = wpcf7_form_controls_class( $tag->type );
+
+    $atts = array();
+
+    $atts['class'] = $tag->get_class_option( $class );
+    $atts['id'] = $tag->get_id_option();
+    $atts['tabindex'] = $tag->get_option( 'tabindex', 'int', true );
+
+    $value = isset( $tag->values[0] ) ? $tag->values[0] : '';
+
+    if ( empty( $value ) )
+        $value = __( 'Send', 'contact-form-7' );
+
+    $atts['type'] = 'submit';
+
+    $atts = wpcf7_format_atts( $atts );
+
+    $html = sprintf( '<button %1$s>%2$s</button>', $atts, $value );
+
+    return $html;
+}
+
