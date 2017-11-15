@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying standards detail page
+ * The template for displaying peer group detail page
  *
  */
 
@@ -10,34 +10,22 @@ get_header(); ?>
     <main>
         <section id="global__content">
             <div class="row">
-                <div id="standards__detail" class="small-12 medium-8 columns body_content">
-                    <div class="lgdss-title">
-                        Local Government Digital Service Standard
-                    </div>
+                <div id="peer-group__detail" class="small-12 medium-8 columns body_content">
 
                 <?php
                     /* Start the Loop */
                     while ( have_posts() ) : the_post();
                 ?>
-                    <div class="standard-point">
-                        <h1><?php the_field('number');?>. <?php the_title();?></h1>
-                        <div class="standard-intro">
-                            <?php the_content();?>
-                        </div>
-                    </div>
-                    <div class="standard-guidelines">
-                        <h2>Notes for applying this point</h2>
-                        <?php the_field('guidance_notes');?>
-                    </div>
-                        <?php if(the_field('assessment_notes') != '') {?>
-                            <div class="standard-assessment">
-                        <h2>How you will be assessed</h2>
-                        <?php the_field('assessment_notes');?>
-                            </div>
-                       <?php } ?>
 
+                <h1><?php the_title();?> peer group</h1>
+                <?php if(get_field('intro_text')) : ?>
+                    <div class="formatted-intro">
+                        <?php the_field('intro_text'); ?>
+                    </div>
+                <?php endif;?>
+                <?php the_content();?>
 
-            <?php
+                <?php
 
 
                     /*

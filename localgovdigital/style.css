@@ -1044,7 +1044,7 @@ header {
   #standards__overview .standards-list .standards-item .standards_number {
     font-weight: bold;
     font-size: 1.8em;
-    padding-top: 0.15em;
+    line-height: 1.4em;
     display: block; }
   #standards__overview .standards-list .standards-item h2 {
     font-size: 1.8em;

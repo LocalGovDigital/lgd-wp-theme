@@ -63,18 +63,19 @@
 
 
 
-            if (is_tax('peer_group')) : ?>
-
-
-                    <?php $leads = pods( 'peer_group', get_queried_object()->term_id )->field('leads');
-
+            if(get_post_type() == 'peer_group_details') : ?>
+                <?php
+                $pod = pods( 'peer_group_details', get_the_id() );
+                $leads = $pod->field( 'peer_group_leads' );
+                //var_dump( $leads );
                 if($leads) {?>
+                    <h3>Peer group leads</h3>
                     <ul>
                         <?php foreach ($leads as $lead) {
                         $leaduser = pods('user', $lead['ID']); ?>
-                        <li><h4>
-                                <a href="<?php echo get_author_posts_url($lead['ID'], $leaduser->display('user_nicename')); ?>"><?php echo $leaduser->display('display_name'); ?></a>
-                            </h4>
+                        <li>
+                            <?php /*<a href="<?php echo get_author_posts_url($lead['ID'], $leaduser->display('user_nicename')); ?>"><?php echo $leaduser->display('display_name'); ?></a><br>*/?>
+                            <b><?php echo $leaduser->display('display_name'); ?></b><br>
                             <?php echo $leaduser->display('job_title'); ?><br>
                             <?php echo $leaduser->display('organisation'); ?>
                         </li>
