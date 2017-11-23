@@ -408,6 +408,15 @@
 	}
 }
 
+.body_content {
+	ul {
+		list-style: disc;
+		li {
+			padding-left: 1em;
+		}
+	}
+}
+
 // Eventbrite lists
 .event-content {
 	h2 {
@@ -420,9 +429,19 @@
 	margin-top: 1em;
 }
 
-.event-booking-widget {
-	margin-top: 3em;
-	padding-bottom: 3em;
-	border-bottom: 1px solid $light-grey;
+.event-overview {
+	border-bottom: 5px solid $light-grey;
+	margin-bottom: 2em;
+	float: left;
+	.event-booking-widget {
+		margin-top: 3em;
+		padding-bottom: 3em;
+	}
+	&:last-child {
+		border-bottom: none;
+		margin-bottom: 0;
+	}
 }
+
+
 

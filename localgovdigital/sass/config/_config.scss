@@ -60,12 +60,14 @@ h1 {
 	font-size: 2.2em;
 	padding: 0.5em 0 0.5em;
 	margin-bottom: 0;
+	font-weight: bold;
 }
 
 h2 {
 	font-size: 1.7em;
 	padding: 0.5em 0 0.5em;
 	display: inline-block;
+	font-weight: bold;
 }
 
 .home {
@@ -76,6 +78,7 @@ h2 {
 	h2 {
 		font-size: 1.8em;
 		padding: 1.5em 0 0.5em;
+		font-weight: bold;
 	}
 }
 
@@ -121,6 +124,11 @@ ul {
 
 hr {
 	border-color: currentcolor currentcolor $light-grey;
+	&.thick_rule {
+		border-bottom: 5px solid $light-grey;
+		margin-bottom: 3em;
+
+	}
 }
 
 

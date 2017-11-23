@@ -65,20 +65,16 @@ get_header(); ?>
 					while ( $events->have_posts() ) : $events->the_post();
                         $title = get_the_title();
                         if (strpos($title, 'Peer') !== false)  {?>
-                            <article id="event-<?php the_ID(); ?>" <?php post_class(); ?>>
+                            <article id="event-<?php the_ID(); ?>" class="event-overview">
                                 <div class="row">
-                                <div class="event-image columns small-12 medium-5">
-                                    <?php the_post_thumbnail(); ?>
-                                </div><!-- .entry-header -->
+                                    <div class="event-image columns small-12 medium-5">
+                                        <?php the_post_thumbnail(); ?>
+                                    </div><!-- .entry-header -->
 
-                                <div class="event-content columns small-12 medium-7">
-                                    <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-
-                                </div><!-- .entry-content -->
-                                    <div class="entry-meta columns small-12">
+                                    <div class="event-content columns small-12 medium-7">
+                                        <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
                                         <?php eventbrite_event_meta(); ?>
-                                    </div><!-- .entry-meta -->
+                                    </div><!-- .entry-content -->
 
                                 </div>
                                 <div class="event-booking-widget columns small-12">

@@ -35,18 +35,21 @@ h6 {
 h1 {
   font-size: 2.2em;
   padding: 0.5em 0 0.5em;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  font-weight: bold; }
 
 h2 {
   font-size: 1.7em;
   padding: 0.5em 0 0.5em;
-  display: inline-block; }
+  display: inline-block;
+  font-weight: bold; }
 
 .home h1 {
   padding: 1em 0 0.5em; }
 .home h2 {
   font-size: 1.8em;
-  padding: 1.5em 0 0.5em; }
+  padding: 1.5em 0 0.5em;
+  font-weight: bold; }
 
 h3 {
   font-size: 1.4em;
@@ -80,6 +83,9 @@ ul {
 
 hr {
   border-color: currentcolor currentcolor #ececec; }
+  hr.thick_rule {
+    border-bottom: 5px solid #ececec;
+    margin-bottom: 3em; }
 
 /*
 * Overwrite Row and grid block margin rules 
@@ -224,9 +230,15 @@ header {
         border-top: none;
         margin-top: 0;
         padding-top: 0; } }
-    #global__sidebar aside .sidebar_content h3 {
+    #global__sidebar aside .sidebar_content h2 {
       font-size: 1.7em;
-      padding-top: 0.3em; }
+      padding-top: 0.3em;
+      padding-bottom: 0; }
+    #global__sidebar aside .sidebar_content h3 {
+      font-size: 1.4em;
+      margin-top: 1em; }
+      #global__sidebar aside .sidebar_content h3:first-of-type {
+        margin-top: 0em; }
     #global__sidebar aside .sidebar_content ul {
       margin: 1em 0; }
       #global__sidebar aside .sidebar_content ul li {
@@ -235,6 +247,14 @@ header {
         @media screen and (max-width: 61.875em) {
           #global__sidebar aside .sidebar_content ul li {
             padding: 0 0 1em 0em; } }
+      #global__sidebar aside .sidebar_content ul.peer_group_leads li {
+        border-left: 4px solid #ececec;
+        padding-left: 1em;
+        padding-bottom: 0;
+        margin-top: 1em; }
+      #global__sidebar aside .sidebar_content ul.peer_group_contact li a {
+        font-size: 1em;
+        margin-left: 0.5em; }
     #global__sidebar aside .sidebar_content a {
       font-size: 1.2em; }
     #global__sidebar aside .sidebar_content #sidebar-widgets .widget_recent_entries li a {
@@ -822,7 +842,7 @@ header {
         #home__product-banners .lgd-feature-banner .feature-banner .feature-banner-content h2 {
           margin-bottom: 0;
           padding-top: 1em;
-          font-size: 1.6em; }
+          font-size: 1.5em; }
         #home__product-banners .lgd-feature-banner .feature-banner .feature-banner-content ul {
           margin-left: 0; }
           #home__product-banners .lgd-feature-banner .feature-banner .feature-banner-content ul li {
@@ -1010,7 +1030,7 @@ header {
         #home__event-banners .lgd-feature-banner .feature-banner .feature-banner-content h2 {
           margin-bottom: 0;
           padding-top: 1em;
-          font-size: 1.6em; }
+          font-size: 1.5em; }
         #home__event-banners .lgd-feature-banner .feature-banner .feature-banner-content ul {
           margin-left: 0; }
           #home__event-banners .lgd-feature-banner .feature-banner .feature-banner-content ul li {
@@ -1101,6 +1121,11 @@ header {
   list-style: circle;
   padding-left: 1em; }
 
+.body_content ul {
+  list-style: disc; }
+  .body_content ul li {
+    padding-left: 1em; }
+
 .event-content h2 {
   font-size: 1.4rem;
   line-height: 1.6rem; }
@@ -1108,10 +1133,16 @@ header {
 .entry-meta {
   margin-top: 1em; }
 
-.event-booking-widget {
-  margin-top: 3em;
-  padding-bottom: 3em;
-  border-bottom: 1px solid #ececec; }
+.event-overview {
+  border-bottom: 5px solid #ececec;
+  margin-bottom: 2em;
+  float: left; }
+  .event-overview .event-booking-widget {
+    margin-top: 3em;
+    padding-bottom: 3em; }
+  .event-overview:last-child {
+    border-bottom: none;
+    margin-bottom: 0; }
 
 /*
 * Features SASS

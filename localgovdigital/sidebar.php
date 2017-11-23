@@ -64,24 +64,41 @@
 
 
             if(get_post_type() == 'peer_group_details') : ?>
+                <h2>About this peer group</h2>
                 <?php
                 $pod = pods( 'peer_group_details', get_the_id() );
                 $leads = $pod->field( 'peer_group_leads' );
                 //var_dump( $leads );
                 if($leads) {?>
+
                     <h3>Peer group leads</h3>
-                    <ul>
+                    <ul class="peer_group_leads">
                         <?php foreach ($leads as $lead) {
                         $leaduser = pods('user', $lead['ID']); ?>
                         <li>
                             <?php /*<a href="<?php echo get_author_posts_url($lead['ID'], $leaduser->display('user_nicename')); ?>"><?php echo $leaduser->display('display_name'); ?></a><br>*/?>
-                            <b><?php echo $leaduser->display('display_name'); ?></b><br>
-                            <?php echo $leaduser->display('job_title'); ?><br>
-                            <?php echo $leaduser->display('organisation'); ?>
+                            <b><?php echo $leaduser->display('display_name'); ?></b>
+                            <?php if($leaduser->display('job_title')) {?>
+                            <br><?php echo $leaduser->display('job_title'); ?>
+                            <?php } ?>
+                            <?php if($leaduser->display('organisation')) {?>
+                            <br><?php echo $leaduser->display('organisation'); ?>
+                            <?php } ?>
                         </li>
                     <?php } ?>
                     </ul>
-               <?php } ?>
+            <?php } ?>
+
+            <?php
+                $peer_group_email = $pod->field( 'contact_email' );
+                if($peer_group_email) {?>
+                    <h3>Contact peer group</h3>
+                    <ul class="peer_group_contact">
+                        <li><i class="fa fa-envelope"></i> <a href="mailto:<?php echo $peer_group_email;?>">Email</a></li>
+                    </ul>
+                    <hr>
+                <?php }?>
+
 
                 <?php
                 //displays other peer groups but not current
@@ -92,7 +109,8 @@
                     'hide_empty' => false,
                 ) );
                 if($terms) {
-                    echo '<h3>Other peer groups</h3>';
+
+                    echo '<h2>Other peer groups</h2>';
                     echo '<ul>';
                     foreach ($terms  as $term ) {
 

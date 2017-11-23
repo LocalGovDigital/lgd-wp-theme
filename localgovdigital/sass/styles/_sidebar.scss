@@ -25,10 +25,19 @@
 			}
 			margin-top: 0.8em;
 			padding-top: 1.5em;
-			h3 {
+			h2 {
 				font-size: 1.7em;
 				padding-top: 0.3em;
+				padding-bottom: 0;
 			}
+			h3 {
+				font-size: 1.4em;
+				margin-top: 1em;
+				&:first-of-type {
+					margin-top: 0em;
+				}
+			}
+
 			ul{
 				margin: 1em 0;
 
@@ -37,6 +46,22 @@
 					padding: 0 0 1em 0em;
 					@include media(small_landscape) {
 						padding: 0 0 1em 0em;
+					}
+				}
+				&.peer_group_leads {
+					li {
+						border-left: 4px solid $light-grey;
+						padding-left: 1em;
+						padding-bottom: 0;
+						margin-top: 1em;
+					}
+				}
+				&.peer_group_contact {
+					li {
+						a {
+							font-size: 1em;
+							margin-left: 0.5em;
+						}
 					}
 				}
 			}
