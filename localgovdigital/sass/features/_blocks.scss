@@ -1,5 +1,12 @@
 // FEATURE BLOCK STYLING
-
+blockquote {
+  border-left: 5px solid $mid-grey;
+  padding: 4% 5% 2% 5%;
+  color: $content-black;
+  p {
+    color: $content-black;
+  }
+}
 
 /* save this styling for show / hide functions
 #guidance__consultation-questions {

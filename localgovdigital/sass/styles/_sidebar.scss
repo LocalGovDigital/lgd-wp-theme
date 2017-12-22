@@ -27,8 +27,9 @@
 			padding-top: 1.5em;
 			h2 {
 				font-size: 1.7em;
-				padding-top: 0.3em;
+				padding-top: 1em;
 				padding-bottom: 0;
+
 			}
 			h3 {
 				font-size: 1.4em;
@@ -39,11 +40,11 @@
 			}
 
 			ul{
-				margin: 1em 0;
+				margin: 0;
 
 				li{
 					list-style: none !important;
-					padding: 0 0 1em 0em;
+					padding: 0 0 0.7em 0em;
 					@include media(small_landscape) {
 						padding: 0 0 1em 0em;
 					}
@@ -66,7 +67,7 @@
 				}
 			}
 			a {
-				font-size: 1.2em;
+				font-size: 1.1em;
 			}
 			#sidebar-widgets{
 				.widget_recent_entries{

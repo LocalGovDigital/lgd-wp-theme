@@ -245,3 +245,5 @@ function wpcf7_submit_button_shortcode_handler( $tag ) {
     return $html;
 }
 
+include ("meta-boxes/show-in-menu-widget.sidebar.php");
+

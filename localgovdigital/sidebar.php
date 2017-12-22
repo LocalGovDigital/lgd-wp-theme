@@ -10,12 +10,6 @@
 
         <div class="sidebar_content">
 
-            <?php if ( is_active_sidebar( 'sidebar-widgets' ) ) : ?>
-                <ul id="sidebar-widgets">
-                    <?php dynamic_sidebar( 'sidebar-widgets' ); ?>
-                </ul>
-            <?php endif; ?>
-        
 
             <?php // adds custom links to sidebar if specified
             if(get_field('add_custom_links')) :
@@ -48,7 +42,7 @@
                     </div>
             <?php endif; ?>
 
-            <?php // adds parent and children page links to sidebar
+            <?php /* adds parent and children page links to sidebar
             if($post->post_parent)
                 $children = wp_list_pages("title_li=&sort_column=menu_order&child_of=".$post->post_parent."&echo=0");
             else
@@ -57,7 +51,7 @@
                 <ul id="subnav">
                     <?php echo $children; ?>
                 </ul>
-            <?php } ?>
+            <?php } */?>
 
             <?php
 
@@ -184,6 +178,18 @@
                 ?>
             <? endif;
            */ ?>
+
+
+            <?php
+            // Widgets in sidebar if a page post type
+
+            if ( is_active_sidebar( 'sidebar-widgets' ) ) : ?>
+                <?php if((get_post_type() == 'page') || (get_post_type() == 'post')): ?>
+                <ul id="sidebar-widgets">
+                    <?php dynamic_sidebar( 'sidebar-widgets' ); ?>
+                </ul>
+                <?php endif; ?>
+            <?php endif; ?>
         </div>
     </aside>
 </div>

@@ -19,10 +19,11 @@ get_header(); ?>
                     $small_event_thumb_url_array = wp_get_attachment_image_src($thumb_id, 'small-event-header', true);
                     $small_event_thumb_url = $small_event_thumb_url_array[0];
                     //$large_event_image = the_post_thumbnail('event-header');
-                    //$medium_event_image = the_post_thumbnail('event-header');
-                }
+                    //$medium_event_image = the_post_thumbnail('event-header');?>
+                    <img src="<?php echo $small_event_thumb_url;?>" srcset="<?php echo $small_event_thumb_url;?> 768w, <?php echo $large_event_thumb_url;?> 1024w" />
+               <?php }
                 ?>
-                <img src="<?php echo $small_event_thumb_url;?>" srcset="<?php echo $small_event_thumb_url;?> 768w, <?php echo $large_event_thumb_url;?> 1024w" />
+
             </div>
         </div>
     </section>
@@ -67,13 +68,25 @@ get_header(); ?>
                         if (strpos($title, 'Peer') !== false)  {?>
                             <article id="event-<?php the_ID(); ?>" class="event-overview">
                                 <div class="row">
+                                    <?php if(has_post_thumbnail()) :?>
                                     <div class="event-image columns small-12 medium-5">
                                         <?php the_post_thumbnail(); ?>
                                     </div><!-- .entry-header -->
+                                    <?php endif;?>
 
                                     <div class="event-content columns small-12 medium-7">
-                                        <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-                                        <?php eventbrite_event_meta(); ?>
+                                        <?php
+                                        $event_booking_url = eventbrite_event_eb_url();
+                                        $event_start = eventbrite_event_time();
+                                        $event_venue = eventbrite_event_venue();
+                                        ?>
+                                        <?php the_title( sprintf( '<h2 class="entry-title"><a href="'.$event_booking_url.'" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+                                        <?php
+                                        echo $event_start;
+                                        echo '<br>';
+                                        echo '<strong>'.eventbrite_event_venue()->address->city.'</strong>';
+                                        //print_r(eventbrite_event_venue());
+                                        ?>
                                     </div><!-- .entry-content -->
 
                                 </div>
@@ -111,12 +124,13 @@ get_header(); ?>
 
 					<?php endwhile;
 
-					// Previous/next post navigation.
-					eventbrite_paging_nav( $events );
+					// Previous/next post navigation
 
 				else :
 					// If no content, include the "No posts found" template.
-					get_template_part( 'content', 'none' );
+					//get_template_part( 'content', 'none' );
+                    echo '<h2>Sorry, there aren\'t any events planned at the moment</h2>';
+                    echo '<p>Visit our <a href="/peer-groups/">peer groups pages</a> or <a href="https://localgovdigital.slack.com">join us on slack</a> to find out more.</p>';
 
 				endif;
 

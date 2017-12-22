@@ -232,7 +232,7 @@ header {
         padding-top: 0; } }
     #global__sidebar aside .sidebar_content h2 {
       font-size: 1.7em;
-      padding-top: 0.3em;
+      padding-top: 1em;
       padding-bottom: 0; }
     #global__sidebar aside .sidebar_content h3 {
       font-size: 1.4em;
@@ -240,10 +240,10 @@ header {
       #global__sidebar aside .sidebar_content h3:first-of-type {
         margin-top: 0em; }
     #global__sidebar aside .sidebar_content ul {
-      margin: 1em 0; }
+      margin: 0; }
       #global__sidebar aside .sidebar_content ul li {
         list-style: none !important;
-        padding: 0 0 1em 0em; }
+        padding: 0 0 0.7em 0em; }
         @media screen and (max-width: 61.875em) {
           #global__sidebar aside .sidebar_content ul li {
             padding: 0 0 1em 0em; } }
@@ -256,7 +256,7 @@ header {
         font-size: 1em;
         margin-left: 0.5em; }
     #global__sidebar aside .sidebar_content a {
-      font-size: 1.2em; }
+      font-size: 1.1em; }
     #global__sidebar aside .sidebar_content #sidebar-widgets .widget_recent_entries li a {
       font-size: 1em; }
     #global__sidebar aside .sidebar_content #sidebar-widgets .widget_recent_entries li .post-date {
@@ -1111,8 +1111,7 @@ header {
       font-weight: bold; }
     .peer-list li:last-child {
       border-bottom: 1px solid #ececec;
-      padding-bottom: 2em;
-      margin-bottom: 4em; }
+      padding-bottom: 2em; }
       @media screen and (max-width: 48em) {
         .peer-list li:last-child {
           margin-bottom: 2em; } }
@@ -1437,6 +1436,13 @@ i {
     height: 1px;
     width: 1px;
     overflow: hidden; }
+
+blockquote {
+  border-left: 5px solid #d5d5d5;
+  padding: 4% 5% 2% 5%;
+  color: #565656; }
+  blockquote p {
+    color: #565656; }
 
 /* save this styling for show / hide functions
 #guidance__consultation-questions {
