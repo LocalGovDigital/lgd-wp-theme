@@ -297,11 +297,20 @@
 	}
 }
 
+
+
 .formatted-intro {
 	font-size: 1.3em;
 	margin-bottom: 2em;
 	padding: 0.5em 0;
 }
+
+.home-intro {
+	.formatted-intro {
+		margin-bottom: 0em;
+	}
+}
+
 
 
 // Standards list items

@@ -1,9 +1,8 @@
 /*!
 Theme Name: LocalGov Digital
 Theme URI: https://localgov.digital/
-Author: Ben Cheetham
-Author URI: https://ben.cheetham.me.uk/
-Description:
+Author: Martin Dainton and Ben Cheetham
+Description: A website for digital practitioners working in and around local government
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1053,6 +1052,9 @@ header {
   font-size: 1.3em;
   margin-bottom: 2em;
   padding: 0.5em 0; }
+
+.home-intro .formatted-intro {
+  margin-bottom: 0em; }
 
 #standards__overview h2 {
   font-size: 1.3em; }
