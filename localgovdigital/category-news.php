@@ -22,7 +22,11 @@ get_header(); ?>
                                 if ($i == '1') : ?>
                                     <article class="first-item">
                                         <div class="first-item-left">
-                                            <a href="<?php the_permalink();?>"><?php the_post_thumbnail(); ?></a>
+                                            <?php if(the_post_thumbnail()): ?>
+                                                <a href="<?php the_permalink();?>"><?php the_post_thumbnail(); ?></a>
+                                            <?php else :?>
+                                                <a href="<?php the_permalink();?>"><img src="/wp-content/uploads/2018/01/Latest-news-banner3.png"></a>
+                                            <?php endif;?>
                                         </div>
                                         <div class="first-item-right">
                                             <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>

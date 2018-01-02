@@ -8,7 +8,7 @@ $args = array(
     'post_type'=> 'voice_post',
     'orderby'    => 'date',
     'order'    => 'DESC',
-    'posts_per_page' => 15,
+    'posts_per_page' => 30,
     'nopaging'  => false,
     'paged'     => $paged,
     );
@@ -35,8 +35,17 @@ get_header(); ?>
                         <?php
                         if ( $the_query->have_posts() ) :?>
                             <ul>
-                            <?php while ( $the_query->have_posts() ) : $the_query->the_post();
-                                get_template_part( 'template-parts/page/content', 'voice-post' );
+                            <?php
+                            $authors_array = array();
+                            while ( $the_query->have_posts() ) : $the_query->the_post();
+                                $this_feed_id = get_post_custom_values( 'syndication_feed_id' )[0];
+                                $authors_array[] = $this_feed_id;
+                                //print_r($authors_array);
+                                $number_of_matching_ids = array_keys($authors_array, $this_feed_id);
+                                $number_of_posts = count($number_of_matching_ids);
+                                if($number_of_posts <= 3) {
+                                    get_template_part( 'template-parts/page/content', 'voice-post' );
+                                }
                             endwhile; ?>
                             </ul>
                             <div class="nav-previous alignleft"><?php next_posts_link( 'Older posts' ); ?></div>

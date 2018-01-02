@@ -37,13 +37,16 @@ get_header(); ?>
                 if ( $the_query->have_posts() ) : while ($the_query->have_posts()) : $the_query->the_post();
                     // if the first item, display as feature
                     if ($i == '1') : ?>
-
-                        <a href="<?php the_permalink();?>"><?php the_post_thumbnail(); ?></a>
+                        <?php if(the_post_thumbnail()): ?>
+                            <a href="<?php the_permalink();?>"><?php the_post_thumbnail(); ?></a>
+                            <?php else :?>
+                            <a href="<?php the_permalink();?>"><img src="/wp-content/uploads/2018/01/Latest-news-banner3.png"></a>
+                        <?php endif;?>
                         <h3><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
-                        <?php $excerpt = get_the_excerpt();
+                        <p><?php $excerpt = get_the_excerpt();
                                 echo $excerpt;
-                        ?>
-                        <span class="small-date"><?php the_date();?></span>
+                        ?></p>
+                        <p><strong><span class="small-date"><?php the_date();?></span></strong></p>
 
                     <?php else :
                     // else create $news_list variable with all other posts in the loop
