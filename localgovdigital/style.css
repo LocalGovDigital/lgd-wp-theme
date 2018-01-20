@@ -1162,133 +1162,224 @@ label, legend {
       margin-bottom: 0;
       cursor: pointer; }
 
-#global__content .gform_body .gform_page_fields {
-  padding-left: 2%; }
-  #global__content .gform_body .gform_page_fields ul {
-    padding: 0;
-    margin: 0; }
-    #global__content .gform_body .gform_page_fields ul li.gfield {
-      list-style: none;
-      padding-left: 0;
-      padding-right: 0; }
-      #global__content .gform_body .gform_page_fields ul li.gfield .gfield_required {
-        display: none; }
-      #global__content .gform_body .gform_page_fields ul li.gfield label {
-        color: #565656;
-        line-height: 1.5em;
-        padding-bottom: 1em;
-        display: inline-block; }
-      #global__content .gform_body .gform_page_fields ul li.gfield .gfield_description {
-        padding-top: 1em; }
-        #global__content .gform_body .gform_page_fields ul li.gfield .gfield_description ul {
-          padding-top: 1em; }
-          #global__content .gform_body .gform_page_fields ul li.gfield .gfield_description ul li {
-            margin-left: 1em; }
-      #global__content .gform_body .gform_page_fields ul li.gfield input[type="email"],
-      #global__content .gform_body .gform_page_fields ul li.gfield input[type="number"],
-      #global__content .gform_body .gform_page_fields ul li.gfield input[type="tel"],
-      #global__content .gform_body .gform_page_fields ul li.gfield input[type="text"],
-      #global__content .gform_body .gform_page_fields ul li.gfield input[type="url"],
-      #global__content .gform_body .gform_page_fields ul li.gfield input[type="radio"],
-      #global__content .gform_body .gform_page_fields ul li.gfield input[type="checkbox"],
-      #global__content .gform_body .gform_page_fields ul li.gfield textarea, #global__content .gform_body .gform_page_fields ul li.gfield select {
-        color: #565656;
-        display: inline; }
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="email"]:focus,
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="number"]:focus,
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="tel"]:focus,
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="text"]:focus,
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="url"]:focus,
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="radio"]:focus,
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="checkbox"]:focus,
-        #global__content .gform_body .gform_page_fields ul li.gfield textarea:focus, #global__content .gform_body .gform_page_fields ul li.gfield select:focus {
-          outline: 3px solid #d68600;
-          outline-offset: 2px; }
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="email"].small,
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="number"].small,
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="tel"].small,
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="text"].small,
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="url"].small,
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="radio"].small,
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="checkbox"].small,
-        #global__content .gform_body .gform_page_fields ul li.gfield textarea.small, #global__content .gform_body .gform_page_fields ul li.gfield select.small {
-          max-width: 200px; }
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="email"].medium,
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="number"].medium,
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="tel"].medium,
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="text"].medium,
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="url"].medium,
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="radio"].medium,
-        #global__content .gform_body .gform_page_fields ul li.gfield input[type="checkbox"].medium,
-        #global__content .gform_body .gform_page_fields ul li.gfield textarea.medium, #global__content .gform_body .gform_page_fields ul li.gfield select.medium {
-          max-width: 500px; }
-      #global__content .gform_body .gform_page_fields ul li.gfield textarea {
-        max-height: 150px; }
-      #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_radio, #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_checkbox {
-        padding-top: 1.5em; }
-        #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_radio li, #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_checkbox li {
-          list-style: none;
-          margin-bottom: 0.5em !important; }
-          #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_radio li input[type="radio"], #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_radio li input[type="checkbox"], #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_checkbox li input[type="radio"], #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_checkbox li input[type="checkbox"] {
-            								/*height: 35px;
-            								width: 35px;
-            
-            								outline: 2px solid $mid-grey;*/
-            width: 25px;
-            height: 25px;
-            cursor: pointer; }
-            #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_radio li input[type="radio"]::before, #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_radio li input[type="checkbox"]::before, #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_checkbox li input[type="radio"]::before, #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_checkbox li input[type="checkbox"]::before {
-              border: 2px solid #d5d5d5; }
-            #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_radio li input[type="radio"]:focus, #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_radio li input[type="radio"]:checked, #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_radio li input[type="checkbox"]:focus, #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_radio li input[type="checkbox"]:checked, #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_checkbox li input[type="radio"]:focus, #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_checkbox li input[type="radio"]:checked, #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_checkbox li input[type="checkbox"]:focus, #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_checkbox li input[type="checkbox"]:checked {
-              outline: 2px solid #d68600; }
-          #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_radio li label, #global__content .gform_body .gform_page_fields ul li.gfield .ginput_container_checkbox li label {
-            vertical-align: top;
-            padding-top: 0em; }
-      #global__content .gform_body .gform_page_fields ul li.gfield.gform_validation_container {
-        display: none; }
-      #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .ginput_container input[type="email"],
-      #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .ginput_container input[type="number"],
-      #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .ginput_container input[type="tel"],
-      #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .ginput_container input[type="text"],
-      #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .ginput_container input[type="url"],
-      #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .ginput_container input[type="radio"],
-      #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .ginput_container input[type="checkbox"],
-      #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .ginput_container textarea, #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .ginput_container select {
-        outline: 1px solid #e40844; }
-        #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .ginput_container input[type="email"]:focus,
-        #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .ginput_container input[type="number"]:focus,
-        #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .ginput_container input[type="tel"]:focus,
-        #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .ginput_container input[type="text"]:focus,
-        #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .ginput_container input[type="url"]:focus,
-        #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .ginput_container input[type="radio"]:focus,
-        #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .ginput_container input[type="checkbox"]:focus,
-        #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .ginput_container textarea:focus, #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .ginput_container select:focus {
-          outline: 1px solid #e40844; }
-      #global__content .gform_body .gform_page_fields ul li.gfield.gfield_error .validation_message {
-        padding-top: 0;
-        margin-top: -1em;
-        color: #e40844; }
-#global__content .gform_body .gform_page_footer {
-  padding-left: 2%; }
-#global__content .gform_validation_error .top-error-panel {
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+textarea, select {
+  color: #565656;
+  display: inline;
+  border: 2px solid #565656; }
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="tel"]:focus,
+  input[type="text"]:focus,
+  input[type="url"]:focus,
+  textarea:focus, select:focus {
+    outline: 3px solid #d68600;
+    outline-offset: 2px; }
+  input[type="email"].small,
+  input[type="number"].small,
+  input[type="tel"].small,
+  input[type="text"].small,
+  input[type="url"].small,
+  textarea.small, select.small {
+    max-width: 200px; }
+  input[type="email"].medium,
+  input[type="number"].medium,
+  input[type="tel"].medium,
+  input[type="text"].medium,
+  input[type="url"].medium,
+  textarea.medium, select.medium {
+    max-width: 500px; }
+
+textarea {
+  max-height: 150px; }
+
+input[type="checkbox"], input[type="radio"] {
+  opacity: 0;
+  height: 38px;
+  width: 38px;
+  margin-bottom: 0.5em;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+input[type="checkbox"] + label::after {
+  content: "";
+  border: solid;
+  border-width: 0 0 5px 5px;
+  border-color: #565656;
+  background: transparent;
+  width: 17px;
+  height: 7px;
+  position: absolute;
+  top: 17px;
+  left: 13px;
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  opacity: 0; }
+
+input[type="checkbox"] + label::before {
+  content: "";
+  border: 2px solid #565656;
+  background: transparent;
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 4px;
+  margin-left: 4px; }
+
+input[type="radio"] + label::after {
+  content: "";
+  border: 10px solid #565656;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 11px;
+  left: 11px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  opacity: 0; }
+
+input[type="radio"] + label::before {
+  content: "";
+  border: 2px solid #565656;
+  background: transparent;
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  margin-top: 4px;
+  margin-left: 4px; }
+
+input:checked + label::before {
+  font-weight: normal;
+  outline: 3px solid #d68600; }
+
+input[type="radio"]:checked + label::before, input[type="radio"]:focus + label::before {
+  box-shadow: 0 0 0 3px #d68600;
+  outline: none; }
+
+input:checked + label::after {
+  opacity: 1; }
+
+label {
+  color: #565656;
+  line-height: 1.5em;
+  cursor: pointer;
+  display: block;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation; }
+
+.ui-datepicker-header {
+  background-color: #565656; }
+  .ui-datepicker-header a {
+    border-bottom: none; }
+
+.body_content .gform_wrapper ul li input[type="checkbox"], .body_content .gform_wrapper ul li input[type="radio"] {
+  width: 38px !important; }
+.body_content .gform_wrapper ul li input[type="checkbox"] + label, .body_content .gform_wrapper ul li input[type="radio"] + label {
+  padding-left: 0.5em !important;
+  font-size: 1rem !important;
+  width: inherit;
+  max-width: none; }
+.body_content .gform_wrapper ul li input:checked + label {
+  font-weight: normal; }
+.body_content .gform_wrapper ul li .ginput_container label {
+  padding: 8px 10px 9px 12px !important; }
+
+.gform_validation_container {
+  display: none; }
+
+.gfield_error .ginput_container input[type="email"],
+.gfield_error .ginput_container input[type="number"],
+.gfield_error .ginput_container input[type="tel"],
+.gfield_error .ginput_container input[type="text"],
+.gfield_error .ginput_container input[type="url"],
+.gfield_error .ginput_container input[type="radio"],
+.gfield_error .ginput_container input[type="checkbox"],
+.gfield_error .ginput_container textarea, .gfield_error .ginput_container select {
+  outline: 2px solid #e40844; }
+  .gfield_error .ginput_container input[type="email"]:focus,
+  .gfield_error .ginput_container input[type="number"]:focus,
+  .gfield_error .ginput_container input[type="tel"]:focus,
+  .gfield_error .ginput_container input[type="text"]:focus,
+  .gfield_error .ginput_container input[type="url"]:focus,
+  .gfield_error .ginput_container input[type="radio"]:focus,
+  .gfield_error .ginput_container input[type="checkbox"]:focus,
+  .gfield_error .ginput_container textarea:focus, .gfield_error .ginput_container select:focus {
+    outline: 1px solid #e40844; }
+.gfield_error .validation_message {
+  padding-top: 0;
+  margin-top: 0;
+  padding-left: 0;
+  color: #e40844; }
+
+.gform_validation_error .top-error-panel {
   margin: 0 2% 2.5em;
   border-top: 5px solid #e40844;
   border-bottom: 5px solid #e40844;
-  padding: 1em 1.5em; }
-  #global__content .gform_validation_error .top-error-panel h2 {
-    font-family: Helvetica, sans-serif; }
-#global__content .form_confirmation {
+  padding: 1em 0em; }
+  .gform_validation_error .top-error-panel h2 {
+    font-size: 2rem; }
+
+.form_confirmation {
   margin: 0 0 2.5em;
-  border-top: 5px solid #3fb34f;
-  border-bottom: 5px solid #3fb34f;
-  padding: 1em 1.5em; }
-  #global__content .form_confirmation h2 {
-    font-family: Helvetica, sans-serif; }
-  #global__content .form_confirmation p {
+  border-top: 5px solid #d5d5d5;
+  border-bottom: 5px solid #d5d5d5;
+  padding: 1em 1.5em;
+  background-color: #e5f1f9; }
+  .form_confirmation p {
     margin: 0 1em; }
-  #global__content .form_confirmation h3 {
-    font-family: Helvetica, sans-serif;
+  .form_confirmation h3 {
     text-align: center; }
+
+.body_content .gform_wrapper .gform_body {
+  padding-left: 2%; }
+  .body_content .gform_wrapper .gform_body ul {
+    padding: 0;
+    margin: 0; }
+    .body_content .gform_wrapper .gform_body ul li.gfield {
+      list-style: none;
+      padding-left: 0;
+      padding-right: 0; }
+      .body_content .gform_wrapper .gform_body ul li.gfield::before {
+        background-color: inherit; }
+      .body_content .gform_wrapper .gform_body ul li.gfield .gfield_required {
+        display: none; }
+      .body_content .gform_wrapper .gform_body ul li.gfield h2 {
+        padding-top: 1rem; }
+      .body_content .gform_wrapper .gform_body ul li.gfield .gfield_description {
+        font-size: 1rem; }
+    .body_content .gform_wrapper .gform_body ul.gfield_checkbox li, .body_content .gform_wrapper .gform_body ul.gfield_radio li {
+      padding-left: 50px !important; }
+  .body_content .gform_wrapper .gform_body .gform_page_footer {
+    margin-top: 3em; }
+    .body_content .gform_wrapper .gform_body .gform_page_footer .button {
+      margin-top: 1em;
+      margin-bottom: 0; }
+.body_content .gform_wrapper .gform_footer {
+  padding-left: 2%; }
+.body_content .form-responses .hidden-content {
+  display: none; }
+.body_content .form-responses ul li {
+  margin-bottom: 1em; }
+.body_content .additional-notes {
+  border-top: 1px dotted #ececec;
+  padding-top: 1em;
+  margin-top: 3em; }
 
 .button {
   transition: all 0.5s ease 0s;

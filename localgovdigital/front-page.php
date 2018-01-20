@@ -169,8 +169,8 @@ get_header(); ?>
                 wp_reset_postdata();
                 ?>
                 <div class="digital-voice-button">
-                    <a href="#" class="button">View all blog posts</a>
-                    <a href="#" class="button secondary">Submit your blog</a>
+                    <a href="<?php echo site_url();?>/voice" class="button">View all blog posts</a>
+                    <a href="<?php echo site_url();?>/submit-your-blog" class="button secondary">Submit your blog</a>
                 </div>
             </div>
         </div>
