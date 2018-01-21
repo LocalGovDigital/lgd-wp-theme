@@ -700,7 +700,8 @@ header {
             #footer__terms-links .menu-terms-container ul li a {
               padding-left: 0; } }
         #footer__terms-links .menu-terms-container ul li:nth-child(1) a {
-          padding-left: 0; }
+          padding-left: 0;
+          margin-left: 0; }
 
 #home__intro {
   padding: 3em 0;
@@ -865,6 +866,9 @@ header {
         padding-bottom: 0; } }
   #global__digital-listings .digital-listings {
     padding-left: 0; }
+    @media screen and (max-width: 40em) {
+      #global__digital-listings .digital-listings {
+        padding-left: 2%; } }
     #global__digital-listings .digital-listings ul {
       margin-left: 0;
       margin-top: 2em;
@@ -1043,7 +1047,7 @@ header {
   @media screen and (max-width: 48em) {
     #global__content {
       padding-bottom: 0em;
-      padding-top: 0; }
+      padding-top: 1.5em; }
       #global__content .body_content {
         padding-bottom: 2em;
         width: 100%; } }
@@ -1051,7 +1055,8 @@ header {
 .formatted-intro {
   font-size: 1.3em;
   margin-bottom: 2em;
-  padding: 0.5em 0; }
+  padding: 0.5em 0;
+  line-height: 1.5em; }
 
 .home-intro .formatted-intro {
   margin-bottom: 0em; }

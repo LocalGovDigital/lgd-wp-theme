@@ -134,6 +134,9 @@
 	}
 	.digital-listings{
 		padding-left: 0;
+		@include media(small) {
+			padding-left: 2%;
+		}
 		ul{
 			margin-left: 0;
 			margin-top: 2em;
@@ -289,7 +292,7 @@
 	padding-bottom: 4em;
 	@include media(portrait) {
 		padding-bottom: 0em;
-		padding-top: 0;
+		padding-top: 1.5em;
 		.body_content {
 			padding-bottom: 2em;
 			width: 100%;
@@ -303,6 +306,7 @@
 	font-size: 1.3em;
 	margin-bottom: 2em;
 	padding: 0.5em 0;
+	line-height: 1.5em;
 }
 
 .home-intro {
