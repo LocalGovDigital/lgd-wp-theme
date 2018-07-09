@@ -29,6 +29,7 @@ header {
 		}
 		@include media(small) {
 			padding-left:0em;
+			left:0;
 		}
 		a {
 			text-decoration: none;

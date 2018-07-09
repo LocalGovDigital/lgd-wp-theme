@@ -139,7 +139,8 @@ header {
         margin-bottom: 2em; } }
     @media screen and (max-width: 40em) {
       #global__brand-nav .brand {
-        padding-left: 0em; } }
+        padding-left: 0em;
+        left: 0; } }
     #global__brand-nav .brand a {
       text-decoration: none; }
       #global__brand-nav .brand a:hover {
@@ -726,9 +727,10 @@ header {
       font-size: 1.2em;
       color: #fff; }
       #home__intro .popular-links ul li a {
-        color: #fff; }
+        color: #fff;
+        border-bottom: 2px solid #fff; }
         #home__intro .popular-links ul li a:hover {
-          border-bottom-color: #fff; }
+          border-bottom-color: transparent; }
   @media screen and (max-width: 40em) {
     #home__intro .popular-links {
       border-top: 1px solid #7f7f7f; } }
@@ -1060,6 +1062,15 @@ header {
 
 .home-intro .formatted-intro {
   margin-bottom: 0em; }
+.home-intro a {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+  margin-top: 15px;
+  display: inline-block; }
+  .home-intro a.button {
+    border: 2px solid #0073b9; }
+  .home-intro a:hover {
+    border-bottom-color: transparent; }
 
 #standards__overview h2 {
   font-size: 1.3em; }
