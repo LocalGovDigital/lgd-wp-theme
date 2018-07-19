@@ -170,7 +170,7 @@ get_header(); ?>
                 ?>
                 <div class="digital-voice-button">
                     <a href="<?php echo site_url();?>/voice" class="button">View all blog posts</a>
-                    <a href="<?php echo site_url();?>/submit-your-blog" class="button secondary">Submit your blog</a>
+                    <a href="<?php echo site_url();?>/voice/submit-your-blog" class="button secondary">Submit your blog</a>
                 </div>
             </div>
         </div>
