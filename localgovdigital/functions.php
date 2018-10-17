@@ -33,3 +33,6 @@ require_once( 'library/theme-functions.php' );
 
 /** Add custom permalink */
 require_once( 'library/permalinks.php' );
+
+/** Add other custom form functions */
+require_once( 'library/form-functions.php' );
