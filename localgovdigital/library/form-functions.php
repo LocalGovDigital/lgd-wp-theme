@@ -4,7 +4,6 @@ require_once ( '/var/sites/l/localgov.digital/membership/push-member-data.php' )
 add_action( 'gform_after_submission_6', 'push_membership_data_to_google', 10, 2 );
 
 function push_membership_data_to_google ( $entry, $form ) {
-
     GFCommon::log_debug( 'membership_form_after_submission: entry => ' . print_r( $entry, true ) );
 
     // Get the API client and construct the service object.
@@ -139,7 +138,36 @@ function push_membership_data_to_google ( $entry, $form ) {
     $conf = ["valueInputOption" => "USER_ENTERED"];
 
     $response = $service->spreadsheets_values->append($spreadsheetId, $range, $requestBody, $conf);
+    
+    GFAPI::update_entry_property( $entry['id'], 'is_read', true );
+    GFAPI::update_entry_property( $entry['id'], 'is_starred', true );
 
  GFCommon::log_debug( 'membership_form_after_submission: response => ' . print_r( $response, true ) );
 
+}
+
+add_filter('gform_pre_render_6', 'set_slack_email');
+
+function set_slack_email( $form ) {
+    $current_page = GFFormDisplay::get_current_page( $form['id'] );
+
+    if ( $current_page == 5 ) {
+        // If the email address given at the start matches a public sector email, pre-populate the Slack email field
+        // Get the initial email address
+        $email = rgpost( 'input_4' );
+
+        // See if it matches
+        $match = publicSectorEmail( $email );
+
+        if ( $match ) {
+            foreach( $form['fields'] as &$field ) {
+                // Set the default value
+                if ( $field->id == 49 ) {
+                    $field->defaultValue = $email;
+                }
+            }
+        }
+    }
+
+    return $form;
 }
